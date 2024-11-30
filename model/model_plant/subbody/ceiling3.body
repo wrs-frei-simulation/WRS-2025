@@ -1,0 +1,28 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: ceiling3
+links:
+  -
+    name: Root
+    translation: [ 0, 0, -0.5 ]
+    joint_type: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      - &shape1
+        type: Shape
+        rotation: [ 1, 0, 0, -90 ] 
+        geometry:
+          type: Extrusion
+          cross_section: [
+            -22.0, -22.0,
+            18.0, -22.0,
+            18.0, -18.0,
+            -18.0, -18.0,
+            -18.0, 18.0,
+            -22.0, 18.0,
+            -22.0, -22.0 ]
+          spine: [ 0, -0.5, 0, 0, 0.5, 0 ]
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0.5 ] } }
+      - <<: *shape1
+        rotation: [ [ 0, 0, 1, -90 ], [ 1, 0, 0, 90 ] ]

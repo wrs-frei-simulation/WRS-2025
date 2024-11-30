@@ -1,0 +1,15 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: Roof
+
+links:
+  -
+    name: Root
+    translation: [ 0, 0, 44.5 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/roof.body"
+    parent: Root
+    prefix: SB1_
+    joint_type: fixed

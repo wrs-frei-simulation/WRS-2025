@@ -1,0 +1,74 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: MonocularCamera
+links:
+  -
+    name: BASE
+    translation: [ 0, 0, 0.04 ]
+    jointType: fixed
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 0.5
+    inertia: [ 0.000533, 0, 0, 0, 0.000533, 0, 0, 0, 0.000533 ]
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 0.08, 0.08, 0.08 ] }
+        appearance: { material: { diffuseColor: [ 0, 0, 0 ] } }
+      -
+        type: AccelerationSensor
+        name: ACCEL_SENSOR
+        id: 0
+      -
+        type: RateGyroSensor
+        name: GYRO_SENSOR
+        id: 0
+      -
+        type: Camera
+        name: KINECT
+        translation: [ 0.04, 0, 0 ]
+        optical_frame_rotation: [ [ 1, 0, 0, 90 ], [ 0, 1, 0, -90 ] ]
+        format: COLOR_DEPTH
+        field_of_view: 62
+        width: 320
+        height: 240
+        frame_rate: 30
+        detection_rate: 0.9
+        error_deviation: 0.005
+        on: true
+        elements:
+          - &CameraShape
+            type: Shape
+            rotation: [ 0, 0, 1, -90 ]
+            geometry: { type: Cylinder, radius: 0.02, height: 0.02 }
+            appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+      -
+        type: SpotLight
+        name: LIGHT
+        translation: [ 0.04, 0, 0 ]
+        direction: [ 1, 0, 0 ]
+        beam_width: 36
+        cut_off_angle: 40
+        cut_off_exponent: 6
+        attenuation: [ 1, 0, 0.01 ]
+        on: true
+      -
+        type: RangeSensor
+        name: VLP-16
+        translation: [ 0, 0, 0.05 ]
+        optical_frame_rotation: [ [ 1, 0, 0, 90 ], [ 0, 1, 0, -90 ] ]
+        yaw_range: 360.0
+        yaw_step:  0.4
+        pitch_range: 30.0
+        pitch_step: 2.0
+        scan_rate:  5
+        max_distance: 100.0
+        detection_rate: 0.9
+        error_deviation: 0.01
+        on: false
+        elements:
+          -
+            type: Shape
+            rotation: [ 1, 0, 0, -90 ]
+            geometry: { type: Cylinder, radius: 0.02, height: 0.02 }
+            appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }

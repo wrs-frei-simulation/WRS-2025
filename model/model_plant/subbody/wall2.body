@@ -1,0 +1,45 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: wall2
+links:
+  -
+    name: Root
+    joint_type: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      -
+        type: Shape
+        geometry:
+          type: Extrusion
+          cross_section: [
+            11, 0,
+            9.52628, 5.5,
+            5.5, 9.52628,
+            6.73556e-16, 11,
+            -5.5, 9.52628,
+            -9.52628, 5.5,
+            -11, 1.34711e-15,
+            -9.52628, -5.5,
+            -5.5, -9.52628,
+            -2.02067e-15, -11,
+            5.5, -9.52628,
+            9.52628, -5.5,
+            11, -2.69422e-15,
+            10, -2.44929e-15,
+            8.66025, -5,
+            5, -8.66025,
+            -1.83697e-15, -10,
+            -5, -8.66025,
+            -8.66025, -5,
+            -10, 1.22465e-15,
+            -8.66025, 5,
+            -5, 8.66025,
+            6.12323e-16, 10,
+            5, 8.66025,
+            8.66025, 5,
+            10, 0,
+            11, 0 ]
+          spine: [ 0, -4.5, 0, 0, 5.5, 0 ]
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0.5 ] } }

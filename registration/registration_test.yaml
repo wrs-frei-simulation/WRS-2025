@@ -1,0 +1,15 @@
+format_version: 2.0
+robot_list: &RobotList [ project_test/Crawler, HobbyDrone-ROS2 ]
+
+registrations:
+  -
+    name: Test
+    task_project: [ Floor ]
+    robot_project: *RobotList
+    robot_alignment: X+
+    start_position: [ 0.0, 0.0, 0.0 ]
+    simulator_project: [ AGXSimulator, AISTSimulator ]
+    view_project: DefaultView
+    # enable_recording: true
+    # enable_tracking: true
+    enable_ros: true

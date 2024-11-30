@@ -1,0 +1,14 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: pcv_bottom
+links:
+  -
+    name: Root
+    joint_type: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      -
+        type: Shape
+        geometry: { type: Sphere, radius: 10.0 }
+        appearance: { material: { diffuseColor: [ 1, 0.333333, 0 ] } }

@@ -1,0 +1,519 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: MonoCrawler2NA
+links:
+  -
+    name: CHASSIS
+    translation: [ 0, 0, 0.1 ]
+    jointType: free
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 50
+    inertia: [ 0.416667, 0, 0, 0, 1.08333, 0, 0, 0, 1.41667 ]
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 0.5, 0.3, 0.1 ] }
+        appearance: { material: { diffuseColor: [ 0, 0, 0 ] } }
+  -
+    type: SubBody
+    uri: "subbody/monocular_camera.body"
+    parent: CHASSIS
+    translation: [ 0.2, 0.0, 0.09 ]
+    rotation: [ 1, 0, 0, 0 ]
+    jointType: fixed
+    jointIdOffset: 0
+#    devicePrefix: CENTER_
+  -
+    name: TRACK_L
+    parent: CHASSIS
+    translation: [ 0, 0.2, 0 ]
+    jointType: &A0 fixed
+    centerOfMass: &A1 [ 0, 0, 0 ]
+    mass: &A2 0.333333
+    inertia: &A3 [ 0.000988889, 0, 0, 0, 0.00765556, 0, 0, 0, 0.00722222 ]
+    elements:
+      - &track_device
+        type: AGXVehicleContinuousTrackDevice
+        name: TRACK_L
+        sprocketNames: [ SPROCKET_L ]
+        rollerNames: [ ROLLER_L ]
+        idlerNames: [ IDLER_L ]
+        upAxis: [ 0, 0, 1 ]
+        numberOfNodes: 42
+        nodeThickness: 0.01
+        nodeWidth: 0.1
+        nodeThickerThickness: 0.02
+        useThickerNodeEvery: 3
+        material: AizuSpiderTracks
+        nodeDistanceTension: 0.002
+        stabilizingHingeFrictionParameter: 8e-07
+        minStabilizingHingeNormalForce: 100
+        hingeCompliance: 2e-05
+        hingeSpookDamping: 0.01
+        nodesToWheelsMergeThreshold: -0.1
+        nodesToWheelsSplitThreshold: -0.05
+  -
+    name: TRACK_R
+    parent: CHASSIS
+    translation: [ 0, -0.2, 0 ]
+    jointType: *A0
+    centerOfMass: *A1
+    mass: *A2
+    inertia: *A3
+    elements:
+      - <<: *track_device
+        name: TRACK_R
+        sprocketNames: [ SPROCKET_R ]
+        rollerNames: [ ROLLER_R ]
+        idlerNames: [ IDLER_R ]
+  -
+    name: SPROCKET_L
+    translation: [ 0.25, 0.2, 0 ]
+    jointId: 0
+    parent: &A4 CHASSIS
+    jointType: &A5 revolute
+    jointAxis: &A6 Y
+    centerOfMass: &A7 [ 0, 0, 0 ]
+    material: &A8 AizuSpiderWheel
+    mass: &A9 0.222222
+    inertia: &A10 [ 0.00243333, 0, 0, 0, 0.0032, 0, 0, 0, 0.00243333 ]
+    elements: &A11
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.08, height: 0.1 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: SPROCKET_R
+    translation: [ 0.25, -0.2, 0 ]
+    jointId: 1
+    parent: *A4
+    jointType: *A5
+    jointAxis: *A6
+    centerOfMass: *A7
+    material: *A8
+    mass: *A9
+    inertia: *A10
+    elements: *A11
+  -
+    name: ROLLER_L
+    translation: [ 0, 0.2, 0 ]
+    jointId: 2
+    parent: &A12 CHASSIS
+    jointType: &A13 revolute
+    jointAxis: &A14 Y
+    centerOfMass: &A15 [ 0, 0, 0 ]
+    material: &A16 AizuSpiderWheel
+    mass: &A17 0.222222
+    inertia: &A18 [ 0.00243333, 0, 0, 0, 0.0032, 0, 0, 0, 0.00243333 ]
+    elements: &A19
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.08, height: 0.1 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: ROLLER_R
+    translation: [ 0, -0.2, 0 ]
+    jointId: 3
+    parent: *A12
+    jointType: *A13
+    jointAxis: *A14
+    centerOfMass: *A15
+    material: *A16
+    mass: *A17
+    inertia: *A18
+    elements: *A19
+  -
+    name: IDLER_L
+    translation: [ -0.25, 0.2, 0 ]
+    jointId: 4
+    parent: &A20 CHASSIS
+    jointType: &A21 revolute
+    jointAxis: &A22 Y
+    centerOfMass: &A23 [ 0, 0, 0 ]
+    material: &A24 AizuSpiderWheel
+    mass: &A25 0.222222
+    inertia: &A26 [ 0.00243333, 0, 0, 0, 0.0032, 0, 0, 0, 0.00243333 ]
+    elements: &A27
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.08, height: 0.1 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: IDLER_R
+    translation: [ -0.25, -0.2, 0 ]
+    jointId: 5
+    parent: *A20
+    jointType: *A21
+    jointAxis: *A22
+    centerOfMass: *A23
+    material: *A24
+    mass: *A25
+    inertia: *A26
+    elements: *A27
+  -
+    name: SPACER_LF
+    translation: [ 0.25, 0.2565, 0 ]
+    jointId: 6
+    parent: &A28 CHASSIS
+    jointType: &A29 revolute
+    jointAxis: &A30 -Y
+    centerOfMass: &A31 [ 0, 0, 0 ]
+    mass: &A32 0.2
+    inertia: &A33 [ 0.000182817, 0, 0, 0, 0.00036, 0, 0, 0, 0.000182817 ]
+    elements: &A34
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.06, height: 0.013 }
+        appearance: { material: { diffuseColor: [ 0, 0, 0 ] } }
+  -
+    name: SPACER_RF
+    translation: [ 0.25, -0.2565, 0 ]
+    jointId: 7
+    parent: *A28
+    jointType: *A29
+    jointAxis: *A30
+    centerOfMass: *A31
+    mass: *A32
+    inertia: *A33
+    elements: *A34
+  -
+    name: TRACK_LF
+    parent: SPACER_LF
+    translation: [ 0, 0.0465, 0 ]
+    jointType: &A35 fixed
+    centerOfMass: &A36 [ 0, 0, 0 ]
+    mass: &A37 0.0833333
+    inertia: &A38 [ 8.88889e-05, 0, 0, 0, 0.000669444, 0, 0, 0, 0.000669444 ]
+    elements:
+      - &sub_track_device
+        type: AGXVehicleContinuousTrackDevice
+        name: TRACK_LF
+        sprocketNames: [ SPROCKET_LF ]
+        rollerNames: [ ROLLER_LF ]
+        idlerNames: [ IDLER_LF ]
+        upAxis: [ 0, 0, 1 ]
+        numberOfNodes: 42
+        nodeThickness: 0.01
+        nodeWidth: 0.08
+        nodeThickerThickness: 0.02
+        useThickerNodeEvery: 3
+        material: AizuSpiderTracks
+        nodeDistanceTension: 0.002
+        stabilizingHingeFrictionParameter: 2e-07
+        minStabilizingHingeNormalForce: 100
+        hingeCompliance: 2e-05
+        hingeSpookDamping: 0.01
+        nodesToWheelsMergeThreshold: -0.1
+        nodesToWheelsSplitThreshold: -0.05
+  -
+    name: TRACK_RF
+    parent: SPACER_RF
+    translation: [ 0, -0.0465, 0 ]
+    jointType: *A35
+    centerOfMass: *A36
+    mass: *A37
+    inertia: *A38
+    elements:
+      - <<: *sub_track_device
+        name: TRACK_RF
+        sprocketNames: [ SPROCKET_RF ]
+        rollerNames: [ ROLLER_RF ]
+        idlerNames: [ IDLER_RF ]
+  -
+    name: SPROCKET_LF
+    parent: SPACER_LF
+    translation: [ 0, 0.0465, 0 ]
+    jointId: 8
+    jointType: &A39 revolute
+    jointAxis: &A40 Y
+    centerOfMass: &A41 [ 0, 0, 0 ]
+    material: &A42 AizuSpiderWheel
+    mass: &A43 0.000882759
+    inertia: &A44 [ 1.88322e-06, 0, 0, 0, 2.82483e-06, 0, 0, 0, 1.88322e-06 ]
+    elements: &A45
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.08, height: 0.08 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: SPROCKET_RF
+    parent: SPACER_RF
+    translation: [ 0, -0.0465, 0 ]
+    jointId: 9
+    jointType: *A39
+    jointAxis: *A40
+    centerOfMass: *A41
+    material: *A42
+    mass: *A43
+    inertia: *A44
+    elements: *A45
+  -
+    name: ROLLER_LF
+    parent: SPACER_LF
+    translation: [ 0.15, 0.0465, 0 ]
+    jointId: 10
+    jointType: &A46 revolute
+    jointAxis: &A47 Y
+    centerOfMass: &A48 [ 0, 0, 0 ]
+    material: &A49 AizuSpiderWheel
+    mass: &A50 0.00027931
+    inertia: &A51 [ 4.00345e-07, 0, 0, 0, 5.02759e-07, 0, 0, 0, 4.00345e-07 ]
+    elements: &A52
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.06, height: 0.08 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: ROLLER_RF
+    parent: SPACER_RF
+    translation: [ 0.15, -0.0465, 0 ]
+    jointId: 11
+    jointType: *A46
+    jointAxis: *A47
+    centerOfMass: *A48
+    material: *A49
+    mass: *A50
+    inertia: *A51
+    elements: *A52
+  -
+    name: IDLER_LF
+    parent: SPACER_LF
+    translation: [ 0.3, 0.0465, 0 ]
+    jointId: 12
+    jointType: &A53 revolute
+    jointAxis: &A54 Y
+    centerOfMass: &A55 [ 0, 0, 0 ]
+    material: &A56 AizuSpiderWheel
+    mass: &A57 5.51724e-05
+    inertia: &A58 [ 5.14943e-08, 0, 0, 0, 4.41379e-08, 0, 0, 0, 5.14943e-08 ]
+    elements: &A59
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.04, height: 0.08 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: IDLER_RF
+    parent: SPACER_RF
+    translation: [ 0.3, -0.0465, 0 ]
+    jointId: 13
+    jointType: *A53
+    jointAxis: *A54
+    centerOfMass: *A55
+    material: *A56
+    mass: *A57
+    inertia: *A58
+    elements: *A59
+  -
+    name: SPACER_LR
+    translation: [ -0.25, 0.2565, 0 ]
+    jointId: 14
+    parent: *A28
+    jointType: *A29
+    jointAxis: *A30
+    centerOfMass: *A31
+    mass: *A32
+    inertia: *A33
+    elements: *A34
+  -
+    name: SPACER_RR
+    translation: [ -0.25, -0.2565, 0 ]
+    jointId: 15
+    parent: *A28
+    jointType: *A29
+    jointAxis: *A30
+    centerOfMass: *A31
+    mass: *A32
+    inertia: *A33
+    elements: *A34
+  -
+    name: TRACK_LR
+    parent: SPACER_LR
+    translation: [ 0, 0.0465, 0 ]
+    jointType: &A60 fixed
+    centerOfMass: &A61 [ 0, 0, 0 ]
+    mass: &A62 0.0833333
+    inertia: &A63 [ 8.88889e-05, 0, 0, 0, 0.000669444, 0, 0, 0, 0.000669444 ]
+    elements:
+      - <<: *sub_track_device
+        name: TRACK_LR
+        sprocketNames: [ SPROCKET_LR ]
+        rollerNames: [ ROLLER_LR ]
+        idlerNames: [ IDLER_LR ]
+  -
+    name: TRACK_RR
+    parent: SPACER_RR
+    translation: [ 0, -0.0465, 0 ]
+    jointType: *A60
+    centerOfMass: *A61
+    mass: *A62
+    inertia: *A63
+    elements:
+      - <<: *sub_track_device
+        name: TRACK_RR
+        sprocketNames: [ SPROCKET_RR ]
+        rollerNames: [ ROLLER_RR ]
+        idlerNames: [ IDLER_RR ]
+  -
+    name: SPROCKET_LR
+    parent: SPACER_LR
+    translation: [ 0, 0.0465, 0 ]
+    jointId: 16
+    jointType: &A64 revolute
+    jointAxis: &A65 Y
+    centerOfMass: &A66 [ 0, 0, 0 ]
+    material: &A67 AizuSpiderWheel
+    mass: &A68 5.51724e-05
+    inertia: &A69 [ 1.17701e-07, 0, 0, 0, 1.76552e-07, 0, 0, 0, 1.17701e-07 ]
+    elements: &A70
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.08, height: 0.08 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: SPROCKET_RR
+    parent: SPACER_RR
+    translation: [ 0, -0.0465, 0 ]
+    jointId: 17
+    jointType: *A64
+    jointAxis: *A65
+    centerOfMass: *A66
+    material: *A67
+    mass: *A68
+    inertia: *A69
+    elements: *A70
+  -
+    name: ROLLER_LR
+    parent: SPACER_LR
+    translation: [ -0.15, 0.0465, 0 ]
+    jointId: 18
+    jointType: &A71 revolute
+    jointAxis: &A72 Y
+    centerOfMass: &A73 [ 0, 0, 0 ]
+    material: &A74 AizuSpiderWheel
+    mass: &A75 0.00027931
+    inertia: &A76 [ 4.00345e-07, 0, 0, 0, 5.02759e-07, 0, 0, 0, 4.00345e-07 ]
+    elements: &A77
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.06, height: 0.08 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: ROLLER_RR
+    parent: SPACER_RR
+    translation: [ -0.15, -0.0465, 0 ]
+    jointId: 19
+    jointType: *A71
+    jointAxis: *A72
+    centerOfMass: *A73
+    material: *A74
+    mass: *A75
+    inertia: *A76
+    elements: *A77
+  -
+    name: IDLER_LR
+    parent: SPACER_LR
+    translation: [ -0.3, 0.0465, 0 ]
+    jointId: 20
+    jointType: &A78 revolute
+    jointAxis: &A79 Y
+    centerOfMass: &A80 [ 0, 0, 0 ]
+    material: &A81 AizuSpiderWheel
+    mass: &A82 0.000882759
+    inertia: &A83 [ 8.23908e-07, 0, 0, 0, 7.06207e-07, 0, 0, 0, 8.23908e-07 ]
+    elements: &A84
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.04, height: 0.08 }
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: IDLER_RR
+    parent: SPACER_RR
+    translation: [ -0.3, -0.0465, 0 ]
+    jointId: 21
+    jointType: *A78
+    jointAxis: *A79
+    centerOfMass: *A80
+    material: *A81
+    mass: *A82
+    inertia: *A83
+    elements: *A84
+  -
+    &WIRE_GUARD_MAIN
+    name: WIRE_GUARD_L
+    parent: CHASSIS
+    jointType: fixed
+    translation: [ 0, 0.2, 0 ]
+    mass: 0.001
+    inertia: [
+      0.001, 0, 0,
+      0, 0.001, 0,
+      0, 0, 0.001 ]
+    elements:
+      Collision:
+        shape:
+          geometry: { type: Box, size: [ 0.7, 0.12, 0.22 ] }
+          appearance: &GUARD_COLOR { material: { diffuseColor: [ 0, 1, 0 ], transparency: 0.6 } }
+  -
+    <<: *WIRE_GUARD_MAIN
+    name: WIRE_GUARD_R
+    translation: [ 0, -0.2, 0 ]
+  -
+    &WIRE_GUARD_SUB
+    name: WIRE_GUARD_LF
+    parent: SPACER_LF
+    jointType: fixed
+    translation: [ 0.125, 0.047, 0 ]
+    mass: 0.001
+    inertia: [
+      0.001, 0, 0,
+      0, 0.001, 0,
+      0, 0, 0.001 ]
+    elements:
+      Collision:
+        shape:
+          geometry: { type: Box, size: [ 0.48, 0.09, 0.22 ] }
+          appearance: *GUARD_COLOR
+  -
+    <<: *WIRE_GUARD_SUB
+    name: WIRE_GUARD_RF
+    parent: SPACER_RF
+    translation: [ 0.125, -0.047, 0 ]
+  -
+    <<: *WIRE_GUARD_SUB
+    name: WIRE_GUARD_LR
+    parent: SPACER_LR
+    translation: [ -0.125, 0.047, 0 ]
+  -
+    <<: *WIRE_GUARD_SUB
+    name: WIRE_GUARD_RR
+    parent: SPACER_RR
+    translation: [ -0.125, -0.047, 0 ]
+
+# TODO: Share the following information with other MonoCrawler models
+collisionDetection:
+  excludeTreeDepth: 1
+  excludeSelfCollisionLinks: [
+    SPROCKET_L, ROLLER_L, IDLER_L,
+    SPROCKET_R, ROLLER_R, IDLER_R,
+    ROLLER_LF, IDLER_LF,
+    ROLLER_RF, IDLER_RF,
+    ROLLER_LR, IDLER_LR,
+    ROLLER_RR, IDLER_RR ]
+  excludeLinkGroups:
+    -
+      name: ChassisGroup
+      links: [
+        CHASSIS,
+        SPACER_LF, SPROCKET_LF,
+        SPACER_RF, SPROCKET_RF,
+        SPACER_LR, SPROCKET_LR,
+        SPACER_RR, SPROCKET_RR ]
+  excludeLinksWireCollision: [
+    SPROCKET_L, ROLLER_L, IDLER_L,
+    SPROCKET_R, ROLLER_R, IDLER_R,
+    SPROCKET_LF, ROLLER_LF, IDLER_LF,
+    SPROCKET_RF, ROLLER_RF, IDLER_RF,
+    SPROCKET_LR, ROLLER_LR, IDLER_LR,
+    SPROCKET_RR, ROLLER_RR, IDLER_RR ]
+  excludeLinksDynamic: [ WIRE_GUARD_L, WIRE_GUARD_R, WIRE_GUARD_LF, WIRE_GUARD_RF, WIRE_GUARD_LR, WIRE_GUARD_RR ]

@@ -1,0 +1,584 @@
+items:
+  id: 0
+  name: "RootItem"
+  plugin: Base
+  class: RootItem
+  is_builtin_item: true
+  children:
+    -
+      id: 1
+      name: "M2-A1"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/M2-Area1.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        jointDisplacements: [ -45, -45, 0, 0 ]
+        initialRootPosition: [ 0, 0, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
+        -
+          id: 2
+          name: "LightController"
+          plugin: Body
+          class: SimpleControllerItem
+          data:
+            isNoDelayMode: false
+            controllerOptions: "SB1_"
+            controller: "PlantLightController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 3
+      name: "TargetTS4_35-50-A1"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-50-A1.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -3, -5, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -3, -5, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 4
+      name: "TargetTS4_35-50-A2"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-50-A2.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -3, -11, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -3, -11, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 5
+      name: "TargetTS4_35-50-A3"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-50-A3.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -10.75, -10, 1 ]
+        rootAttitude: [
+          6.123234e-17, 0, 1,
+          0, 1, -0,
+          -1, 0, 6.123234e-17 ]
+        initialRootPosition: [ -10.75, -10, 1 ]
+        initialRootAttitude: [
+          2.22044605e-16, 0, 1,
+          0, 1, 0,
+          -1, 0, 2.22044605e-16 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 6
+      name: "TargetTS4_35-50-A4"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-50-A4.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -6, -7, 2.567 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, -1, -1.2246468e-16,
+          0, 1.2246468e-16, -1 ]
+        initialRootPosition: [ -6, -7, 2.567 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, -1, -1.2246468e-16,
+          0, 1.2246468e-16, -1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 7
+      name: "TargetTS4_35-50-A5"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-50-A5.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -7, -4.906, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -7, -4.906, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 8
+      name: "TargetTS4_35-100-A1"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-100-A1.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -6.15, -2.566, 1 ]
+        rootAttitude: [
+          0.866025404, 0.353553391, 0.353553391,
+          0, 0.707106781, -0.707106781,
+          -0.5, 0.612372436, 0.612372436 ]
+        initialRootPosition: [ -6.15, -2.566, 1 ]
+        initialRootAttitude: [
+          0.866025404, 0.353553391, 0.353553391,
+          -2.4323582e-10, 0.707106781, -0.707106781,
+          -0.5, 0.612372436, 0.612372436 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 9
+      name: "TargetTS4_35-100-A2"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-100-A2.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -6.5, 0.5, -1 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -6.5, 0.5, -1 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 10
+      name: "TargetTS4_35-100-A3"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-100-A3.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -10, -1, 0.515 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -10, -1, 0.515 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 11
+      name: "TargetTS4_35-100-A4"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-100-A4.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -1.1, -7.65989778, 1.22745994 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, -0.0871557427, 0.996194698,
+          0, -0.996194698, -0.0871557427 ]
+        initialRootPosition: [ -1.1, -7.65989778, 1.22745994 ]
+        initialRootAttitude: [
+          1, -0, 0,
+          0, -0.0871557395, 0.996194698,
+          -0, -0.996194698, -0.0871557395 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 12
+      name: "TargetTS4_35-100-A5"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2024PRE/model/M2/Target/TargetTS4_35-100-A5.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 1.51717983, -6.23449148, -0.0321858225 ]
+        rootAttitude: [
+          1, 0, -0,
+          0, 0.996194698, 0.0871557427,
+          0, -0.0871557427, 0.996194698 ]
+        initialRootPosition: [ 1.51717983, -6.23449148, -0.0321858225 ]
+        initialRootAttitude: [
+          1, 0, -0,
+          0, 0.996194698, 0.0871557427,
+          0, -0.0871557427, 0.996194698 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+views:
+  -
+    id: 0
+    plugin: Base
+    class: GeneralSliderView
+  -
+    id: 1
+    plugin: Base
+    class: ItemPropertyView
+    mounted: true
+  -
+    id: 2
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state:
+      expanded: [ 1 ]
+  -
+    id: 3
+    plugin: Base
+    class: LocationView
+    mounted: true
+    state:
+      show_rpy: true
+      unique_rpy: false
+      show_quaternion: false
+      show_rotation_matrix: false
+      coordinate: world
+  -
+    id: 4
+    plugin: Base
+    class: MessageView
+    mounted: true
+  -
+    id: 5
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state:
+      editMode: false
+      viewpointOperationMode: thirdPerson
+      visible_polygon_elements: [ face ]
+      highlighting: false
+      collisionLines: false
+      cameras:
+        -
+          camera: [ System, Perspective ]
+          isCurrent: true
+          eye: [ -24.2073, 0.94938, 10.8947 ]
+          direction: [ 0.794805, -0.312636, -0.520138 ]
+          up: [ 0.484038, -0.190396, 0.854082 ]
+        -
+          camera: [ System, Orthographic ]
+          orthoHeight: 20
+      lighting_mode: normal
+      culling_mode: enabled
+      shading_mode: smooth
+      world_light: true
+      world_light_intensity: 0.5
+      ambient_light: true
+      ambient_light_intensity: 0.5
+      head_light: true
+      head_light_intensity: 0.5
+      world_light_shadow: true
+      shadow_lights:
+        - { index: 0, enabled: false }
+        - { index: 1, enabled: false }
+      background_color: [ 0.1, 0.1, 0.3 ]
+      line_width: 1
+      point_size: 1
+      field_of_view: 35
+      clip_distances: [ 0.04, 200 ]
+      floorGrid: true
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGrid: false
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      yzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      xy_grid_color: [ 0.9, 0.9, 0.9 ]
+      xz_grid_color: [ 0.9, 0.9, 0.9 ]
+      yz_grid_color: [ 0.9, 0.9, 0.9 ]
+  -
+    id: 6
+    plugin: Body
+    class: JointDisplacementView
+    mounted: true
+    state:
+      show_joint_ids: true
+      show_joint_names: false
+      overlap_joint_names: false
+      show_sliders: true
+      show_dials: false
+      show_phases: true
+      limit_ranges: false
+      show_selected_joints: false
+  -
+    id: 7
+    plugin: Body
+    class: LinkDeviceListView
+    mounted: true
+    state:
+      element_type: all
+      listing_mode: list
+  -
+    id: 8
+    plugin: Body
+    class: LinkPositionView
+    mounted: true
+    state:
+      coordinate_mode: world
+      preferred_coordinate_mode: base
+      show_rpy: true
+      unique_rpy: false
+      show_quaternion: false
+      show_rotation_matrix: false
+      target_link_type: ik_link
+  -
+    id: 9
+    plugin: Body
+    class: LinkPropertyView
+    mounted: true
+  -
+    id: 10
+    plugin: Python
+    class: PythonConsoleView
+    mounted: true
+toolbars:
+  "TimeBar":
+    current_time: 0
+    min_time: 0
+    max_time: 30
+    frame_rate: 1000
+    playback_frame_rate: 60
+    idle_loop_driven_mode: false
+    playback_speed_ratio: 1
+    sync_to_ongoing_updates: true
+    auto_expansion: true
+  "LeggedBodyBar":
+    stanceWidth: 0.15
+  "KinematicsBar":
+    forward_kinematics: true
+    inverse_kinematics: true
+    preset_kinematics: true
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+Body:
+  "BodySelectionManager":
+    current_body_item: 1
+    current_link: "Root"
+  "KinematicFaultChecker":
+    checkJointPositions: true
+    angleMargin: 0
+    translationMargin: 0
+    checkJointVelocities: true
+    velocityLimitRatio: 100
+    targetJoints: all
+    checkSelfCollisions: true
+    onlyTimeBarRange: false
+  "OperableSceneBody":
+    scene_bodies:
+      -
+        body_item: 1
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 3
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 4
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 5
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 6
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 7
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 8
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 9
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 10
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 11
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 12
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+  "SplineFilterDialog":
+    isInputFrameRateSpecified: false
+    inputFrameRate: 200
+    isOutputFrameRateSpecified: false
+    outputFrameRate: 200
+viewAreas:
+  -
+    type: embedded
+    tabs: true
+    contents:
+      type: splitter
+      orientation: horizontal
+      sizes: [ 1401, 445 ]
+      children:
+        -
+          type: splitter
+          orientation: horizontal
+          sizes: [ 362, 1035 ]
+          children:
+            -
+              type: splitter
+              orientation: vertical
+              sizes: [ 504, 504 ]
+              children:
+                -
+                  type: pane
+                  views: [ 2 ]
+                -
+                  type: pane
+                  views: [ 1, 9 ]
+                  current: 1
+            -
+              type: splitter
+              orientation: vertical
+              sizes: [ 757, 251 ]
+              children:
+                -
+                  type: pane
+                  views: [ 5 ]
+                -
+                  type: pane
+                  views: [ 4, 10 ]
+                  current: 4
+        -
+          type: splitter
+          orientation: vertical
+          sizes: [ 222, 786 ]
+          children:
+            -
+              type: pane
+              views: [ 3 ]
+            -
+              type: splitter
+              orientation: vertical
+              sizes: [ 306, 476 ]
+              children:
+                -
+                  type: pane
+                  views: [ 8 ]
+                -
+                  type: pane
+                  views: [ 7, 6 ]
+                  current: 6
+layoutOfToolBars:
+  rows:
+    -
+      - { name: "FileBar", x: 0, priority: 0 }
+      - { name: "ScriptBar", x: 0, priority: 1 }
+      - { name: "SimulationBar", x: 0, priority: 2 }
+      - { name: "TimeBar", x: 0, priority: 0 }
+    -
+      - { name: "BodyBar", x: 0, priority: 0 }
+      - { name: "KinematicsBar", x: 0, priority: 1 }
+      - { name: "SceneBar", x: 0, priority: 2 }
+      - { name: "GraphBar", x: 0, priority: 3 }
+      - { name: "CaptureBar", x: 0, priority: 4 }
+      - { name: "DisplayValueFormatBar", x: 0, priority: 5 }

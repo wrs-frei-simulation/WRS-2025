@@ -1,0 +1,1 @@
+add_subdirectory(WRS2025Plugin)

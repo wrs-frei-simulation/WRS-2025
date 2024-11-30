@@ -1,0 +1,231 @@
+materials:
+  -
+    name: Default
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: Ground
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: Slider
+    roughness: 0.0
+    viscosity: 1.0
+  -
+    name: Tire
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: Tracks
+    roughness: 0.5
+    viscosity: 1.0
+  -
+    name: OilWetGround
+    roughness: 0.1
+    viscosity: 1.0
+  -
+    name: Sole
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: Hand
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: TankTracks
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: TankWheel
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: AizuSpiderTracks
+    density: 1e3
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: AizuSpiderWheel
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: DoubleArmV7ATracks
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: DoubleArmV7AWheel
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: Wire
+    wire_youngs_modulus_bend: 1e7
+    viscosity: 1.0
+  -
+    name: Steel
+    roughness: 1.0
+    viscosity: 1.0
+    youngs_modulus: 200e9
+  -
+    name: MonoCrawlerTracks
+    density: 1e3
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: MonoCrawlerWheel
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+
+contact_materials:
+  -
+    materials: [ Default, Default ]
+    friction: 0.5
+    restitution: 0.0
+    youngsModulus: 1.0e9
+  -
+    materials: [ Ground, Default ]
+    friction: 0.5
+    restitution: 0.25
+    youngsModulus: 1.0e9
+  -
+    materials: [ Default, Slider ]
+    friction: 0.0
+    restitution: 0.0
+    youngsModulus: 2.0e9
+  -
+    materials: [ Ground, Slider ]
+    friction: 0.0
+    restitution: 0.0
+    youngsModulus: 2.0e9
+  -
+    materials: [ Ground, Sole ]
+    friction: 1.0
+    restitution: 0.0
+    youngsModulus: 1.0e9
+    friction_model: [ iterative, direct ]
+  -
+    materials: [ Ground, Tire ]
+    friction: 3.0
+    restitution: 0.0
+    friction_model: [ box, direct ]
+  -
+    materials: [ Default, Hand ]
+    friction: 1.0
+    restitution: 0.0
+    surfaceViscosity: 1e-8
+    friction_model: [ iterative, direct ]
+  -
+    materials: [ Ground, TankTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    secondary_friction: 0.5
+    restitution: 0.0
+    surface_viscosity: 1e-7
+    secondary_surface_viscosity: 1e-5
+    primary_direction: [ 1, 0, 0 ]
+    friction_model: [ constant_normal_force_oriented_box, direct ]
+    #frictionModel: [ oriented_iterative, direct ]
+    reference_body: Tank
+    reference_link: CHASSIS
+  -
+    materials: [ TankWheel, TankTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    restitution: 0.0
+  -
+    materials: [ Ground, AizuSpiderTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    secondary_friction: 0.5
+    restitution: 0.0
+    surface_viscosity: 1e-3 # 1e-2
+    secondary_surface_viscosity: 2e-2
+    primary_direction: [ 1, 0, 0 ]
+    friction_model: [ constant_normal_force_oriented_box, direct ]
+    #friction_model: [ oriented_iterative, direct ]
+    constant_normal_force: 500
+    reference_body: AizuSpider
+    reference_link: CHASSIS
+  -
+    materials: [ AizuSpiderWheel, AizuSpiderTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    restitution: 0.0
+  -
+    materials: [ Ground, DoubleArmV7ATracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    secondary_friction: 0.5
+    restitution: 0.0
+    surface_viscosity: 7.0e-7
+    secondary_surface_viscosity: 8.0e-6
+    primary_direction: [ 1, 0, 0 ]
+    friction_model: [ constant_normal_force_oriented_box, direct ]
+    #friction_model: [ oriented_iterative, direct ]
+    constant_normal_force: 5000
+    reference_body: DoubleArmV7
+    reference_link: TFRAME
+  -
+    materials: [ DoubleArmV7AWheel, DoubleArmV7ATracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    restitution: 0.0
+  -
+    materials: [ Wire, Default ]
+    friction: 0.5
+    restitution: 0.0
+  -
+    materials: [ Wire, Ground ]
+    friction: 0.5
+    restitution: 0.0
+  -
+    materials: [ Steel, Steel ]
+    friction: 0.5
+    restitution: 0.0
+    friction_model: [ iterative, direct ]
+  -
+    materials: [ Steel, Hand ]
+    friction: 1.0
+    restitution: 0.0
+    surface_viscosity: 1e-8
+    friction_model: [ iterative, direct ]
+  -
+    materials: [ Ground, MonoCrawlerTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    secondary_friction: 0.5
+    restitution: 0.0
+    surface_viscosity: 1e-3 # 1e-2
+    secondary_surface_viscosity: 2e-2
+    primary_direction: [ 1, 0, 0 ]
+    friction_model: [ constant_normal_force_oriented_box, direct ]
+    #friction_model: [ oriented_iterative, direct ]
+    constant_normal_force: 500
+    reference_body: MonoCrawlerNA
+    reference_link: CHASSIS
+  -
+    materials: [ Ground, MonoCrawlerTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    secondary_friction: 0.5
+    restitution: 0.0
+    surface_viscosity: 1e-3 # 1e-2
+    secondary_surface_viscosity: 2e-2
+    primary_direction: [ 1, 0, 0 ]
+    friction_model: [ constant_normal_force_oriented_box, direct ]
+    #friction_model: [ oriented_iterative, direct ]
+    constant_normal_force: 500
+    reference_body: MonoCrawler2NA
+    reference_link: CHASSIS
+  -
+    materials: [ MonoCrawlerWheel, MonoCrawlerTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    restitution: 0.0

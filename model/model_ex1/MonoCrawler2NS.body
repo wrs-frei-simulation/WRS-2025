@@ -1,0 +1,188 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: MonoCrawler2NS
+links:
+  -
+    name: CHASSIS
+    translation: [ 0, 0, 0.1 ]
+    jointType: free
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 50
+    inertia: [ 0.416667, 0, 0, 0, 1.08333, 0, 0, 0, 1.41667 ]
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 0.5, 0.3, 0.1 ] }
+        appearance: { material: { diffuseColor: [ 0, 0, 0 ] } }
+  -
+    type: SubBody
+    uri: "subbody/monocular_camera.body"
+    parent: CHASSIS
+    translation: [ 0.2, 0.0, 0.09 ]
+    rotation: [ 1, 0, 0, 0 ]
+    jointType: fixed
+    jointIdOffset: 0
+#    devicePrefix: CENTER_
+  -
+    name: TRACK_L
+    translation: [ 0, 0.2, 0 ]
+    parent: &A0 CHASSIS
+    jointType: &A1 pseudo_continuous_track
+    jointAxis: &A2 Y
+    centerOfMass: &A3 [ 0, 0, 0 ]
+    mass: &A4 1
+    inertia: &A5 [ 0.00296667, 0, 0, 0, 0.0229667, 0, 0, 0, 0.0216667 ]
+    elements: &A6
+      -
+        type: Shape
+        geometry:
+          type: Extrusion
+          crossSection: [
+            0.25, -0.08,
+            0.306569, -0.0565685,
+            0.33, 0,
+            0.306569, 0.0565685,
+            0.25, 0.08,
+            -0.25, 0.08,
+            -0.306569, 0.0565685,
+            -0.33, 9.79717e-18,
+            -0.306569, -0.0565685,
+            -0.25, -0.08,
+            0.25, -0.08 ]
+          spine: [ 0, -0.05, 0, 0, 0.05, 0 ]
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: TRACK_R
+    translation: [ 0, -0.2, 0 ]
+    parent: *A0
+    jointType: *A1
+    jointAxis: *A2
+    centerOfMass: *A3
+    mass: *A4
+    inertia: *A5
+    elements: *A6
+  -
+    name: SPACER_LF
+    translation: [ 0.25, 0.2565, 0 ]
+    jointId: 0
+    parent: &A7 CHASSIS
+    jointType: &A8 revolute
+    jointAxis: &A9 -Y
+    centerOfMass: &A10 [ 0, 0, 0 ]
+    mass: &A11 0.2
+    inertia: &A12 [ 0.000182817, 0, 0, 0, 0.00036, 0, 0, 0, 0.000182817 ]
+    elements: &A13
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.06, height: 0.013 }
+        appearance: { material: { diffuseColor: [ 0, 0, 0 ] } }
+  -
+    name: SPACER_RF
+    translation: [ 0.25, -0.2565, 0 ]
+    jointId: 1
+    parent: *A7
+    jointType: *A8
+    jointAxis: *A9
+    centerOfMass: *A10
+    mass: *A11
+    inertia: *A12
+    elements: *A13
+  -
+    name: TRACK_LF
+    parent: SPACER_LF
+    translation: [ 0.15, 0.0465, 0 ]
+    jointType: &A14 pseudo_continuous_track
+    jointAxis: &A15 Y
+    centerOfMass: &A16 [ 0, 0, 0 ]
+    mass: &A17 0.25
+    inertia: &A18 [ 0.000666667, 0, 0, 0, 0.00240833, 0, 0, 0, 0.00200833 ]
+    elements: &A19
+      -
+        type: Shape
+        geometry:
+          type: Extrusion
+          crossSection: [
+            0.15, -0.04,
+            0.178284, -0.0282843,
+            0.19, 0,
+            0.178284, 0.0282843,
+            0.15, 0.04,
+            -0.15, 0.08,
+            -0.206569, 0.0565685,
+            -0.23, 9.79717e-18,
+            -0.206569, -0.0565685,
+            -0.15, -0.08,
+            0.15, -0.04 ]
+          spine: [ 0, -0.04, 0, 0, 0.04, 0 ]
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: TRACK_RF
+    parent: SPACER_RF
+    translation: [ 0.15, -0.0465, 0 ]
+    jointType: *A14
+    jointAxis: *A15
+    centerOfMass: *A16
+    mass: *A17
+    inertia: *A18
+    elements: *A19
+  -
+    name: SPACER_LR
+    translation: [ -0.25, 0.2565, 0 ]
+    jointId: 2
+    parent: *A7
+    jointType: *A8
+    jointAxis: *A9
+    centerOfMass: *A10
+    mass: *A11
+    inertia: *A12
+    elements: *A13
+  -
+    name: SPACER_RR
+    translation: [ -0.25, -0.2565, 0 ]
+    jointId: 3
+    parent: *A7
+    jointType: *A8
+    jointAxis: *A9
+    centerOfMass: *A10
+    mass: *A11
+    inertia: *A12
+    elements: *A13
+  -
+    name: TRACK_LR
+    parent: SPACER_LR
+    translation: [ -0.15, 0.0465, 0 ]
+    jointType: &A20 pseudo_continuous_track
+    jointAxis: &A21 Y
+    centerOfMass: &A22 [ 0, 0, 0 ]
+    mass: &A23 0.25
+    inertia: &A24 [ 0.000666667, 0, 0, 0, 0.00240833, 0, 0, 0, 0.00200833 ]
+    elements: &A25
+      -
+        type: Shape
+        geometry:
+          type: Extrusion
+          crossSection: [
+            0.15, -0.08,
+            0.206569, -0.0565685,
+            0.23, 0,
+            0.206569, 0.0565685,
+            0.15, 0.08,
+            -0.15, 0.04,
+            -0.178284, 0.0282843,
+            -0.19, 4.89859e-18,
+            -0.178284, -0.0282843,
+            -0.15, -0.04,
+            0.15, -0.08 ]
+          spine: [ 0, -0.04, 0, 0, 0.04, 0 ]
+        appearance: { material: { diffuseColor: [ 1, 1, 1 ] } }
+  -
+    name: TRACK_RR
+    parent: SPACER_RR
+    translation: [ -0.15, -0.0465, 0 ]
+    jointType: *A20
+    jointAxis: *A21
+    centerOfMass: *A22
+    mass: *A23
+    inertia: *A24
+    elements: *A25
