@@ -1,5 +1,5 @@
 format_version: 2.0
-robot_list: &RobotList [ MonoCrawler2NA-ROS2, HobbyDrone-ROS2 ]
+robot_list: &RobotList [ MonoCrawlerNA-ROS2, HobbyDrone-ROS2 ]
 
 registrations:
   - &Mission2

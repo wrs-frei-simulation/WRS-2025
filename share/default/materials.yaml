@@ -82,6 +82,17 @@ materials:
     youngs_modulus: 1e10
     roughness: 1.0
     viscosity: 1.0
+  -
+    name: MonoCrawler2Tracks
+    density: 1e3
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
+  -
+    name: MonoCrawler2Wheel
+    youngs_modulus: 1e10
+    roughness: 1.0
+    viscosity: 1.0
 
 contact_materials:
   -
@@ -211,7 +222,7 @@ contact_materials:
     reference_body: MonoCrawlerNA
     reference_link: CHASSIS
   -
-    materials: [ Ground, MonoCrawlerTracks ]
+    materials: [ Ground, MonoCrawler2Tracks ]
     youngs_modulus: 1e10
     friction: 1.0
     secondary_friction: 0.5
@@ -226,6 +237,11 @@ contact_materials:
     reference_link: CHASSIS
   -
     materials: [ MonoCrawlerWheel, MonoCrawlerTracks ]
+    youngs_modulus: 1e10
+    friction: 1.0
+    restitution: 0.0
+  -
+    materials: [ MonoCrawler2Wheel, MonoCrawler2Tracks ]
     youngs_modulus: 1e10
     friction: 1.0
     restitution: 0.0
