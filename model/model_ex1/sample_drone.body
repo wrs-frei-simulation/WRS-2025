@@ -1,0 +1,90 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: SampleDrone
+root_link: CHASSIS
+
+links:
+  -
+    name: CHASSIS
+    translation: [ 0, 0, 0.1 ]
+    joint_type: free
+    center_of_mass: [ 0, 0, 0 ]
+    mass: 0.6
+    inertia: [ 0.002405, 0, 0, 0, 0.002405, 0, 0, 0, 0.004 ]
+    density: 500.0
+    cda: 0.25
+    cw: 0.2
+    cv: 10.0
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 0.2, 0.2, 0.09 ] }
+        appearance: { material: { diffuse: [ 0.8, 0.8, 0.8 ] } }
+      -
+        type: Camera
+        name: FrontCamera
+        translation: [ 0.1, 0, 0 ]
+        rotation: [ [ 1, 0, 0, 90 ], [ 0, 1, 0, -90 ] ]        
+        format: COLOR
+        field_of_view: 62
+        near_clip_distance: 0.02
+        width: 640
+        height: 480
+        frame_rate: 30
+        elements:
+          - 
+            type: Shape
+            geometry: { type: Box, size: [ 0.06, 0.06, 0.02 ] }
+            appearance: { material: { diffuse: [ 0.2, 0.2, 0.2 ] } }
+      -
+        type: SpotLight
+        name: Light
+        translation: [ 0.08, 0, 0 ]
+        direction: [ 1, 0, 0 ]
+        beamWidth: 36
+        cutOffAngle: 40
+        cutOffExponent: 6
+        attenuation: [ 1, 0, 0.01 ]
+        elements:
+          -
+            type: Shape
+            rotation: [ 0, 0, 1, 90 ]
+            translation: [ -0.02, 0, 0 ]
+            geometry: { type: Cone, height: 0.04, radius: 0.025 }
+            appearance: { material: { diffuseColor: [ 1.0, 1.0, 0.4 ] } }
+      - { type: RateGyroSensor, name: GyroSensor, maxAngularVelocity: 1000.0 }
+      - { type: AccelerationSensor, name: AccSensor, max_acceleration: [ 1000.0, 1000.0, 1000.0 ] }
+  - &rotor_link
+    name: ROTOR_RF
+    parent: CHASSIS
+    translation: [ 0.1, -0.1, 0.055 ]
+    joint_type: fixed
+    center_of_mass: [ 0, 0, 0 ]
+    mass: 0.03
+    inertia: [ 1.98e-05, 0, 0, 0, 1.98e-05, 0, 0, 0, 3.75e-05 ]
+    elements:
+      - &rotor_shape
+        type: Shape
+        rotation: [ 1, 0, 0, -90 ]
+        geometry: { type: Cylinder, radius: 0.05, height: 0.02 }
+        appearance: &green { material: { diffuse: [ 0, 1, 0 ] } }
+      - &rotor_device { type: Rotor, name: Rotor_RF, symbol: false }
+  - <<: *rotor_link
+    name: ROTOR_LF
+    translation: [ 0.1, 0.1, 0.055 ]
+    elements:
+      - { <<: *rotor_shape, appearance: *green }
+      - { <<: *rotor_device, name: Rotor_LF }
+  - <<: *rotor_link
+    name: ROTOR_LR
+    translation: [ -0.1, 0.1, 0.055 ]
+    elements:
+      - { <<: *rotor_shape, appearance: &red { material: { diffuse: [ 1, 0, 0 ] } } }
+      - { <<: *rotor_device, name: Rotor_LR }
+  - <<: *rotor_link
+    name: ROTOR_RR
+    translation: [ -0.1, -0.1, 0.055 ]
+    elements:
+      - { <<: *rotor_shape, appearance: *red }
+      - { <<: *rotor_device, name: Rotor_RR }
