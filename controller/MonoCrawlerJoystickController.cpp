@@ -1,7 +1,7 @@
 /**
     MonoCrawler Controller
     @author Kenta Suzuki
- */
+*/
 
 #include <cnoid/SharedJoystick>
 #include <cnoid/SimpleController>

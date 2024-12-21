@@ -1,1 +1,3 @@
 choreonoid_add_simple_controller(MonoCrawlerJoystickController MonoCrawlerJoystickController.cpp)
+
+choreonoid_add_simple_controller(PressureGaugeController PressureGaugeController.cpp)
