@@ -6,7 +6,6 @@
 #include <cnoid/Joystick>
 #include <cnoid/SimpleController>
 
-using namespace std;
 using namespace cnoid;
 
 class PressureGaugeController : public SimpleController
@@ -22,20 +21,25 @@ public:
     virtual bool initialize(SimpleControllerIO* io) override
     {
         this->io = io;
-        ostream& os = io->os();
+        std::ostream& os = io->os();
         Body* body = io->body();
 
+        std::string prefix;
+
         useDebugMode = false;
-        for(auto opt : io->options()) {
-            if(opt == "debug") {
+        for(auto& option : io->options()) {
+            if(option == "debug") {
                 useDebugMode = true;
-                os << "Debug mode has started." << endl;
+                os << "Debug mode has started." << std::endl;
+            } else if(!option.empty()) {
+                prefix = option;
+                io->os() << "prefix: " << prefix << std::endl;
             }
         }
 
-        hand = body->link("HAND");
+        hand = body->link(prefix + "HAND");
         if(!hand) {
-            os << "The hand is not found." << endl;
+            os << "The hand is not found." << std::endl;
             return false;
         }
         hand->setActuationMode(Link::JointVelocity);
