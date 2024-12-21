@@ -15,13 +15,13 @@ links:
     elements:
       -
         type: Shape
-        translation: [ 0, 0.001, 0 ]
-        rotation: [ 0, 0, 1, -90 ]
+        translation: [ 0, -0.001, 0 ]
+        rotation: [ 0, 0, 1, 90 ]
         geometry: { type: Cylinder, radius: 0.05, height: 0.03 }
         appearance: { texture: { url: "resource/gauge.png" } }
       -
         type: Shape
-        translation: [ 0.011, 0, 0 ]
+        translation: [ -0.011, 0, 0 ]
         rotation: [ 0, 0, 1, -90 ]
         geometry: { type: Cylinder, radius: 0.06, height: 0.02 }
         appearance: { material: &gray { diffuseColor: [ 0.5, 0.5, 0.5 ] } }
@@ -87,9 +87,9 @@ links:
   -
     name: HAND
     parent: BASE
-    translation: [ -0.016, 0, 0 ]
+    translation: [ 0.016, 0, 0 ]
     jointType: revolute
-    jointAxis: X
+    jointAxis: -X
     jointRange: [ -135, 135 ]
     maxJointVelocity: 90
     jointId: 0
