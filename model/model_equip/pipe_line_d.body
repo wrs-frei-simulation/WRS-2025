@@ -1,7 +1,7 @@
 format: ChoreonoidBody
 format_version: 2.0
 angle_unit: degree
-name: PipeLine180degx3
+name: PipeLineD
 
 links:
   -
@@ -13,43 +13,52 @@ links:
     uri: "subbody/pipe_100cm.body"
     parent: Root
     prefix: SB1_
-    translation: [ 0, 0, 0 ]
+    translation: [ 0, 0, 0.1 ]
     joint_type: fixed
   - <<: *straight
     prefix: SB2_
-    translation: [ 0, -0.25, 0 ]
+    translation: [ 0, -0.25, 0.1 ]
   - <<: *straight
     prefix: SB3_
-    translation: [ 0, 0.25, 0 ]
+    translation: [ 0, 0.25, 0.1 ]
+  - <<: *straight
+    prefix: SB4_
+    translation: [ 0, 0, -0.1 ]
+  - <<: *straight
+    prefix: SB5_
+    translation: [ 0, 0.25, -0.1 ]
+  - <<: *straight
+    prefix: SB6_
+    translation: [ 0, -0.25, -0.1 ]
   - &bent1
     type: SubBody
     uri: "subbody/bent_pipe_90deg.body"
     parent: Root
-    prefix: SB4_
-    translation: [ 0.5, 0, 0 ]
+    prefix: SB7_
+    translation: [ 0.5, 0, 0.1 ]
     rotation: [ 1, 0, 0, 90 ]
     joint_type: fixed
   - <<: *bent1
     type: SubBody
-    prefix: SB5_
-    translation: [ 0.5, -0.25, 0 ]
+    prefix: SB8_
+    translation: [ 0.5, -0.25, 0.1 ]
   - <<: *bent1
     type: SubBody
-    prefix: SB6_
-    translation: [ 0.5, 0.25, 0 ]
+    prefix: SB9_
+    translation: [ 0.5, 0.25, 0.1 ]
   - &bent2
     type: SubBody
     uri: "subbody/bent_pipe_90deg.body"
     parent: Root
-    prefix: SB7_
-    translation: [ -0.5, 0, 0 ]
-    rotation: [ [ 0, 0, 1, 180 ], [ 1, 0, 0, 90 ] ]
+    prefix: SB10_
+    translation: [ 0.5, 0, -0.1 ]
+    rotation: [ 1, 0, 0, -90 ]
     joint_type: fixed
   - <<: *bent2
     type: SubBody
-    prefix: SB8_
-    translation: [ -0.5, -0.25, 0 ]
+    prefix: SB11_
+    translation: [ 0.5, -0.25, -0.1 ]
   - <<: *bent2
     type: SubBody
-    prefix: SB9_
-    translation: [ -0.5, 0.25, 0 ]
+    prefix: SB12_
+    translation: [ 0.5, 0.25, -0.1 ]
