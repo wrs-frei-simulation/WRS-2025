@@ -1,11 +1,11 @@
 format: ChoreonoidBody
 formatVersion: 1.0
 angleUnit: degree
-name: PressureGauge
+name: pressure_gauge_1mpa
 
 links:
   -
-    name: BASE
+    name: GAUGE_BASE
     jointType: fixed
     mass: 0.5
     inertia: [
@@ -84,8 +84,8 @@ links:
           spine: [ 0, -0.02, 0, 0, 0.02, 0 ]
         appearance: { material: *gray }
   -
-    name: HAND
-    parent: BASE
+    name: GAUGE_HAND
+    parent: GAUGE_BASE
     translation: [ 0.012, 0, 0 ]
     jointType: revolute
     jointAxis: -X

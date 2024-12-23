@@ -1,7 +1,7 @@
 format: ChoreonoidBody
 formatVersion: 1.0
 angleUnit: degree
-name: Pipe100cm
+name: pipe_100cm
 
 links:
   -

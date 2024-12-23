@@ -3,7 +3,6 @@
     @author Kenta Suzuki
 */
 
-#include <cnoid/Joystick>
 #include <cnoid/SimpleController>
 
 using namespace cnoid;
@@ -11,10 +10,8 @@ using namespace cnoid;
 class PressureGaugeController : public SimpleController
 {
     SimpleControllerIO* io;
-    bool useDebugMode;
+    Link* valve;
     Link* hand;
-
-    Joystick joystick;
 
 public:
 
@@ -26,54 +23,50 @@ public:
 
         std::string prefix;
 
-        useDebugMode = false;
         for(auto& option : io->options()) {
-            if(option == "debug") {
-                useDebugMode = true;
-                os << "Debug mode has started." << std::endl;
-            } else if(!option.empty()) {
-                prefix = option;
-                io->os() << "prefix: " << prefix << std::endl;
-            }
+            prefix = option;
+            io->os() << "prefix: " << prefix << std::endl;
         }
 
-        hand = body->link(prefix + "HAND");
+        valve = body->link(prefix + "VALVE_HANDLE");
+        if(!valve) {
+            os << "The valve is not found." << std::endl;
+            return false;
+        }
+        io->enableInput(valve, Link::JointAngle);
+
+        hand = body->link(prefix + "GAUGE_HAND");
         if(!hand) {
             os << "The hand is not found." << std::endl;
             return false;
         }
-        hand->setActuationMode(Link::JointVelocity);
+        hand->setActuationMode(Link::JointDisplacement);
         io->enableIO(hand);
-
-        joystick.makeReady();
        
         return true;
     }
 
     virtual bool control() override
     {
-        joystick.readCurrentState();
+        double q1 = valve->q();
+        double q1_upper = valve->q_upper();
+        double q1_lower = valve->q_lower();
+        double q1_range = fabs(q1_upper) + fabs(q1_lower);
+        double q1_rate = (q1 - q1_lower) / q1_range;
 
-        for(int i = 0; i < 1; ++i) {
-            double pos = joystick.getPosition(Joystick::L_STICK_H_AXIS);
-            if(fabs(pos) < 0.15) {
-                pos = 0.0;
-            }
+        double q2 = hand->q();
+        double q2_upper = hand->q_upper();
+        double q2_lower = hand->q_lower();
+        double q2_range = fabs(q2_upper) + fabs(q2_lower);
+        double q2_target = q2_range * q1_rate + q2_lower;
 
-            if(useDebugMode) {
-                double q = hand->q();
-                double q_upper = hand->q_upper();
-                double q_lower = hand->q_lower();
-
-                if((q > q_upper && pos > 0.0) || (q < q_lower && pos < 0.0)) {
-                    pos = 0.0;
-                }
-
-                hand->dq_target() = pos;
-            } else {
-                hand->dq_target() = 0.0;
-            }
+        if(q2_target > q2_upper) {
+            q2_target = q2_upper;
+        } else if(q2_target < q2_lower) {
+            q2_target = q2_lower;
         }
+
+        hand->q_target() = q2_target;
 
         return true;
     }
