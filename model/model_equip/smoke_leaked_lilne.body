@@ -12,7 +12,11 @@ links:
       -
         type: SmokeDevice
         name: Smoke1
-        translation: [ 0, 0, 0.2 ]
+        translation: [ -0.3, 0, 0.2 ]
+      -
+        type: SmokeDevice
+        name: Smoke2
+        translation: [ 0.3, -0.25, 0.2 ]
   -
     type: SubBody
     uri: "pipe_line_c.body"

@@ -1,0 +1,33 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: WaterLeakedLine
+
+links:
+  -
+    name: LINE_BASE
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    elements:
+      -
+        type: FountainDevice
+        name: Fountain1
+        translation: [ -0.13, 0, 0 ]
+      -
+        type: FountainDevice
+        name: Fountain2
+        translation: [ -0.13, 0.25, 0.3 ]
+  -
+    type: SubBody
+    uri: "pipe_line_b.body"
+    parent: LINE_BASE
+    translation: [ 0, 0, 0 ]
+    rotation: [ 0, 1, 0, -90 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "valve_v_1mpa.body"
+    parent: LINE_BASE
+    translation: [ -0.1, -0.25, 0 ]
+    rotation: [ 0, 0, 1, 90 ]
+    joint_type: fixed
