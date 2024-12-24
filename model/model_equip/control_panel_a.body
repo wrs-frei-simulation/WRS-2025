@@ -1,0 +1,51 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: ControlPanelA
+
+links:
+  -
+    name: PANEL_BASE
+    translation: [ 0, 0, 0.5 ]
+    joint_type: free
+    center_of_mass: [ 0, 0, 0 ]
+    mass: 100.0
+    inertia: [
+      12.90, 0, 0,
+      0, 10.42, 0,
+      0, 0, 6.647 ]
+    elements:
+      -
+        type: Transform
+        translation: [ 0.25, 0, 0 ]
+        elements:
+          -
+            type: Shape
+            geometry: { type: Box, size: [ 0.5, 0.74, 1.0 ] }
+            appearance: { material: { diffuse: [ 1, 1, 0.7 ] } }
+          - &knob
+            type: Shape
+            translation: [ 0.255, -0.02, 0 ]
+            geometry: { type: Box, size: [ 0.01, 0.01, 0.1 ] }
+            appearance: { material: &silver { diffuse: [ 0.8, 0.8, 0.8 ] } }
+          - <<: *knob
+            translation: [ 0.255, 0.02, 0 ]
+          - &ring
+            type: Shape
+            translation: [ 0.24, -0.35, 0.52 ]
+            rotation: [ 0, 0, 1, -90 ]
+            geometry: { type: Cylinder, height: 0.02, radius: 0.02 }
+            appearance: { material: *silver }
+          - <<: *ring
+            translation: [ 0.24, 0.35, 0.52 ]
+          - <<: *ring
+            translation: [ -0.24, -0.35, 0.52 ]
+          - <<: *ring
+            translation: [ -0.24, 0.35, 0.52 ]
+          - &plate
+            type: Shape
+            translation: [ 0.255, -0.16, 0.3 ]
+            geometry: { type: Box, size: [ 0.01, 0.25, 0.1 ] }
+            appearance: { material: { diffuse: [ 0.3, 0.3, 0.3 ] } }
+          - <<: *plate
+            translation: [ 0.255, 0.16, 0.3 ]
