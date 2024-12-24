@@ -23,7 +23,7 @@ links:
         translation: [ -0.015, 0, 0 ]
         rotation: [ 0, 0, 1, -90 ]
         geometry: { type: Cylinder, radius: 0.043, height: 0.01 }
-        appearance: { material: &gray { diffuseColor: [ 0.5, 0.5, 0.5 ] } }
+        appearance: { material: &black { diffuseColor: [ 0.1, 0.1, 0.1 ] } }
       -
         type: Shape
         rotation: [ 0, 0, 1, -90 ]
@@ -82,7 +82,7 @@ links:
             0.0415, 0,
             0.055, 0 ]
           spine: [ 0, -0.02, 0, 0, 0.02, 0 ]
-        appearance: { material: *gray }
+        appearance: { material: *black }
   -
     name: GAUGE_HAND
     parent: GAUGE_BASE

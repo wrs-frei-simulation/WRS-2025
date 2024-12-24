@@ -1,3 +1,6 @@
 choreonoid_add_simple_controller(MonoCrawlerJoystickController MonoCrawlerJoystickController.cpp)
 
 choreonoid_add_simple_controller(PressureGaugeController PressureGaugeController.cpp)
+
+choreonoid_add_simple_controller(LeakedLineController LeakedLineController.cpp)
+target_link_libraries(LeakedLineController CnoidSceneEffectsPlugin)
