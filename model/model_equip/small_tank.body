@@ -1,5 +1,6 @@
 format: ChoreonoidBody
 format_version: 2.0
+angle_unit: degree
 name: SmallTank
 
 links:

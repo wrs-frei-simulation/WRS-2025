@@ -1,0 +1,32 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: Floor
+
+links:
+  -
+    name: Floor
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      - &floor
+        type: Shape
+        geometry: { type: Box, size: [ 12.0, 10.0, 0.2 ] }
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } }
+#      - { <<: *floor, translation: [ 0, 0, 3.0 ] }
+      -
+        type: Shape
+        translation: [ 0, 0, 1.5 ]
+        geometry: { type: Box, size: [ 4.0, 4.0, 2.8 ] }
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } }
+  - &line
+    type: SubBody
+    uri: "pipe_lines.body"
+    parent: Floor
+    prefix: SB1_
+    translation: [ 0, -4.5, 0.1 ]
+    rotation: [ [ 1, 0, 0, 0 ], [ 0, 0, 1, 0 ] ]
+    joint_type: fixed
+  - { <<: *line, prefix: SB2_, translation: [ 0, 5.0, 2.4 ], rotation: [ [ 0, 1, 0, 180 ], [ 1, 0, 0, 90 ] ] }

@@ -22,11 +22,11 @@ links:
     uri: "subbody/pipe_90cm.body"
     parent: Root
     prefix: SB4_
-    translation: [ 0.5, 0, 0.5 ]
+    translation: [ 0.5, 0, 0.55 ]
     rotation: [ 0, 1, 0, -90 ]
     joint_type: fixed
-  - { <<: *straight2, prefix: SB5_, translation: [ 0.5, -0.25, 0.5 ] }
-  - { <<: *straight2, prefix: SB6_, translation: [ 0.5,  0.25, 0.5 ] }
+  - { <<: *straight2, prefix: SB5_, translation: [ 0.5, -0.25, 0.55 ] }
+  - { <<: *straight2, prefix: SB6_, translation: [ 0.5,  0.25, 0.55 ] }
   - &bent1
     type: SubBody
     uri: "subbody/bent_pipe_90deg.body"
