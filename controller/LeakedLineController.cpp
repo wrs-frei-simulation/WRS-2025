@@ -15,6 +15,7 @@ class LeakedLineController : public SimpleController
 {
     SimpleControllerIO* io;
     Link* valve;
+    Link* hand;
     DeviceList<FireDevice> fires;
     DeviceList<FountainDevice> fountains;
     DeviceList<SmokeDevice> smokes;
@@ -43,6 +44,14 @@ public:
             return false;
         }
         io->enableInput(valve, Link::JointAngle);
+
+        hand = body->link(prefix + "GAUGE_HAND");
+        if(!hand) {
+            os << "The hand is not found." << std::endl;
+            return false;
+        }
+        hand->setActuationMode(Link::JointDisplacement);
+        io->enableIO(hand);
 
         for(auto& fire : fires) {
             fire->on(true);
@@ -87,6 +96,26 @@ public:
             }
             smoke->notifyStateChange();
         }
+
+        double q1 = valve->q();
+        double q1_upper = valve->q_upper();
+        double q1_lower = valve->q_lower();
+        double q1_range = fabs(q1_upper) + fabs(q1_lower);
+        double q1_rate = (q1 - q1_lower) / q1_range;
+
+        double q2 = hand->q();
+        double q2_upper = hand->q_upper();
+        double q2_lower = hand->q_lower();
+        double q2_range = fabs(q2_upper) + fabs(q2_lower);
+        double q2_target = q2_range * q1_rate + q2_lower;
+
+        if(q2_target > q2_upper) {
+            q2_target = q2_upper;
+        } else if(q2_target < q2_lower) {
+            q2_target = q2_lower;
+        }
+
+        hand->q_target() = q2_target;
 
         return true;
     }
