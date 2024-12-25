@@ -1,21 +1,21 @@
 format: ChoreonoidBody
 formatVersion: 1.0
 angleUnit: degree
-name: ValveV-1MPa
+name: horizontal_valve2_1mpa
 
 links:
   -
     name: VALVE_BASE
     jointType: fixed
-    mass: 0.5
+    mass: 1.0
     inertia: [
-      0.0035, 0, 0,
+      0.0032, 0, 0,
       0, 0.0035, 0,
-      0, 0, 0.0032 ]
+      0, 0, 0.0035 ]
     elements:
       -
         type: Shape
-        rotation: [ 1, 0, 0, 90 ]
+        rotation: [ 0, 0, 1, 90 ]
         geometry: { type: Cylinder, radius: 0.08, height: 0.15 }
         appearance: { material: { diffuseColor: [ 0.5, 0.5, 0.5 ] } }
       - &joint
@@ -24,8 +24,8 @@ links:
         geometry: { type: Cylinder, radius: 0.01, height: 0.04 }
         appearance: { material: { diffuseColor: [ 0.5, 0.5, 0 ] } }
       - <<: *joint
-        translation: [ -0.08, 0, 0 ]
-        rotation: [ 0, 0, 1, -90 ]
+        translation: [ 0, 0, -0.08 ]
+        rotation: [ 1, 0, 0, -90 ]
   -
     name: VALVE_HANDLE
     parent: VALVE_BASE
@@ -81,9 +81,9 @@ links:
         geometry: { type: Box, size: [ 0.08, 0.01, 0.01 ] }
   -
     type: SubBody
-    uri: "subbody/pressure_gauge_1mpa.body"
+    uri: "pressure_gauge_1mpa.body"
     parent: VALVE_BASE
     jointIdOffset: 1
-    translation: [ -0.15, 0, 0 ]
+    translation: [ 0, 0, -0.15 ]
     rotation: [ 0, 0, 1, 90 ]
     joint_type: fixed

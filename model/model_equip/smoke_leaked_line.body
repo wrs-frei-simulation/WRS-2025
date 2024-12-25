@@ -25,7 +25,7 @@ links:
     joint_type: fixed
   -
     type: SubBody
-    uri: "valve_h_1mpa.body"
+    uri: "valve/horizontal_valve_1mpa.body"
     parent: LINE_BASE
     translation: [ 0, 0.25, 0.2 ]
     joint_type: fixed

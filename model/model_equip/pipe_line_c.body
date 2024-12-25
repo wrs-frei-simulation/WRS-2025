@@ -10,7 +10,7 @@ links:
     joint_type: fixed
   - &straight
     type: SubBody
-    uri: "subbody/pipe_60cm.body"
+    uri: "pipe/pipe_60cm.body"
     parent: Root
     prefix: SB1_
     translation: [ 0, 0, 0.2 ]
@@ -19,7 +19,7 @@ links:
   - { <<: *straight, prefix: SB3_, translation: [ 0,  0.25, 0.2 ] }
   - &bent1
     type: SubBody
-    uri: "subbody/bent_pipe_90deg.body"
+    uri: "pipe/bent_pipe_90deg.body"
     parent: Root
     prefix: SB4_
     translation: [ 0.3, 0, 0.2 ]
@@ -29,7 +29,7 @@ links:
   - { <<: *bent1, prefix: SB6_, translation: [ 0.3,  0.25, 0.2 ] }
   - &bent2
     type: SubBody
-    uri: "subbody/bent_pipe_90deg.body"
+    uri: "pipe/bent_pipe_90deg.body"
     parent: Root
     prefix: SB7_
     translation: [ -0.3, 0, 0.2 ]
@@ -39,7 +39,7 @@ links:
   - { <<: *bent2, prefix: SB9_, translation: [ -0.3,  0.25, 0.2 ] }
   - &bent3
     type: SubBody
-    uri: "subbody/bent_pipe_90deg.body"
+    uri: "pipe/bent_pipe_90deg.body"
     parent: Root
     prefix: SB10_
     translation: [ 0.5, 0, 0 ]
@@ -49,7 +49,7 @@ links:
   - { <<: *bent3, prefix: SB12_, translation: [ 0.5,  0.25, 0 ] }
   - &bent4
     type: SubBody
-    uri: "subbody/bent_pipe_90deg.body"
+    uri: "pipe/bent_pipe_90deg.body"
     parent: Root
     prefix: SB13_
     translation: [ -0.5, 0, 0 ]

@@ -26,7 +26,7 @@ links:
     joint_type: fixed
   -
     type: SubBody
-    uri: "valve_v_1mpa.body"
+    uri: "valve/vertical_valve2_1mpa.body"
     parent: LINE_BASE
     translation: [ -0.1, -0.25, 0 ]
     rotation: [ 0, 0, 1, 90 ]
