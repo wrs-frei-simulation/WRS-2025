@@ -6,27 +6,50 @@ name: Floor
 links:
   -
     name: Floor
-    translation: [ 0, 0, 0 ]
+    translation: [ 0, 0, -0.1 ]
     joint_type: fixed
     material: Ground
     AMOR: true
     elements:
       - &floor
         type: Shape
-        geometry: { type: Box, size: [ 12.0, 10.0, 0.2 ] }
-        appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } }
+        geometry: { type: Box, size: [ 20.0, 5.0, 0.2 ] }
+        appearance: { material: { diffuse: [ 0.5, 0.3, 0 ] } }
 #      - { <<: *floor, translation: [ 0, 0, 3.0 ] }
-      -
-        type: Shape
-        translation: [ 0, 0, 1.5 ]
-        geometry: { type: Box, size: [ 4.0, 4.0, 2.8 ] }
-        appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } }
+      - { <<: *floor, translation: [ 0, -2.6, 1.6 ], geometry: { type: Box, size: [ 20.0, 0.2, 3.0 ] }, appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } } }
+      - { <<: *floor, translation: [ 0,  2.6, 1.6 ], geometry: { type: Box, size: [ 20.0, 0.2, 3.0 ] }, appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } } }
   - &line
     type: SubBody
-    uri: "pipe_lines.body"
+    uri: "pipe_line.body"
     parent: Floor
     prefix: SB1_
-    translation: [ 0, -4.5, 0.1 ]
+    translation: [ 0, 0, 2.5 ]
     rotation: [ [ 1, 0, 0, 0 ], [ 0, 0, 1, 0 ] ]
     joint_type: fixed
-  - { <<: *line, prefix: SB2_, translation: [ 0, 5.0, 2.4 ], rotation: [ [ 0, 1, 0, 180 ], [ 1, 0, 0, 90 ] ] }
+#  - { <<: *line, prefix: SB2_, translation: [ 0, 2.5, 1.5 ], rotation: [ 1, 0, 0, 90 ] }
+  - &panel
+    type: SubBody
+    uri: "control_panel_a.body"
+    parent: Floor
+    prefix: SB1_
+    translation: [ -9.0, -2.5, 0.6 ]
+    rotation: [ 0, 0, 1, 90 ]
+    joint_type: fixed
+  - { <<: *panel, uri: "control_panel_a.body", prefix:  SB2_, translation: [ -5.0, -2.5, 1.1 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix:  SB3_, translation: [ -4.0, -2.5, 1.1 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix:  SB4_, translation: [ -2.0, -2.5, 1.1 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix:  SB5_, translation: [ -1.0, -2.5, 0.6 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix:  SB6_, translation: [  1.0, -2.5, 1.1 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix:  SB7_, translation: [  2.0, -2.5, 1.1 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix:  SB8_, translation: [  6.0, -2.5, 0.6 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix:  SB9_, translation: [  7.0, -2.5, 0.6 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix: SB10_, translation: [  8.0, -2.5, 0.6 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix: SB11_, translation: [ -8.0,  2.5, 1.1 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix: SB12_, translation: [ -7.0,  2.5, 1.1 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix: SB13_, translation: [ -5.0,  2.5, 0.6 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix: SB14_, translation: [ -4.0,  2.5, 0.6 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix: SB15_, translation: [  2.0,  2.5, 0.6 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix: SB16_, translation: [  3.0,  2.5, 1.1 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix: SB17_, translation: [  5.0,  2.5, 1.1 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_a.body", prefix: SB18_, translation: [  6.0,  2.5, 0.6 ], rotation: [ 0, 0, 1, -90 ] }
+  - { <<: *panel, uri: "control_panel_b.body", prefix: SB19_, translation: [  7.0,  2.5, 1.1 ], rotation: [ 0, 0, 1, -90 ] }

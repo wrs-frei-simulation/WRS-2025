@@ -1,0 +1,83 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: pipe_line
+
+links:
+  -
+    name: LINE_ROOT
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    material: Ground
+    AMOR: true
+  - &line
+    type: SubBody
+    uri: "pipe/pipe_line_a.body"
+    parent: LINE_ROOT
+    prefix: SB1_
+    translation: [ -10.0, 0, 0.0 ]
+    joint_type: fixed
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix:  SB2_, translation: [  -9.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix:  SB3_, translation: [  -8.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix:  SB4_, translation: [  -7.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix:  SB5_, translation: [  -6.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix:  SB6_, translation: [  -5.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix:  SB7_, translation: [  -4.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix:  SB8_, translation: [  -3.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix:  SB9_, translation: [  -2.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB10_, translation: [  -1.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB11_, translation: [   0.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB12_, translation: [   1.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB13_, translation: [   2.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB14_, translation: [   3.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB15_, translation: [   4.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB16_, translation: [   5.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB17_, translation: [   6.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB18_, translation: [   7.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB19_, translation: [   8.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB20_, translation: [   9.0.0, 0.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB21_, translation: [  10.0.0, 0.0, 0.0 ] }
+
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB22_, translation: [ -10.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB23_, translation: [  -9.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB24_, translation: [  -8.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB25_, translation: [  -7.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB26_, translation: [  -6.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB27_, translation: [  -5.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB28_, translation: [  -4.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB29_, translation: [  -3.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB30_, translation: [  -2.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB31_, translation: [  -1.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB32_, translation: [   0.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB33_, translation: [   1.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB34_, translation: [   2.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB35_, translation: [   3.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB36_, translation: [   4.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB37_, translation: [   5.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB38_, translation: [   6.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB39_, translation: [   7.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB40_, translation: [   8.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB41_, translation: [   9.0.0, 1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB42_, translation: [  10.0.0, 1.0, 0.0 ] }
+
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB43_, translation: [ -10.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB44_, translation: [  -9.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB45_, translation: [  -8.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB46_, translation: [  -7.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB47_, translation: [  -6.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB48_, translation: [  -5.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB49_, translation: [  -4.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB50_, translation: [  -3.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB51_, translation: [  -2.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB52_, translation: [  -1.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB53_, translation: [   0.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB54_, translation: [   1.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB55_, translation: [   2.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB56_, translation: [   3.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB57_, translation: [   4.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB58_, translation: [   5.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB59_, translation: [   6.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB60_, translation: [   7.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_b.body", prefix: SB61_, translation: [   8.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_a.body", prefix: SB62_, translation: [   9.0.0, -1.0, 0.0 ] }
+  - { <<: *line, uri: "pipe/pipe_line_c.body", prefix: SB63_, translation: [  10.0.0, -1.0, 0.0 ] }

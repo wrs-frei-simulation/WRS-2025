@@ -19,13 +19,14 @@ links:
         translation: [ 0.3, -0.25, 0.2 ]
   -
     type: SubBody
-    uri: "pipe_line_c.body"
+    uri: "pipe/pipe_line_e.body"
     parent: LINE_BASE
     translation: [ 0, 0, 0 ]
     joint_type: fixed
   -
     type: SubBody
-    uri: "valve/horizontal_valve_1mpa.body"
+    uri: "valve/horizontal_valve2_1mpa.body"
     parent: LINE_BASE
-    translation: [ 0, 0.25, 0.2 ]
+    translation: [ 0, 0.25, 0.1 ]
+    rotation: [ 1, 0, 0, 90 ]
     joint_type: fixed

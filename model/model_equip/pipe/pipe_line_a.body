@@ -1,7 +1,7 @@
 format: ChoreonoidBody
 format_version: 2.0
 angle_unit: degree
-name: PipeLineA
+name: pipe_line_a
 
 links:
   -
@@ -10,7 +10,7 @@ links:
     joint_type: fixed
   - &straight
     type: SubBody
-    uri: "pipe/pipe_100cm.body"
+    uri: "pipe_100cm.body"
     parent: Root
     prefix: SB1_
     translation: [ 0, 0, 0 ]

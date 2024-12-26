@@ -39,7 +39,7 @@ links:
     joint_type: fixed
   -
     type: SubBody
-    uri: "pipe_line_b.body"
+    uri: "pipe/pipe_line_e.body"
     parent: TANK_ROOT
     prefix: SB1_
     translation: [ 0.25, 0.5, 0 ]
