@@ -32,7 +32,7 @@ links:
     translation: [ 0, 0.1, 0 ]
     jointType: revolute
     jointAxis: -Y
-    jointRange: [ 0, 360 ]
+    jointRange: [ -180, 180 ]
     maxJointVelocity: 90
     jointId: 0
     centerOfMass: [ 0, 0, 0 ]

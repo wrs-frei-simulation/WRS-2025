@@ -71,7 +71,7 @@ public:
 
     virtual bool control() override
     {
-        bool is_valve_opened = valve->q() > radian(180.0) ? true : false;
+        bool is_valve_opened = valve->q() < radian(0.0) ? true : false;
         for(auto& fire : fires) {
             if(is_valve_opened && !fire->on()) {
                 fire->on(true);
@@ -107,7 +107,7 @@ public:
         double q2_upper = hand->q_upper();
         double q2_lower = hand->q_lower();
         double q2_range = fabs(q2_upper) + fabs(q2_lower);
-        double q2_target = q2_range * q1_rate + q2_lower;
+        double q2_target = q2_upper - q2_range * q1_rate;
 
         if(q2_target > q2_upper) {
             q2_target = q2_upper;

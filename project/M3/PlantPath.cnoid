@@ -19,7 +19,7 @@ items:
           1, 0, 0,
           0, 1, 0,
           0, 0, 1 ]
-        jointDisplacements: [ 0, 0 ]
+        jointDisplacements: [ -180, 0 ]
         initialRootPosition: [ 4, -1.5, 0 ]
         initialRootAttitude: [
           1, 0, 0,
@@ -57,7 +57,7 @@ items:
           -1, 1.2246468e-16, 0,
           -1.2246468e-16, -1, 0,
           0, 0, 1 ]
-        jointDisplacements: [ 0, 0 ]
+        jointDisplacements: [ -180, 0 ]
         initialRootPosition: [ 0, 1.5, 0 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, 0,
@@ -95,7 +95,7 @@ items:
           -1, 1.2246468e-16, 7.49879891e-33,
           -0, 6.123234e-17, -1,
           -1.2246468e-16, -1, -6.123234e-17 ]
-        jointDisplacements: [ 0, 0 ]
+        jointDisplacements: [ -180, 0 ]
         initialRootPosition: [ -3, 2.5, 1 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, 1.23259516e-32,
@@ -133,7 +133,7 @@ items:
           -1, 1.2246468e-16, 7.49879891e-33,
           -0, 6.123234e-17, -1,
           -1.2246468e-16, -1, -6.123234e-17 ]
-        jointDisplacements: [ 0, 0 ]
+        jointDisplacements: [ -180, 0 ]
         initialRootPosition: [ -1.5, 2.5, 1.5 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, 1.23259516e-32,
@@ -171,7 +171,7 @@ items:
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
           -1.2246468e-16, 0, 1 ]
-        jointDisplacements: [ 0, 0 ]
+        jointDisplacements: [ -180, 0 ]
         initialRootPosition: [ -4, 1.5, 0 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
@@ -209,7 +209,7 @@ items:
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
           -1.2246468e-16, 0, 1 ]
-        jointDisplacements: [ 0, 0 ]
+        jointDisplacements: [ -180, 0 ]
         initialRootPosition: [ 2, 1, 0 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
