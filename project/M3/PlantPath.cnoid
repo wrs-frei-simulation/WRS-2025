@@ -7,6 +7,53 @@ items:
   children:
     -
       id: 1
+      name: "Floor"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/M3/floor.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0, -0.1 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 0, 0, -0.1 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 2
+      name: "Ceiling"
+      plugin: Body
+      class: BodyItem
+      data:
+        file: "${SHARE}/WRS2025/model/M3/ceiling.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0, 3.1 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 0, 0, 3.1 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 3
       name: "SmallTank"
       plugin: Body
       class: BodyItem
@@ -32,7 +79,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 2
+          id: 4
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -44,7 +91,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 3
+      id: 5
       name: "SmallTank"
       plugin: Body
       class: BodyItem
@@ -63,44 +110,6 @@ items:
           -1, 1.2246468e-16, 0,
           -1.2246468e-16, -1, 0,
           0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-      children:
-        -
-          id: 4
-          name: "ValveController"
-          plugin: Body
-          class: SimpleControllerItem
-          data:
-            isNoDelayMode: false
-            controllerOptions: ""
-            controller: "LeakedLineController"
-            base_directory: "Controller directory"
-            reloading: false
-            export_symbols: false
-    -
-      id: 5
-      name: "SmokeLeakedLine"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -3, 2.5, 1 ]
-        rootAttitude: [
-          -1, 1.2246468e-16, 7.49879891e-33,
-          -0, 6.123234e-17, -1,
-          -1.2246468e-16, -1, -6.123234e-17 ]
-        jointDisplacements: [ -180, 0 ]
-        initialRootPosition: [ -3, 2.5, 1 ]
-        initialRootAttitude: [
-          -1, 1.2246468e-16, 1.23259516e-32,
-          1.23259516e-32, 2.22044605e-16, -1,
-          -1.2246468e-16, -1, -2.22044605e-16 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -128,13 +137,13 @@ items:
       data:
         file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
-        rootPosition: [ -1.5, 2.5, 1.5 ]
+        rootPosition: [ -3, 2.5, 1 ]
         rootAttitude: [
           -1, 1.2246468e-16, 7.49879891e-33,
           -0, 6.123234e-17, -1,
           -1.2246468e-16, -1, -6.123234e-17 ]
         jointDisplacements: [ -180, 0 ]
-        initialRootPosition: [ -1.5, 2.5, 1.5 ]
+        initialRootPosition: [ -3, 2.5, 1 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, 1.23259516e-32,
           1.23259516e-32, 2.22044605e-16, -1,
@@ -166,17 +175,17 @@ items:
       data:
         file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
-        rootPosition: [ -4, 1.5, 0 ]
+        rootPosition: [ -1.5, 2.5, 1.5 ]
         rootAttitude: [
-          -1, 1.2246468e-16, -1.2246468e-16,
-          -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 0, 1 ]
+          -1, 1.2246468e-16, 7.49879891e-33,
+          -0, 6.123234e-17, -1,
+          -1.2246468e-16, -1, -6.123234e-17 ]
         jointDisplacements: [ -180, 0 ]
-        initialRootPosition: [ -4, 1.5, 0 ]
+        initialRootPosition: [ -1.5, 2.5, 1.5 ]
         initialRootAttitude: [
-          -1, 1.2246468e-16, -1.2246468e-16,
-          -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 2.37511988e-41, 1 ]
+          -1, 1.2246468e-16, 1.23259516e-32,
+          1.23259516e-32, 2.22044605e-16, -1,
+          -1.2246468e-16, -1, -2.22044605e-16 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -204,13 +213,13 @@ items:
       data:
         file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
-        rootPosition: [ 2, 1, 0 ]
+        rootPosition: [ -4, 1.5, 0 ]
         rootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
           -1.2246468e-16, 0, 1 ]
         jointDisplacements: [ -180, 0 ]
-        initialRootPosition: [ 2, 1, 0 ]
+        initialRootPosition: [ -4, 1.5, 0 ]
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
@@ -235,30 +244,44 @@ items:
             export_symbols: false
     -
       id: 13
-      name: "Floor"
+      name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/M3/floor.body"
+        file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
-        rootPosition: [ 0, 0, -0.1 ]
+        rootPosition: [ 2, 1, 0 ]
         rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ 0, 0, -0.1 ]
+          -1, 1.2246468e-16, -1.2246468e-16,
+          -1.2246468e-16, -1, -1.49975978e-32,
+          -1.2246468e-16, 0, 1 ]
+        jointDisplacements: [ -180, 0 ]
+        initialRootPosition: [ 2, 1, 0 ]
         initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
+          -1, 1.2246468e-16, -1.2246468e-16,
+          -1.2246468e-16, -1, -1.49975978e-32,
+          -1.2246468e-16, 2.37511988e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
+      children:
+        -
+          id: 14
+          name: "ValveController"
+          plugin: Body
+          class: SimpleControllerItem
+          data:
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
     -
-      id: 14
+      id: 15
       name: "CFDCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -266,7 +289,7 @@ items:
       data:
         translation: [ 0, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 20, 20, 20 ]
+        size: [ 100, 100, 100 ]
         diffuse_color: [ 0, 1, 1 ]
         radius: 0.5
         height: 1
@@ -297,7 +320,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 15
+      id: 16
       name: "TCCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -305,7 +328,7 @@ items:
       data:
         translation: [ 0, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 20, 20, 20 ]
+        size: [ 100, 100, 100 ]
         diffuse_color: [ 1, 1, 0 ]
         radius: 0.5
         height: 1
@@ -336,7 +359,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 16
+      id: 17
       name: "VFXCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -344,7 +367,7 @@ items:
       data:
         translation: [ 0, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 20, 20, 20 ]
+        size: [ 100, 100, 100 ]
         diffuse_color: [ 1, 0, 1 ]
         radius: 0.5
         height: 1
@@ -375,7 +398,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 17
+      id: 18
       name: "StartCollider"
       plugin: SimpleCollider
       class: SimpleColliderItem
@@ -383,7 +406,7 @@ items:
       data:
         translation: [ -8, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 0.1, 10, 10 ]
+        size: [ 0.1, 6, 6 ]
         diffuse_color: [ 0, 0, 1 ]
         radius: 0.5
         height: 1
@@ -391,7 +414,7 @@ items:
         transparency: 0.8
         scene_type: Box
     -
-      id: 18
+      id: 19
       name: "GoalCollider"
       plugin: SimpleCollider
       class: SimpleColliderItem
@@ -399,7 +422,7 @@ items:
       data:
         translation: [ 8, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 0.1, 10, 10 ]
+        size: [ 0.1, 6, 6 ]
         diffuse_color: [ 1, 0, 0 ]
         radius: 0.5
         height: 1
@@ -456,7 +479,7 @@ views:
           isCurrent: true
           eye: [ 14.2142, 12.0141, 18.3767 ]
           direction: [ -0.541651, -0.484751, -0.686753 ]
-          up: [ -0.511742, -0.457985, 0.72689 ]
+          up: [ -0.511742, -0.457985, 0.726891 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -561,7 +584,7 @@ toolbars:
 Body:
   "BodySelectionManager":
     current_body_item: 1
-    current_link: "TANK_ROOT"
+    current_link: "Floor"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -575,6 +598,11 @@ Body:
     scene_bodies:
       -
         body_item: 1
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 2
         show_cm: false
         show_cm_projection: false
         show_zmp: false
