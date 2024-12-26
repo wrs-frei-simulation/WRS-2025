@@ -12,7 +12,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/small_tank.body"
+        file: "${SHARE}/WRS2025/model/model_M3/small_tank.body"
         format: CHOREONOID-BODY
         rootPosition: [ 4, -1.5, 0 ]
         rootAttitude: [
@@ -50,7 +50,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/small_tank.body"
+        file: "${SHARE}/WRS2025/model/model_M3/small_tank.body"
         format: CHOREONOID-BODY
         rootPosition: [ 0, 1.5, 0 ]
         rootAttitude: [
@@ -88,7 +88,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ -3, 2.5, 1 ]
         rootAttitude: [
@@ -126,7 +126,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ -1.5, 2.5, 1.5 ]
         rootAttitude: [
@@ -164,7 +164,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ -4, 1.5, 0 ]
         rootAttitude: [
@@ -176,7 +176,7 @@ items:
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 0, 1 ]
+          -1.2246468e-16, 2.37511988e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -202,7 +202,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ 2, 1, 0 ]
         rootAttitude: [
@@ -214,7 +214,7 @@ items:
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 0, 1 ]
+          -1.2246468e-16, 2.37511988e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -235,228 +235,12 @@ items:
             export_symbols: false
     -
       id: 13
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -9, 1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -9, 1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 14
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -7, 1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -7, 1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 15
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -6, -1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -6, -1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 16
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -4, -1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -4, -1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 17
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -2, -1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -2, -1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 18
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ 2, 1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ 2, 1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 19
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ 5, 1.8, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ 5, 1.8, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 20
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -1, 1, 0 ]
-        rootAttitude: [
-          6.123234e-17, -1, 0,
-          1, 6.123234e-17, -0,
-          0, 0, 1 ]
-        initialRootPosition: [ -1, 1, 0 ]
-        initialRootAttitude: [
-          2.22044605e-16, -1, 0,
-          1, 2.22044605e-16, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 21
-      name: "Fence"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ 3, -1, 0 ]
-        rootAttitude: [
-          6.123234e-17, -1, 0,
-          1, 6.123234e-17, -0,
-          0, 0, 1 ]
-        initialRootPosition: [ 3, -1, 0 ]
-        initialRootAttitude: [
-          2.22044605e-16, -1, 0,
-          1, 2.22044605e-16, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 22
       name: "Floor"
       plugin: Body
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_equip/floor.body"
+        file: "${SHARE}/WRS2025/model/model_M3/floor.body"
         format: CHOREONOID-BODY
         rootPosition: [ 0, 0, -0.1 ]
         rootAttitude: [
@@ -672,51 +456,6 @@ Body:
         show_zmp: false
       -
         body_item: 13
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 14
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 15
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 16
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 17
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 18
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 19
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 20
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 21
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 22
         show_cm: false
         show_cm_projection: false
         show_zmp: false
