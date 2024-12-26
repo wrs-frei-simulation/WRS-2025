@@ -7,249 +7,472 @@ items:
   children:
     -
       id: 1
-      name: "World"
+      name: "SmallTank"
       plugin: Body
-      class: WorldItem
+      class: BodyItem
+      is_checked: true
       data:
-        collision_detection: false
-        collision_detector: AISTCollisionDetector
-        default_material_table_file: "${SHARE}/default/materials.yaml"
+        file: "${SHARE}/WRS2025/model/model_equip/small_tank.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 4, -1.5, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        jointDisplacements: [ 0, 0 ]
+        initialRootPosition: [ 4, -1.5, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
       children:
         -
           id: 2
-          name: "Floor"
+          name: "ValveController"
           plugin: Body
-          class: BodyItem
-          is_checked: true
+          class: SimpleControllerItem
           data:
-            file: "${SHARE}/WRS2025/model/model_equip/floor.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ 0, 0, -0.1 ]
-            rootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            initialRootPosition: [ 0, 0, -0.1 ]
-            initialRootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            fix_root: true
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 3
+      name: "SmallTank"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/small_tank.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 1.5, 0 ]
+        rootAttitude: [
+          -1, 1.2246468e-16, 0,
+          -1.2246468e-16, -1, 0,
+          0, 0, 1 ]
+        jointDisplacements: [ 0, 0 ]
+        initialRootPosition: [ 0, 1.5, 0 ]
+        initialRootAttitude: [
+          -1, 1.2246468e-16, 0,
+          -1.2246468e-16, -1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
         -
-          id: 3
-          name: "SmallTank"
+          id: 4
+          name: "ValveController"
           plugin: Body
-          class: BodyItem
-          is_checked: true
+          class: SimpleControllerItem
           data:
-            file: "${SHARE}/WRS2025/model/model_equip/small_tank.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ 4, -1.5, 0 ]
-            rootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            jointDisplacements: [ 0, 0 ]
-            initialRootPosition: [ 4, -1.5, 0 ]
-            initialRootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            fix_root: true
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
-          children:
-            -
-              id: 4
-              name: "ValveController"
-              plugin: Body
-              class: SimpleControllerItem
-              data:
-                isNoDelayMode: false
-                controllerOptions: ""
-                controller: "LeakedLineController"
-                base_directory: "Controller directory"
-                reloading: false
-                export_symbols: false
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 5
+      name: "SmokeLeakedLine"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -3, 2.5, 1 ]
+        rootAttitude: [
+          -1, 1.2246468e-16, 7.49879891e-33,
+          -0, 6.123234e-17, -1,
+          -1.2246468e-16, -1, -6.123234e-17 ]
+        jointDisplacements: [ 0, 0 ]
+        initialRootPosition: [ -3, 2.5, 1 ]
+        initialRootAttitude: [
+          -1, 1.2246468e-16, 1.23259516e-32,
+          1.23259516e-32, 2.22044605e-16, -1,
+          -1.2246468e-16, -1, -2.22044605e-16 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
         -
-          id: 5
-          name: "SmallTank"
+          id: 6
+          name: "ValveController"
           plugin: Body
-          class: BodyItem
-          is_checked: true
+          class: SimpleControllerItem
           data:
-            file: "${SHARE}/WRS2025/model/model_equip/small_tank.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ 0, 1.5, 0 ]
-            rootAttitude: [
-              -1, 1.2246468e-16, 0,
-              -1.2246468e-16, -1, 0,
-              0, 0, 1 ]
-            jointDisplacements: [ 0, 0 ]
-            initialRootPosition: [ 0, 1.5, 0 ]
-            initialRootAttitude: [
-              -1, 1.2246468e-16, 0,
-              -1.2246468e-16, -1, 0,
-              0, 0, 1 ]
-            fix_root: true
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
-          children:
-            -
-              id: 6
-              name: "ValveController"
-              plugin: Body
-              class: SimpleControllerItem
-              data:
-                isNoDelayMode: false
-                controllerOptions: ""
-                controller: "LeakedLineController"
-                base_directory: "Controller directory"
-                reloading: false
-                export_symbols: false
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 7
+      name: "SmokeLeakedLine"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -1.5, 2.5, 1.5 ]
+        rootAttitude: [
+          -1, 1.2246468e-16, 7.49879891e-33,
+          -0, 6.123234e-17, -1,
+          -1.2246468e-16, -1, -6.123234e-17 ]
+        jointDisplacements: [ 0, 0 ]
+        initialRootPosition: [ -1.5, 2.5, 1.5 ]
+        initialRootAttitude: [
+          -1, 1.2246468e-16, 1.23259516e-32,
+          1.23259516e-32, 2.22044605e-16, -1,
+          -1.2246468e-16, -1, -2.22044605e-16 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
         -
-          id: 7
-          name: "SmokeLeakedLine"
+          id: 8
+          name: "ValveController"
           plugin: Body
-          class: BodyItem
-          is_checked: true
+          class: SimpleControllerItem
           data:
-            file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ -3, 2.5, 1 ]
-            rootAttitude: [
-              -1, 1.2246468e-16, 7.49879891e-33,
-              -0, 6.123234e-17, -1,
-              -1.2246468e-16, -1, -6.123234e-17 ]
-            jointDisplacements: [ 0, 0 ]
-            initialRootPosition: [ -3, 2.5, 1 ]
-            initialRootAttitude: [
-              -1, 1.2246468e-16, 1.23259516e-32,
-              1.23259516e-32, 2.22044605e-16, -1,
-              -1.2246468e-16, -1, -2.22044605e-16 ]
-            fix_root: true
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
-          children:
-            -
-              id: 8
-              name: "ValveController"
-              plugin: Body
-              class: SimpleControllerItem
-              data:
-                isNoDelayMode: false
-                controllerOptions: ""
-                controller: "LeakedLineController"
-                base_directory: "Controller directory"
-                reloading: false
-                export_symbols: false
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 9
+      name: "SmokeLeakedLine"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -4, 1.5, 0 ]
+        rootAttitude: [
+          -1, 1.2246468e-16, -1.2246468e-16,
+          -1.2246468e-16, -1, -1.49975978e-32,
+          -1.2246468e-16, 0, 1 ]
+        jointDisplacements: [ 0, 0 ]
+        initialRootPosition: [ -4, 1.5, 0 ]
+        initialRootAttitude: [
+          -1, 1.2246468e-16, -1.2246468e-16,
+          -1.2246468e-16, -1, -1.49975978e-32,
+          -1.2246468e-16, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
         -
-          id: 9
-          name: "SmokeLeakedLine"
+          id: 10
+          name: "ValveController"
           plugin: Body
-          class: BodyItem
-          is_checked: true
+          class: SimpleControllerItem
           data:
-            file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ -1.5, 2.5, 1.5 ]
-            rootAttitude: [
-              -1, 1.2246468e-16, 7.49879891e-33,
-              -0, 6.123234e-17, -1,
-              -1.2246468e-16, -1, -6.123234e-17 ]
-            jointDisplacements: [ 0, 0 ]
-            initialRootPosition: [ -1.5, 2.5, 1.5 ]
-            initialRootAttitude: [
-              -1, 1.2246468e-16, 1.23259516e-32,
-              1.23259516e-32, 2.22044605e-16, -1,
-              -1.2246468e-16, -1, -2.22044605e-16 ]
-            fix_root: true
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
-          children:
-            -
-              id: 10
-              name: "ValveController"
-              plugin: Body
-              class: SimpleControllerItem
-              data:
-                isNoDelayMode: false
-                controllerOptions: ""
-                controller: "LeakedLineController"
-                base_directory: "Controller directory"
-                reloading: false
-                export_symbols: false
-        -
-          id: 11
-          name: "AGXSimulator"
-          plugin: AGXDynamics
-          class: AGXSimulatorItem
-          data:
-            time_step: 0.005
-            realtime_sync_mode: compensatory
-            recording: tail
-            time_range_mode: unlimited
-            time_length: 300
-            is_active_control_time_range_mode: false
-            output_all_link_positions: true
-            output_device_states: true
-            use_controller_threads: true
-            record_collision_data: false
-            controller_options: ""
-            block_scene_view_edit_mode: false
-            Gravity: [ 0, 0, -9.80665 ]
-            NumThreads: 1
-            ContactReduction: true
-            ContactReductionBinResolution: 3
-            ContactReductionThreshhold: 12
-            ContactWarmstarting: false
-            AutoSleep: false
-            SaveToAGXFileOnStart: false
-            DebugMessageOnConsole: 4
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 11
+      name: "SmokeLeakedLine"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/smoke_leaked_line.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 2, 1, 0 ]
+        rootAttitude: [
+          -1, 1.2246468e-16, -1.2246468e-16,
+          -1.2246468e-16, -1, -1.49975978e-32,
+          -1.2246468e-16, 0, 1 ]
+        jointDisplacements: [ 0, 0 ]
+        initialRootPosition: [ 2, 1, 0 ]
+        initialRootAttitude: [
+          -1, 1.2246468e-16, -1.2246468e-16,
+          -1.2246468e-16, -1, -1.49975978e-32,
+          -1.2246468e-16, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
         -
           id: 12
-          name: "AISTSimulator"
+          name: "ValveController"
           plugin: Body
-          class: AISTSimulatorItem
+          class: SimpleControllerItem
           data:
-            time_step: 0.001
-            realtime_sync_mode: compensatory
-            recording: tail
-            time_range_mode: unlimited
-            time_length: 300
-            is_active_control_time_range_mode: false
-            output_all_link_positions: false
-            output_device_states: true
-            use_controller_threads: true
-            record_collision_data: false
-            controller_options: ""
-            block_scene_view_edit_mode: false
-            dynamicsMode: "Forward dynamics"
-            integrationMode: semi-implicit_euler
-            gravity: [ 0, 0, -9.80665 ]
-            min_friction_coefficient: 0
-            max_friction_coefficient: 100
-            cullingThresh: 0.005
-            contactCullingDepth: 0.05
-            errorCriterion: 0.001
-            maxNumIterations: 25
-            contactCorrectionDepth: 0.00025
-            contactCorrectionVelocityRatio: 5
-            kinematicWalking: false
-            2Dmode: false
-            oldAccelSensorMode: false
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 13
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -9, 1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -9, 1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 14
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -7, 1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -7, 1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 15
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -6, -1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -6, -1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 16
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -4, -1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -4, -1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 17
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -2, -1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ -2, -1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 18
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 2, 1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 2, 1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 19
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 5, 1.8, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 5, 1.8, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 20
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ -1, 1, 0 ]
+        rootAttitude: [
+          6.123234e-17, -1, 0,
+          1, 6.123234e-17, -0,
+          0, 0, 1 ]
+        initialRootPosition: [ -1, 1, 0 ]
+        initialRootAttitude: [
+          2.22044605e-16, -1, 0,
+          1, 2.22044605e-16, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 21
+      name: "Fence"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/fence/fence.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 3, -1, 0 ]
+        rootAttitude: [
+          6.123234e-17, -1, 0,
+          1, 6.123234e-17, -0,
+          0, 0, 1 ]
+        initialRootPosition: [ 3, -1, 0 ]
+        initialRootAttitude: [
+          2.22044605e-16, -1, 0,
+          1, 2.22044605e-16, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 22
+      name: "Floor"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/model_equip/floor.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0, -0.1 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 0, 0, -0.1 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
 views:
   -
     id: 0
@@ -266,7 +489,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 1, 3, 5, 7, 9 ]
+      expanded: [ ]
   -
     id: 3
     plugin: Base
@@ -298,9 +521,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 15.259, 13.3109, 15.5949 ]
-          direction: [ -0.539213, -0.562839, -0.626468 ]
-          up: [ -0.433383, -0.452372, 0.779448 ]
+          eye: [ -18.9324, -8.29635, 11.1742 ]
+          direction: [ 0.730124, 0.432948, -0.528653 ]
+          up: [ 0.454719, 0.269639, 0.848838 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -404,8 +627,8 @@ toolbars:
     lazyCollisionDetectionMode: true
 Body:
   "BodySelectionManager":
-    current_body_item: 9
-    current_link: "LINE_BASE"
+    current_body_item: 1
+    current_link: "TANK_ROOT"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -418,7 +641,7 @@ Body:
   "OperableSceneBody":
     scene_bodies:
       -
-        body_item: 2
+        body_item: 1
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -439,6 +662,61 @@ Body:
         show_zmp: false
       -
         body_item: 9
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 11
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 13
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 14
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 15
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 16
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 17
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 18
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 19
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 20
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 21
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 22
         show_cm: false
         show_cm_projection: false
         show_zmp: false

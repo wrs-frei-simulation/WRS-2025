@@ -4,62 +4,6 @@ items:
   plugin: Base
   class: RootItem
   is_builtin_item: true
-  children:
-    -
-      id: 1
-      name: "AGXSimulator"
-      plugin: AGXDynamics
-      class: AGXSimulatorItem
-      data:
-        time_step: 0.005
-        realtime_sync_mode: compensatory
-        recording: full
-        time_range_mode: unlimited
-        time_length: 180
-        is_active_control_time_range_mode: false
-        output_all_link_positions: true
-        output_device_states: true
-        use_controller_threads: true
-        record_collision_data: false
-        controller_options: ""
-        block_scene_view_edit_mode: false
-        Gravity: [ 0, 0, -9.80665 ]
-        NumThreads: 4
-        ContactReduction: true
-        ContactReductionBinResolution: 3
-        ContactReductionThreshhold: 12
-        ContactWarmstarting: true
-        AutoSleep: false
-        SaveToAGXFileOnStart: false
-        DebugMessageOnConsole: 4
-      children:
-        -
-          id: 2
-          name: "CFDSimulator"
-          plugin: CFD
-          class: CFDSimulatorItem
-          data:
-            enabled: true
-        -
-          id: 3
-          name: "VFXVisionSimulator"
-          plugin: VFX
-          class: VFXVisionSimulatorItem
-          data:
-            enabled: true
-            max_frame_rate: 1000
-            max_latency: 1
-            record_vision_data: false
-            thread_mode: Sensor
-            best_effort: true
-            all_scene_objects: true
-            range_sensor_precision_ratio: 2
-            depth_error: 0
-            background_color: [ 0, 0, 0 ]
-            enable_head_light: false
-            enable_world_light: false
-            enable_additional_lights: true
-            antialiasing: false
 views:
   -
     id: 0
@@ -76,7 +20,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 1 ]
+      expanded: [ ]
   -
     id: 3
     plugin: Base
@@ -87,7 +31,7 @@ views:
       unique_rpy: false
       show_quaternion: false
       show_rotation_matrix: false
-      coordinate: parent
+      coordinate: world
   -
     id: 4
     plugin: Base
@@ -108,9 +52,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 3, 1.5, 1.2 ]
-          direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787495, 0.984374 ]
+          eye: [ -13.0436, 2.93179, 2.37207 ]
+          direction: [ 0.77046, -0.571185, -0.283089 ]
+          up: [ 0.227411, -0.168593, 0.959094 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -257,7 +201,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 757, 251 ]
+              sizes: [ 756, 252 ]
               children:
                 -
                   type: pane
@@ -300,3 +244,5 @@ layoutOfToolBars:
       - { name: "GraphBar", x: 0, priority: 3 }
       - { name: "CaptureBar", x: 0, priority: 4 }
       - { name: "DisplayValueFormatBar", x: 0, priority: 5 }
+  hidden:
+    - "WRSUtilBar"

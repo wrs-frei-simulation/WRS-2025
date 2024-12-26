@@ -43,3 +43,15 @@ registrations:
     robot_alignment: X+
     start_position: [ -16.0, -16.0, 33.0 ]
     view_project: M3/RefereeView4
+
+  - &Mission4
+    name: M4
+    task_project: [ M4/PlantPath ]
+    robot_project: *RobotList
+    robot_alignment: X+
+    start_position: [ -9.0, 0.0, 0.0 ]
+    simulator_project: [ AGXSimulator, AISTSimulator ]
+    view_project: M4/RefereeView
+    enable_recording: true
+    # enable_tracking: true
+    enable_ros: true
