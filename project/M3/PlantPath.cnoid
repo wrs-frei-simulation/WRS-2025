@@ -12,7 +12,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/small_tank.body"
+        file: "${SHARE}/WRS2025/model/M3/small_tank.body"
         format: CHOREONOID-BODY
         rootPosition: [ 4, -1.5, 0 ]
         rootAttitude: [
@@ -50,7 +50,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/small_tank.body"
+        file: "${SHARE}/WRS2025/model/M3/small_tank.body"
         format: CHOREONOID-BODY
         rootPosition: [ 0, 1.5, 0 ]
         rootAttitude: [
@@ -88,7 +88,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ -3, 2.5, 1 ]
         rootAttitude: [
@@ -126,7 +126,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ -1.5, 2.5, 1.5 ]
         rootAttitude: [
@@ -164,7 +164,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ -4, 1.5, 0 ]
         rootAttitude: [
@@ -202,7 +202,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/smoke_leaked_line.body"
+        file: "${SHARE}/WRS2025/model/M3/smoke_leaked_line.body"
         format: CHOREONOID-BODY
         rootPosition: [ 2, 1, 0 ]
         rootAttitude: [
@@ -240,7 +240,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_M3/floor.body"
+        file: "${SHARE}/WRS2025/model/M3/floor.body"
         format: CHOREONOID-BODY
         rootPosition: [ 0, 0, -0.1 ]
         rootAttitude: [
@@ -257,6 +257,155 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
+    -
+      id: 14
+      name: "CFDCollider"
+      plugin: SimpleCollider
+      class: MultiColliderItem
+      is_checked: true
+      data:
+        translation: [ 0, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 20, 20, 20 ]
+        diffuse_color: [ 0, 1, 1 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 1
+        scene_type: Box
+        collider_type: CFD
+        density: 0
+        viscosity: 0
+        steady_flow: [ 0, 0, 0 ]
+        inbound_delay: 0
+        inbound_rate: 0
+        inbound_loss: 0
+        outbound_delay: 0
+        outbound_rate: 0
+        outbound_loss: 0
+        source: 0.0.0.0/0
+        destination: 0.0.0.0/0
+        hsv: [ 0, 0, 0 ]
+        rgb: [ 0, 0, 0 ]
+        coef_b: 0
+        coef_d: 0
+        std_dev: 0
+        salt_amount: 0
+        salt_chance: 0
+        pepper_amount: 0
+        pepper_chance: 0
+        mosaic_chance: 0
+        kernel: 16
+    -
+      id: 15
+      name: "TCCollider"
+      plugin: SimpleCollider
+      class: MultiColliderItem
+      is_checked: true
+      data:
+        translation: [ 0, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 20, 20, 20 ]
+        diffuse_color: [ 1, 1, 0 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 1
+        scene_type: Box
+        collider_type: TC
+        density: 0
+        viscosity: 0
+        steady_flow: [ 0, 0, 0 ]
+        inbound_delay: 0
+        inbound_rate: 0
+        inbound_loss: 0
+        outbound_delay: 0
+        outbound_rate: 0
+        outbound_loss: 0
+        source: 0.0.0.0/0
+        destination: 0.0.0.0/0
+        hsv: [ 0, 0, 0 ]
+        rgb: [ 0, 0, 0 ]
+        coef_b: 0
+        coef_d: 0
+        std_dev: 0
+        salt_amount: 0
+        salt_chance: 0
+        pepper_amount: 0
+        pepper_chance: 0
+        mosaic_chance: 0
+        kernel: 16
+    -
+      id: 16
+      name: "VFXCollider"
+      plugin: SimpleCollider
+      class: MultiColliderItem
+      is_checked: true
+      data:
+        translation: [ 0, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 20, 20, 20 ]
+        diffuse_color: [ 1, 0, 1 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 1
+        scene_type: Box
+        collider_type: VFX
+        density: 0
+        viscosity: 0
+        steady_flow: [ 0, 0, 0 ]
+        inbound_delay: 0
+        inbound_rate: 0
+        inbound_loss: 0
+        outbound_delay: 0
+        outbound_rate: 0
+        outbound_loss: 0
+        source: 0.0.0.0/0
+        destination: 0.0.0.0/0
+        hsv: [ 0, 0, 0 ]
+        rgb: [ 0, 0, 0 ]
+        coef_b: 0
+        coef_d: 0
+        std_dev: 0
+        salt_amount: 0
+        salt_chance: 0
+        pepper_amount: 0
+        pepper_chance: 0
+        mosaic_chance: 0
+        kernel: 16
+    -
+      id: 17
+      name: "StartCollider"
+      plugin: SimpleCollider
+      class: SimpleColliderItem
+      is_checked: true
+      data:
+        translation: [ -8, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 0.1, 10, 10 ]
+        diffuse_color: [ 0, 0, 1 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 0.8
+        scene_type: Box
+    -
+      id: 18
+      name: "GoalCollider"
+      plugin: SimpleCollider
+      class: SimpleColliderItem
+      is_checked: true
+      data:
+        translation: [ 8, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 0.1, 10, 10 ]
+        diffuse_color: [ 1, 0, 0 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 0.8
+        scene_type: Box
 views:
   -
     id: 0
@@ -305,9 +454,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ -18.9324, -8.29635, 11.1742 ]
-          direction: [ 0.730124, 0.432948, -0.528653 ]
-          up: [ 0.454719, 0.269639, 0.848838 ]
+          eye: [ 14.2142, 12.0141, 18.3767 ]
+          direction: [ -0.541651, -0.484751, -0.686753 ]
+          up: [ -0.511742, -0.457985, 0.72689 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
