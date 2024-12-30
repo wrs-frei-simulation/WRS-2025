@@ -19,6 +19,7 @@ items:
           1, 0, 0,
           0, 1, 0,
           0, 0, 1 ]
+        jointDisplacements: [ -45, -45 ]
         initialRootPosition: [ 0, 0, -0.1 ]
         initialRootAttitude: [
           1, 0, 0,
@@ -29,8 +30,21 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
+      children:
+        -
+          id: 2
+          name: "LightController"
+          plugin: Body
+          class: SimpleControllerItem
+          data:
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "PlantLightController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
     -
-      id: 2
+      id: 3
       name: "Ceiling"
       plugin: Body
       class: BodyItem
@@ -53,7 +67,7 @@ items:
         lock_location: false
         scene_sensitive: true
     -
-      id: 3
+      id: 4
       name: "SmallTank"
       plugin: Body
       class: BodyItem
@@ -79,7 +93,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 4
+          id: 5
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -91,7 +105,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 5
+      id: 6
       name: "SmallTank"
       plugin: Body
       class: BodyItem
@@ -117,7 +131,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 6
+          id: 7
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -129,7 +143,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 7
+      id: 8
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -155,7 +169,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 8
+          id: 9
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -167,7 +181,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 9
+      id: 10
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -193,7 +207,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 10
+          id: 11
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -205,7 +219,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 11
+      id: 12
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -231,7 +245,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 12
+          id: 13
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -243,7 +257,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 13
+      id: 14
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -269,7 +283,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 14
+          id: 15
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -281,7 +295,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 15
+      id: 16
       name: "CFDCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -320,7 +334,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 16
+      id: 17
       name: "TCCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -359,7 +373,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 17
+      id: 18
       name: "VFXCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -398,7 +412,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 18
+      id: 19
       name: "StartCollider"
       plugin: SimpleCollider
       class: SimpleColliderItem
@@ -414,7 +428,7 @@ items:
         transparency: 0.8
         scene_type: Box
     -
-      id: 19
+      id: 20
       name: "GoalCollider"
       plugin: SimpleCollider
       class: SimpleColliderItem
@@ -602,37 +616,37 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 2
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
         body_item: 3
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 5
+        body_item: 4
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 7
+        body_item: 6
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 9
+        body_item: 8
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 11
+        body_item: 10
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 13
+        body_item: 12
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 14
         show_cm: false
         show_cm_projection: false
         show_zmp: false
