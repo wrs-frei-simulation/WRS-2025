@@ -283,38 +283,6 @@ items:
         pepper_chance: 0
         mosaic_chance: 0
         kernel: 16
-    -
-      id: 12
-      name: "StartCollider"
-      plugin: SimpleCollider
-      class: SimpleColliderItem
-      is_checked: true
-      data:
-        translation: [ -8, 0, 0 ]
-        rotation: [ 0, -0, 0 ]
-        size: [ 0.1, 6, 6 ]
-        diffuse_color: [ 0, 0, 1 ]
-        radius: 0.5
-        height: 1
-        specular_exponent: 25
-        transparency: 0.8
-        scene_type: Box
-    -
-      id: 13
-      name: "GoalCollider"
-      plugin: SimpleCollider
-      class: SimpleColliderItem
-      is_checked: true
-      data:
-        translation: [ 8, 0, 0 ]
-        rotation: [ 0, -0, 0 ]
-        size: [ 0.1, 6, 6 ]
-        diffuse_color: [ 1, 0, 0 ]
-        radius: 0.5
-        height: 1
-        specular_exponent: 25
-        transparency: 0.8
-        scene_type: Box
 views:
   -
     id: 0
@@ -331,7 +299,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 13 ]
+      expanded: [ ]
   -
     id: 3
     plugin: Base

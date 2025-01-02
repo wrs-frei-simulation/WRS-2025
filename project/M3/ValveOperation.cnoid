@@ -237,7 +237,7 @@ items:
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 2.37511988e-41, 1 ]
+          -1.2246468e-16, 3.56267983e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -275,7 +275,7 @@ items:
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 2.37511988e-41, 1 ]
+          -1.2246468e-16, 3.56267983e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -411,38 +411,6 @@ items:
         pepper_chance: 0
         mosaic_chance: 0
         kernel: 16
-    -
-      id: 19
-      name: "StartCollider"
-      plugin: SimpleCollider
-      class: SimpleColliderItem
-      is_checked: true
-      data:
-        translation: [ -8, 0, 0 ]
-        rotation: [ 0, -0, 0 ]
-        size: [ 0.1, 6, 6 ]
-        diffuse_color: [ 0, 0, 1 ]
-        radius: 0.5
-        height: 1
-        specular_exponent: 25
-        transparency: 0.8
-        scene_type: Box
-    -
-      id: 20
-      name: "GoalCollider"
-      plugin: SimpleCollider
-      class: SimpleColliderItem
-      is_checked: true
-      data:
-        translation: [ 8, 0, 0 ]
-        rotation: [ 0, -0, 0 ]
-        size: [ 0.1, 6, 6 ]
-        diffuse_color: [ 1, 0, 0 ]
-        radius: 0.5
-        height: 1
-        specular_exponent: 25
-        transparency: 0.8
-        scene_type: Box
 views:
   -
     id: 0

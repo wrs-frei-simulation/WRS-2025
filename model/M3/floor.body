@@ -113,3 +113,11 @@ links:
   - { <<: *fence, prefix: SB43_, translation: [  2.0,  1.8, 0.1 ] }
   - { <<: *fence, prefix: SB44_, translation: [  3.0, -1.0, 0.1 ], rotation: [ 0, 0, 1, 90 ] }
   - { <<: *fence, prefix: SB45_, translation: [  5.0,  1.8, 0.1 ] }
+  - &gate
+    type: SubBody
+    uri: "gate/gate_b.body"
+    parent: Floor
+    prefix: SB46_
+    translation: [ -8.0, 0.0, 0.1 ]
+    joint_type: fixed
+  - { <<: *gate, prefix: SB47_, uri: "gate/gate_r.body", translation: [ 8.0, 0, 0.1 ] }

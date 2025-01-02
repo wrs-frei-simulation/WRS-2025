@@ -1,0 +1,32 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: gate_g
+
+links:
+  -
+    name: GATE_ROOT
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      - &gate
+        type: Transform
+        translation: [ 0, 1.5, 0 ]
+        elements:
+          - &block
+            type: Shape
+            translation: [ 0, 0, 0.25 ]
+            geometry: { type: Box, size: [ 0.1, 0.1, 0.5 ] }
+            appearance: { material: &white { diffuse: [ 1, 1, 1 ] } }
+          - { <<: *block, translation: [ 0, 0, 0.75 ], appearance: { material: &green { diffuse: [ 0, 1, 0 ] } } }
+          - { <<: *block, translation: [ 0, 0, 1.25 ], appearance: { material: *white } }
+          - { <<: *block, translation: [ 0, 0, 1.75 ], appearance: { material: *green } }
+          - { <<: *block, translation: [ 0, 0, 2.25 ], appearance: { material: *white } }
+      - { <<: *gate, translation: [ 0, -1.5, 0 ] }
+      -
+        type: Shape
+        translation: [ 0, 0, 1.0 ]
+        geometry: { type: Box, size: [ 0.01, 3.0, 2.0 ] }
+        appearance: { material: { diffuse: [ 1, 1, 1 ], transparency: 0.9 } }
