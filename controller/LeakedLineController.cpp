@@ -19,6 +19,7 @@ class LeakedLineController : public SimpleController
     DeviceList<FireDevice> fires;
     DeviceList<FountainDevice> fountains;
     DeviceList<SmokeDevice> smokes;
+    bool is_lever;
 
 public:
 
@@ -30,15 +31,24 @@ public:
         fires = body->devices();
         fountains = body->devices();
         smokes = body->devices();
+        is_lever = false;
 
         std::string prefix;
 
         for(auto& option : io->options()) {
-            prefix = option;
-            io->os() << "prefix: " << prefix << std::endl;
+            if(option == "lever") {
+                is_lever = true;
+            } else {
+                prefix = option;
+                io->os() << "prefix: " << prefix << std::endl;
+            }
         }
 
-        valve = body->link(prefix + "VALVE_HANDLE");
+        if(!is_lever) {
+            valve = body->link(prefix + "VALVE_HANDLE");
+        } else {
+            valve = body->link(prefix + "LEVER_HANDLE");
+        }
         if(!valve) {
             os << "The valve is not found." << std::endl;
             return false;
@@ -71,7 +81,13 @@ public:
 
     virtual bool control() override
     {
-        bool is_valve_opened = valve->q() < radian(0.0) ? true : false;
+        bool is_valve_opened = false;
+        if(!is_lever) {
+            is_valve_opened = valve->q() < radian(0.0) ? true : false;
+        } else {
+            is_valve_opened = valve->q() < radian(45.0) ? true : false;
+        }
+
         for(auto& fire : fires) {
             if(is_valve_opened && !fire->on()) {
                 fire->on(true);

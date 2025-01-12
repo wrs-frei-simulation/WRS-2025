@@ -1,0 +1,62 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: vertical_lever_1mpa
+
+links:
+  -
+    name: LEVER_BASE
+    jointType: fixed
+    mass: 0.5
+    inertia: [
+      0.0035, 0, 0,
+      0, 0.0035, 0,
+      0, 0, 0.0032 ]
+    elements:
+      -
+        type: Shape
+        rotation: [ 1, 0, 0, 90 ]
+        geometry: { type: Cylinder, radius: 0.08, height: 0.15 }
+        appearance: { material: { diffuseColor: [ 0.5, 0.5, 0.5 ] } }
+      - &joint
+        type: Shape
+        translation: [ 0, 0.08, 0 ]
+        geometry: { type: Cylinder, radius: 0.01, height: 0.04 }
+        appearance: { material: { diffuseColor: [ 0.5, 0.5, 0 ] } }
+      - <<: *joint
+        translation: [ 0.08, 0, 0 ]
+        rotation: [ 0, 0, 1, -90 ]
+  -
+    name: LEVER_HANDLE
+    parent: LEVER_BASE
+    translation: [ 0, 0.1, 0 ]
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: [ 0, 90 ]
+    maxJointVelocity: 90
+    jointId: 0
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 0.3
+    inertia: [
+      0.0000049, 0, 0,
+      0, 0.0001625, 0,
+      0, 0, 0.0001625 ]
+
+    # For the friction for AGX
+    jointMotor: true
+    jointMotorCompliance: 0.5
+    jointMotorSpookDamping: 0.01
+    elements:
+      -
+        type: Shape
+        translation: [ -0.03, 0, 0 ]
+        geometry: { type: Box, size: [ 0.08, 0.01, 0.01 ] }
+        appearance: { material: { diffuseColor: [ 1, 0, 0 ] } }
+  -
+    type: SubBody
+    uri: "pressure_gauge_1mpa.body"
+    parent: LEVER_BASE
+    jointIdOffset: 1
+    translation: [ 0.15, 0, 0 ]
+    rotation: [ 0, 0, 1, 90 ]
+    joint_type: fixed

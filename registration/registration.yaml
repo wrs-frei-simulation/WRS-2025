@@ -19,7 +19,7 @@ registrations:
     robot_alignment: X+
     start_position: [ 4.0, 7.0, 0.0 ]
   - &Mission3
-    name: M3
+    name: ValveOperation
     task_project: [ M3/ValveOperation ]
     robot_project: *RobotList
     robot_alignment: X+
@@ -29,9 +29,6 @@ registrations:
     enable_recording: true
     # enable_tracking: true
     enable_ros: true
-#  - <<: *Mission3
-#    name: ValveOperation
-#    task_project: [ M3/ValveOperation ]
-#  - <<: *Mission3
-#    name: FireFighting
-#    task_project: [ M3/FireFighting ]
+  - <<: *Mission3
+    name: FireFighting
+    task_project: [ M3/FireFighting ]
