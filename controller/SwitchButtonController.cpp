@@ -79,7 +79,7 @@ public:
             bool currentState = q < 0.001 ? true : false;
             if(currentState && !prevButtonState[i]) {
                 for(auto& light : lights) {
-                    light->on(!light->on());
+                    light->on(i == 0 ? true : false);
                     light->notifyStateChange();
                 }
                 // std::string button_name = i == 0 ? "green" : "red";
