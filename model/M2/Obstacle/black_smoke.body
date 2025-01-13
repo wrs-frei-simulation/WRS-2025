@@ -1,0 +1,11 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: BlackSmoke
+
+links:
+  -
+    name: Base
+    jointType: fixed
+    elements:
+      SmokeDevice: { tint_color: [ 0, 0, 0 ] }

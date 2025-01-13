@@ -1,0 +1,71 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: PowerPanel
+
+links:
+  -
+    name: POWER_PANEL
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    center_of_mass: [ 0, 0, 0 ]
+    mass: 10.0
+    inertia: [
+      0.1, 0, 0,
+      0, 0.1, 0,
+      0, 0, 0.1 ]
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 0.1, 0.4, 0.4 ] }
+        appearance: { material: { diffuseColor: [ 1.0, 1.0, 0.4 ] } }
+      -
+        type: Shape
+        translation: [ 0.075, 0, 0 ]
+        geometry: { type: Box, size: [ 0.05, 0.3, 0.3 ] }
+        appearance: { material: { diffuseColor: [ 0.1, 0.1, 0.1 ] } }
+  -
+    name: BREAKER_L
+    parent: POWER_PANEL
+    translation: [ 0.1, 0.1, 0 ]
+    joint_type: revolute
+    joint_axis: -Y
+    joint_id: 0
+    joint_range: [ -45, 45 ]
+    mass: 3.0
+    inertia: [ 0.05, 0, 0,
+               0, 0.05, 0,
+               0, 0, 0.05 ]
+
+    # For the friction for AGX
+    jointMotor: true
+    jointMotorCompliance: 0.5
+    jointMotorSpookDamping: 0.01
+    elements: &BreakerShape
+      -
+        type: Shape
+        geometry: { type: Cylinder, radius: 0.03, height: 0.04 }
+        appearance: { material: { diffuseColor: [ 0.3, 0.3, 0.3 ] } }
+      -
+        type: Shape
+        translation: [ 0.05, 0, 0 ]
+        geometry: { type: Box, size: [ 0.1, 0.02, 0.02 ] }
+        appearance: { material: { diffuseColor: [ 0.3, 0.3, 0.3 ] } }
+  -
+    name: BREAKER_R
+    parent: POWER_PANEL
+    translation: [ 0.1, -0.1, 0 ]
+    joint_type: revolute
+    joint_axis: -Y
+    joint_id: 1
+    joint_range: [ -45, 45 ]
+    mass: 3.0
+    inertia: [ 0.05, 0, 0,
+               0, 0.05, 0,
+               0, 0, 0.05 ]
+
+    # For the friction for AGX
+    jointMotor: true
+    jointMotorCompliance: 0.5
+    jointMotorSpookDamping: 0.01
+    elements: *BreakerShape

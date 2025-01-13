@@ -1,0 +1,14 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: Rack2
+
+links:
+  -
+    name: Rack2
+    joint_type: fixed
+    elements:
+      Resource:
+        translation: [ 1.31, -3.52, 0 ]
+        rotation: [ [ 0, 0, 1, 180 ], [ 1, 0, 0, 90 ] ]
+        uri: "resource/rack2.wrl"

@@ -1,0 +1,33 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: ContainmentVessel
+
+links:
+  -
+    name: Root
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/vessel.body"
+    parent: Root
+    prefix: SB1_
+    rotation: [ 0, 0, 1, 180 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/duct.body"
+    parent: Root
+    prefix: SB2_
+    translation: [ 3.0, -3.0, 2.5 ]
+    rotation: [ 0, 0, 1, -45 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/duct2.body"
+    parent: Root
+    prefix: SB3_
+    translation: [ -0.355, -0.355, 3.5 ]
+    rotation: [ 0, 0, 1, 135 ]
+    joint_type: fixed

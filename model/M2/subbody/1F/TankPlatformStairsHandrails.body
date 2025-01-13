@@ -1,0 +1,91 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: TankPlatformStairsHandrails # WRS_P_1F_cw_handrail
+
+SILIVER: &SILVER
+  material:
+    diffuseColor: [ 0.96, 0.96, 0.96 ]
+    specularColor: [ 0.96, 0.96, 0.96 ]
+    shininess: 0.12
+
+CYLINDER1: &CYLINDER1
+  Shape: 
+    geometry: { type: Cylinder, radius: 0.02, height: 0.809 }
+    appearance: *SILVER
+
+CYLINDER26: &CYLINDER26
+  Shape:
+    geometry: { type: Cylinder, radius: 0.02, height: 1.86 }
+    appearance: *SILVER
+
+links:
+  -
+    name: BASE
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 10.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  -
+    name: HANDRAIL_R
+    parent: BASE
+    jointType: fixed
+    translation: [ -4.06, -4.7455, 0 ]
+    elements:
+      -
+        name: CYLINDER1
+        type: Transform
+        translation: [ 2.6395, 4.417, 0.4245 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER2
+        type: Transform
+        translation: [ 3.1195, 4.417, 0.8085 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER3
+        type: Transform
+        translation: [ 3.5995, 4.417, 1.1925 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER33
+        type: Transform
+        translation: [ 3.354, 4.4171, 1.3917 ]
+        rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -38.65 ] ]
+        elements: *CYLINDER26
+  -
+    name: HANDRAIL_L
+    parent: BASE
+    jointType: fixed
+    translation: [ -4.06, -4.7455, 0 ]
+    elements:
+      -
+        name: CYLINDER14
+        type: Transform
+        translation: [ 2.629, 5.0477, 0.4245 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER15
+        type: Transform
+        translation: [ 3.109, 5.0477, 0.8085 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER16
+        type: Transform
+        translation: [ 3.589, 5.0477, 1.1925 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER29
+        type: Transform
+        translation: [ 3.354, 5.0477, 1.40 ]
+        rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -38.65 ] ]
+        elements: *CYLINDER26

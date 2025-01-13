@@ -1,0 +1,35 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: M2-A2
+
+links:
+  -
+    name: Root
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    elements:
+      -
+        type: FountainDevice
+        name: Fountain1
+        translation: [ 6.0, -5.0, 2.7 ]
+      -
+        type: FountainDevice
+        name: Fountain2
+        translation: [ 8.78, -11.6, 2.0 ]
+  -
+    type: SubBody
+    uri: "subbody/floor.body"
+    parent: Root
+    prefix: SB1_
+    translation: [ 7.0, -7.0, -0.1 ]
+    rotation: [ 0, 0, 1, 180 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/path.body"
+    parent: Root
+    prefix: SB2_
+    translation: [ 7.0, 0, 0 ]
+    rotation: [ 0, 0, 1, 90 ]
+    joint_type: fixed

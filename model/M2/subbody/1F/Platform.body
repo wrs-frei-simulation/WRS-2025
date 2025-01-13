@@ -1,0 +1,136 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Platform # WRS_P_1F_cp_stairs
+
+SILVER: &SILVER
+  material:
+    diffuseColor: [ 0.75, 0.75, 0.75 ]
+    specularColor: [ 0.75, 0.75, 0.75 ]
+    shininess: 0.12
+
+links:
+  -
+    name: BASE
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 20.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      -
+        name: BOX1
+        type: Transform
+        translation: [ 1.973, 8.115, 0.6732 ]
+        elements:
+          Shape: 
+            geometry: { type: Box, size: [ 0.9, 1.1, 0.03 ] }
+            appearance: *SILVER
+  -
+    name: STAIRS1
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+          -
+            name: BOX2
+            type: Transform
+            translation: [ 1.973, 8.74, 0.4458 ]
+            elements: &BOX2
+              Shape: 
+                geometry: { type: Box, size: [ 0.9, 0.15, 0.03 ] }
+                appearance: *SILVER
+          -
+            name: BOX3
+            type: Transform
+            translation: [ 1.973, 8.89, 0.2184 ]
+            elements: *BOX2
+          -
+            name: BOX6
+            type: Transform
+            translation: [ 1.538, 8.59, 0.5442 ]
+            elements: &BOX6
+              Shape: 
+                geometry: { type: Box, size: [ 0.03, 0.15, 0.228 ] }
+                appearance: *SILVER
+          -
+            name: BOX7
+            type: Transform
+            translation: [ 1.538, 8.665, 0.3182 ]
+            elements: &BOX7
+              Shape: 
+                geometry: { type: Box, size: [ 0.03, 0.3, 0.228 ] }
+                appearance: *SILVER
+          -
+            name: BOX8
+            type: Transform
+            translation: [ 1.538, 8.74, 0.1192 ]
+            elements: &BOX8
+              Shape: 
+                geometry: { type: Box, size: [ 0.03, 0.45, 0.228 ] }
+                appearance: *SILVER
+          -
+            name: BOX9
+            type: Transform
+            translation: [ 2.408, 8.59, 0.5442 ]
+            elements: *BOX6
+          -
+            name: BOX10
+            type: Transform
+            translation: [ 2.408, 8.665, 0.3182 ]
+            elements: *BOX7
+          -
+            name: BOX11
+            type: Transform
+            translation: [ 2.408, 8.74, 0.1192 ]
+            elements: *BOX8
+  -
+    name: STAIRS2
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+          -
+            name: BOX4
+            type: Transform
+            translation: [ 1.973, 7.49, 0.4458 ]
+            elements: *BOX2
+          -
+            name: BOX5
+            type: Transform
+            translation: [ 1.973, 7.34, 0.2184 ]
+            elements: *BOX2
+          -
+            name: BOX12
+            type: Transform
+            translation: [ 1.538, 7.64, 0.5442 ]
+            elements: *BOX6
+          -
+            name: BOX13
+            type: Transform
+            translation: [ 1.538, 7.565, 0.3182 ]
+            elements: *BOX7
+          -
+            name: BOX14
+            type: Transform
+            translation: [ 1.538, 7.49, 0.1192 ]
+            elements: *BOX8
+          -
+            name: BOX15
+            type: Transform
+            translation: [ 2.408, 7.64, 0.5442 ]
+            elements: *BOX6
+          -
+            name: BOX16
+            type: Transform
+            translation: [ 2.408, 7.565, 0.3182 ]
+            elements: *BOX7
+          -
+            name: BOX17
+            type: Transform
+            translation: [ 2.408, 7.49, 0.1192 ]
+            elements: *BOX8

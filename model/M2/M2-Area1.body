@@ -1,0 +1,113 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: M2-A1
+
+links:
+  -
+    name: Root
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    elements:
+      - &floor
+        type: Shape
+        translation: [ -4.0, 0, -0.1 ]
+        geometry: { type: Box, size: [ 4.0, 4.0, 0.2 ] }
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } }
+      - <<: *floor
+        translation: [ -9.5, 0, -0.1 ]
+        geometry: { type: Box, size: [ 5.0, 4.0, 0.2 ] }
+      - <<: *floor
+        translation: [ -6.5, -1.0, -0.1 ]
+        geometry: { type: Box, size: [ 1.0, 2.0, 0.2 ] }
+      - <<: *floor
+        translation: [ -6.5, 1.5, -0.1 ]
+        geometry: { type: Box, size: [ 1.0, 1.0, 0.2 ] }
+      -
+        type: Shape
+        translation: [ -6.1, 0.5, 0.5 ]
+        rotation: [ 0, 1, 0, 80 ]
+        geometry: { type: Box, size: [ 1.0, 1.0, 0.2 ] }
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0.5 ] } }
+      - &light
+        type: SpotLight
+        name: Light1
+        translation: [ -7.0, -7.0, 2.9 ]
+        beamWidth: 90
+        cutOffAngle: 120
+        cutOffExponent: 6
+        attenuation: [ 1, 0, 0.01 ]
+        on: false
+        elements:
+          -
+            type: Shape
+            rotation: [ 1, 0, 0, 90 ]
+            geometry: { type: Cone, height: 0.1, radius: 0.05 }
+            appearance: { material: { diffuse: [ 1.0, 1.0, 0.4 ] } }
+      - <<: *light
+        name: Light2
+        translation: [ 7.0, -7.0, 2.9 ]
+#      - <<: *light
+#        name: Light3
+#        translation: [ 7.0, 7.0, 2.9 ]
+#      - <<: *light
+#        name: Light4
+#        translation: [ -7.0, 7.0, 2.9 ]
+  -
+    type: SubBody
+    uri: "subbody/power_panel.body"
+    parent: Root
+    prefix: SB1_
+    translation: [ -7.0, -11.85, 1.0 ]
+    rotation: [ 0, 0, 1, 90 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/floor.body"
+    parent: Root
+    prefix: SB2_
+    translation: [ -7.0, -7.0, -0.1 ]
+    joint_type: fixed
+    joint_id_offset: 2
+  -
+    type: SubBody
+    uri: "subbody/path.body"
+    parent: Root
+    prefix: SB3_
+    translation: [ 0, -7.0, 0 ]
+    rotation: [ 1, 0, 0, -5 ]
+    joint_type: fixed
+  - &board
+    type: SubBody
+    uri: "subbody/board.body"
+    parent: Root
+    prefix: SB4_
+    translation: [ -11.0, -10.0, 1.0 ]
+    joint_type: fixed
+  - <<: *board
+    prefix: SB5_
+    translation: [ -11.0, -9.0, 1.0 ]
+  - <<: *board
+    prefix: SB6_
+    translation: [ -11.0, -7.7, 1.0 ]
+    rotation: [ 1, 0, 0, 20 ]
+  - <<: *board
+    prefix: SB7_
+    translation: [ -8.0, 1.0, 0.25 ]
+    rotation: [ [ 0, 1, 0, 90 ], [ 1, 0, 0, 20 ] ]
+  - <<: *board
+    prefix: SB8_
+    translation: [ -10.5, 1.0, 0.25 ]
+    rotation: [ [ 0, 1, 0, 90 ], [ 1, 0, 0, 0 ] ]
+  - <<: *board
+    prefix: SB9_
+    translation: [ -4.0, 1.0, 0.25 ]
+    rotation: [ [ 0, 1, 0, 90 ], [ 1, 0, 0, 20 ] ]
+  - <<: *board
+    prefix: SB10_
+    translation: [ -4.5, -1.0, 0.25 ]
+    rotation: [ [ 0, 1, 0, 90 ], [ 1, 0, 0, -90 ] ]
+  - <<: *board
+    prefix: SB11_
+    translation: [ -10.5, -1.0, 0.25 ]
+    rotation: [ [ 0, 1, 0, 90 ], [ 1, 0, 0, -45 ] ]

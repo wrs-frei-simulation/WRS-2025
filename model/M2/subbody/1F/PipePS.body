@@ -1,0 +1,82 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: PipePS # WRS_P_1F_pipe_p_s
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    translation: [ 0, 0.04, 0 ]
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      Visual:
+        resource: { uri: "resource/PipePS.dae" }
+  -
+    name: PIPE1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_1
+            type: Transform
+            translation: [ 5.33963, 11.9128, 1.2475 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.01, height: 2.446 } }
+          -
+            name: PIPE_P_2
+            type: Transform
+            translation: [ 5.33963, 11.9123, 0.024 ]
+            rotation: [ 1, 0, 0, 76 ]
+            elements: &PIPE_P_2
+              Shape: { geometry: { type: Cylinder, radius: 0.01, height: 0.00612 } }
+          -
+            name: PIPE_P_3
+            type: Transform
+            translation: [ 5.33963, 11.9109, 0.02 ]
+            rotation: [ 1, 0, 0, 66 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_4
+            type: Transform
+            translation: [ 5.33963, 11.9089, 0.01665 ]
+            rotation: [ 1, 0, 0, 53 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_5
+            type: Transform
+            translation: [ 5.33963, 11.9065, 0.0142 ]
+            rotation: [ 1, 0, 0, 40 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_6
+            type: Transform
+            translation: [ 5.33963, 11.9035, 0.0122 ]
+            rotation: [ 1, 0, 0, 27 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_7
+            type: Transform
+            translation: [ 5.33963, 11.9005, 0.0109 ]
+            rotation: [ 1, 0, 0, 17 ]
+            elements: *PIPE_P_2
+  -
+    name: PIPE2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_8
+            type: Transform
+            translation: [ 5.33963, 9.174, 0.0103 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.01, height: 5.455 } }

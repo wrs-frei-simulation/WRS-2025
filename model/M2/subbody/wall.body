@@ -1,0 +1,14 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: Wall
+links:
+  -
+    name: Wall
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    material: Ground
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 24.0, 0.2, 9.2 ] }
+        appearance: { material: { diffuse: [ 0.5, 0.5, 0.5 ] } }

@@ -1,0 +1,40 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: Structures
+
+links:
+  -
+    name: Root
+    translation: [ 0, 0, -0.1 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/roof.body"
+    parent: Root
+    translation: [ 0, 0, 4.7 ]
+    joint_type: fixed
+  - &Wall
+    type: SubBody
+    uri: "subbody/wall.body"
+    parent: Root
+    prefix: SB1_
+    translation: [ 0, -12.0, 0 ]
+    joint_type: fixed
+  - <<: *Wall
+    prefix: SB2_
+    translation: [ 12.0, 0, 0 ]
+    rotation: [ 0, 0, 1, 90 ]
+  - <<: *Wall
+    prefix: SB3_
+    translation: [ 0, 12.0, 0 ]
+  - <<: *Wall
+    prefix: SB4_
+    translation: [ -12.0, 0, 0 ]
+    rotation: [ 0, 0, 1, 90 ]
+  -
+    type: SubBody
+    uri: "subbody/vessel_cover.body"
+    parent: Root
+    prefix: SB5_
+    translation: [ 0, 0, 6.0 ]
+    joint_type: fixed

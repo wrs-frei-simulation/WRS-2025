@@ -1,0 +1,128 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: vessel_cover
+links:
+  -
+    name: Root
+    translation: [ 0, 0, 6.0 ]
+    joint_type: fixed
+    elements:
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 0 ]
+        elements: &cover
+          -
+            type: Shape
+            geometry:
+              type: Extrusion
+              cross_section: [
+                5, 0,
+                4.92404, 0.868241,
+                4.69846, 1.7101,
+                4.33013, 2.5,
+                3.83022, 3.21394,
+                3.21394, 3.83022,
+                2.5, 4.33013,
+                1.7101, 4.69846,
+                0.868241, 4.92404,
+                3.06162e-16, 5,
+                -0.868241, 4.92404,
+                -1.7101, 4.69846,
+                -2.5, 4.33013,
+                -3.21394, 3.83022,
+                -3.83022, 3.21394,
+                -4.33013, 2.5,
+                -4.69846, 1.7101,
+                -4.92404, 0.868241,
+                -5, 6.12323e-16,
+                -4.9, 6.00077e-16,
+                -4.82556, 0.850876,
+                -4.60449, 1.6759,
+                -4.24352, 2.45,
+                -3.75362, 3.14966,
+                -3.14966, 3.75362,
+                -2.45, 4.24352,
+                -1.6759, 4.60449,
+                -0.850876, 4.82556,
+                3.00038e-16, 4.9,
+                0.850876, 4.82556,
+                1.6759, 4.60449,
+                2.45, 4.24352,
+                3.14966, 3.75362,
+                3.75362, 3.14966,
+                4.24352, 2.45,
+                4.60449, 1.6759,
+                4.82556, 0.850876,
+                4.9, 0,
+                5, 0 ]
+              spine: [ 0, -0.45, 0, 0, 0.45, 0 ]
+            appearance: { material: { diffuse: [ 1, 0.333333, 0 ] } }
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 10 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 20 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 30 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 40 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 50 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 60 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 70 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 80 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 100 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 110 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 120 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 130 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 140 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 150 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 160 ]
+        elements: *cover
+      -
+        type: Transform
+        rotation: [ 0, 0, 1, 170 ]
+        elements: *cover

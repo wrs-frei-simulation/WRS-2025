@@ -3,21 +3,41 @@ robot_list: &RobotList [ MonoCrawlerNA-ROS2, HobbyDrone-ROS2 ]
 
 registrations:
   - &Mission2
-    name: M2-A12
-    task_project: [ M2/A1, M2/A2, M2/Common ]
+    name: PS-1
+    task_project: [ PS/PS-1, PS/PS-Common ]
     robot_project: *RobotList
-    robot_alignment: X-
-    start_position: [ -4.0, -7.0, 0.0 ]
+    robot_alignment: Y-
+    start_position: [ -7.0, -4.0, 0.0 ]
     simulator_project: [ AGXSimulator, AISTSimulator ]
-    view_project: M2/RefereeView
+    view_project: PS/RefereeView
     enable_recording: true
     # enable_tracking: true
     enable_ros: true
   - <<: *Mission2
-    name: M2-A34
-    task_project: [ M2/A3, M2/A4, M2/Common ]
+    name: PS-2
+    task_project: [ PS/PS-2, PS/PS-Common ]
     robot_alignment: X+
-    start_position: [ 4.0, 7.0, 0.0 ]
+    start_position: [ 4.0, -7.0, 0.0 ]
+  - <<: *Mission2
+    name: PS-3
+    task_project: [ PS/PS-3, PS/PS-Common ]
+    robot_alignment: Y+
+    start_position: [ 7.0, 4.0, 0.0 ]
+  - <<: *Mission2
+    name: PS-4
+    task_project: [ PS/PS-4, PS/PS-Common ]
+    robot_alignment: X-
+    start_position: [ -4.0, 7.0, 0.0 ]
+  - <<: *Mission2
+    name: PS-12
+    task_project: [ PS/PS-1, PS/PS-2, PS/PS-Common ]
+    robot_alignment: Y-
+    start_position: [ -7.0, -4.0, 0.0 ]
+  - <<: *Mission2
+    name: PS-34
+    task_project: [ PS/PS-3, PS/PS-4, PS/PS-Common ]
+    robot_alignment: Y+
+    start_position: [ 7.0, 4.0, 0.0 ]
   - &Mission3
     name: ValveOperation
     task_project: [ M3/ValveOperation ]
@@ -29,6 +49,4 @@ registrations:
     enable_recording: true
     # enable_tracking: true
     enable_ros: true
-  - <<: *Mission3
-    name: FireFighting
-    task_project: [ M3/FireFighting ]
+  - { <<: *Mission3, name: FireFighting, task_project: [ M3/FireFighting ] }

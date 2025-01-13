@@ -1,0 +1,70 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: TankPlatformStage # WRS_P_1F_cw
+
+links:
+  -
+    name: STAGE
+    jointType: fixed
+    material: Ground
+    elements:
+      -
+        type: Visual
+        elements:
+          Resource: { uri: "resource/TankPlatformStage.dae" }
+      -
+        type: Collision
+        elements:
+          -
+            type: Transform
+            translation: [ 5.21, 4.742, 1.122 ]
+            elements: &BOX_STAGE1
+              Shape: { geometry: { type: Box, size: [ 2.3, 0.7, 0.1 ] } }
+          -
+            type: Transform
+            translation: [ 6.71, 5.542, 1.122 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *BOX_STAGE1
+          -
+            type: Transform
+            translation: [ 5.91, 7.042, 1.122 ]
+            elements: *BOX_STAGE1
+          -
+            type: Transform
+            translation: [ 4.41, 6.242, 1.122 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *BOX_STAGE1
+  -
+    name: LEG1
+    parent: STAGE
+    jointType: fixed
+    translation: [ 4.16, 4.492, 0.536 ]
+    elements:
+      Collision:
+        elements: &LEG_SHAPE
+          Shape: { geometry: { type: Box, size: [ 0.2, 0.2, 1.072 ] } }
+  -
+    name: LEG2
+    parent: STAGE
+    jointType: fixed
+    translation: [ 6.96, 4.492, 0.536 ]
+    elements:
+      Collision:
+        elements: *LEG_SHAPE
+  -
+    name: LEG3
+    parent: STAGE
+    jointType: fixed
+    translation: [ 6.96, 7.292, 0.536 ]
+    elements:
+      Collision:
+        elements: *LEG_SHAPE
+  -
+    name: LEG4
+    parent: STAGE
+    jointType: fixed
+    translation: [ 4.16, 7.292, 0.536 ]
+    elements:
+      Collision:
+        elements: *LEG_SHAPE

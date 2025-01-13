@@ -19,7 +19,6 @@ items:
           1, 0, 0,
           0, 1, 0,
           0, 0, 1 ]
-        jointDisplacements: [ -45, -45 ]
         initialRootPosition: [ 0, 0, -0.1 ]
         initialRootAttitude: [
           1, 0, 0,
@@ -30,21 +29,8 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
-      children:
-        -
-          id: 2
-          name: "LightController"
-          plugin: Body
-          class: SimpleControllerItem
-          data:
-            isNoDelayMode: false
-            controllerOptions: ""
-            controller: "PlantLightController"
-            base_directory: "Controller directory"
-            reloading: false
-            export_symbols: false
     -
-      id: 3
+      id: 2
       name: "Ceiling"
       plugin: Body
       class: BodyItem
@@ -67,7 +53,7 @@ items:
         lock_location: false
         scene_sensitive: true
     -
-      id: 4
+      id: 3
       name: "SmallTank"
       plugin: Body
       class: BodyItem
@@ -93,7 +79,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 5
+          id: 4
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -105,7 +91,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 6
+      id: 5
       name: "SmallTank"
       plugin: Body
       class: BodyItem
@@ -131,7 +117,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 7
+          id: 6
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -143,7 +129,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 8
+      id: 7
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -169,7 +155,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 9
+          id: 8
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -181,7 +167,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 10
+      id: 9
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -207,7 +193,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 11
+          id: 10
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -219,7 +205,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 12
+      id: 11
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -237,7 +223,7 @@ items:
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 3.56267983e-41, 1 ]
+          -1.2246468e-16, 4.1564598e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -245,7 +231,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 13
+          id: 12
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -257,7 +243,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 14
+      id: 13
       name: "SmokeLeakedLine"
       plugin: Body
       class: BodyItem
@@ -275,7 +261,7 @@ items:
         initialRootAttitude: [
           -1, 1.2246468e-16, -1.2246468e-16,
           -1.2246468e-16, -1, -1.49975978e-32,
-          -1.2246468e-16, 3.56267983e-41, 1 ]
+          -1.2246468e-16, 4.1564598e-41, 1 ]
         fix_root: true
         collisionDetection: true
         selfCollisionDetection: false
@@ -283,7 +269,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 15
+          id: 14
           name: "ValveController"
           plugin: Body
           class: SimpleControllerItem
@@ -295,7 +281,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 16
+      id: 15
       name: "CFDCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -334,7 +320,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 17
+      id: 16
       name: "TCCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -373,7 +359,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 18
+      id: 17
       name: "VFXCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -427,7 +413,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ ]
+      expanded: [ 1 ]
   -
     id: 3
     plugin: Base
@@ -584,37 +570,37 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
+        body_item: 2
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
         body_item: 3
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 4
+        body_item: 5
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 6
+        body_item: 7
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 8
+        body_item: 9
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 10
+        body_item: 11
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 12
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 14
+        body_item: 13
         show_cm: false
         show_cm_projection: false
         show_zmp: false

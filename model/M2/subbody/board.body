@@ -1,0 +1,14 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: Board
+links:
+  -
+    name: Board
+    translation: [ 0, 0, 1.0 ]
+    joint_type: fixed
+    material: Ground
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 0.5, 1.0, 2.0 ] }
+        appearance: { material: { diffuseColor: [ 0.3, 0.3, 0.3 ] } }

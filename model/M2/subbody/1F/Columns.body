@@ -1,0 +1,47 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Columns # 1F_pillar
+
+COLUMN: &COLUMN
+  type: Resource
+  uri: "../resource/CommonParts.yaml"
+  node: COLUMN_L
+
+links:
+  -
+    name: COLUMN1
+    jointType: fixed
+    elements:
+      Transform:
+        translation: [ 0.176, 0.175, 2.5 ]        
+        elements: *COLUMN
+  -
+    name: COLUMN2
+    parent: COLUMN1
+    jointType: fixed
+    translation: [ 5.974, 0.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN6
+    parent: COLUMN1
+    jointType: fixed
+    translation: [ 0.176, 5.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN9
+    parent: COLUMN1
+    jointType: fixed
+    translation: [ 0.175, 12.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN10
+    parent: COLUMN1
+    jointType: fixed
+    translation: [ 5.974, 12.175, 2.5 ]
+    elements: *COLUMN
+  - 
+    type: SubBody
+    uri: ColumnsSub.body
+    parent: COLUMN1
+    translation: [ 10.175, 0.0, 0.0 ]

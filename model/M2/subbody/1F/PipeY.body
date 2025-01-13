@@ -1,0 +1,690 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: PipeY # WRS_P_1F_pipe_y
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      Visual:
+        resource: { uri: "resource/PipeY.dae" }
+  -
+    name: PIPE1-1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_1
+            type: Transform
+            translation: [ 7.219, 6.505, 0.3685 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &PIPE_Y_1
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 0.737 } }
+          -
+            name: PIPE_Y_2
+            type: Transform
+            translation: [ 7.219, 6.4985, 0.746 ]
+            rotation: [ 1, 0, 0, 108 ]
+            elements: &PIPE_Y_2
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 0.0678 } }
+          -
+            name: PIPE_Y_3
+            type: Transform
+            translation: [ 7.219, 6.4785, 0.787 ]
+            rotation: [ 1, 0, 0, 124 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_4
+            type: Transform
+            translation: [ 7.219, 6.451, 0.816 ]
+            rotation: [ 1, 0, 0, 145 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_5
+            type: Transform
+            translation: [ 7.219, 6.413, 0.8355 ]
+            rotation: [ 1, 0, 0, 162 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_6
+            type: Transform
+            translation: [ 7.219, 6.37, 0.843 ]
+            elements: *PIPE_Y_2
+  -
+    name: PIPE1-2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATTACHMENT1
+            type: Transform
+            translation: [ 7.222, 6.3377, 0.8515 ]
+            elements: &ATTACHMENT1
+              Shape: { geometry: { type: Cylinder, radius: 0.14, height: 0.054 } }
+          -
+            name: PIPE_Y_7
+            type: Transform
+            translation: [ 7.219, 4.884, 0.843 ]
+            elements: &PIPE_Y_7
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 2.854 } }
+          -
+            name: ATTACHMENT2
+            type: Transform
+            translation: [ 7.212, 3.43, 0.84 ]
+            elements: *ATTACHMENT1
+  -
+    name: PIPE1_Meter
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_1
+            type: Transform
+            translation: [ 7.2429, 5.6389, 0.8647 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &METER_PIPE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0135, height: 0.093 } }
+          -
+            name: METER_VALVE_1
+            type: Transform
+            translation: [ 7.243, 5.6558, 0.8819 ]
+            elements: &METER_VALVE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0051, height: 0.012 } }
+          -
+            name: METER_HANDLE_1
+            type: Transform
+            translation: [ 7.243, 5.664, 0.882 ]
+            elements: &METER_HANDLE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0155, height: 0.006 } }
+          -
+            name: METER_DISPLAY_1
+            type: Transform
+            translation: [ 7.2355, 5.6415, 0.9625 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &METER_DISPLAY_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0525, height: 0.029 } }
+  -
+    name: PIPE1-3
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_8
+            type: Transform
+            translation: [ 7.219, 3.4, 0.843 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_9
+            type: Transform
+            translation: [ 7.219, 3.36, 0.8495 ]
+            rotation: [ 1, 0, 0, -18 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_10
+            type: Transform
+            translation: [ 7.219, 3.32, 0.87 ]
+            rotation: [ 1, 0, 0, -35 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_11
+            type: Transform
+            translation: [ 7.219, 3.2925, 0.899 ]
+            rotation: [ 1, 0, 0, -56 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_12
+            type: Transform
+            translation: [ 7.219, 3.2725, 0.94 ]
+            rotation: [ 1, 0, 0, -72 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_13
+            type: Transform
+            translation: [ 7.219, 3.2655, 1.83 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 1.76 } }
+  -
+    name: PIPE1-4
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_14
+            type: Transform
+            translation: [ 7.219, 3.26, 2.715 ]
+            rotation: [ 1, 0, 0, 108 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_15
+            type: Transform
+            translation: [ 7.219, 3.24, 2.756 ]
+            rotation: [ 1, 0, 0, 124 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_16
+            type: Transform
+            translation: [ 7.219, 3.2125, 2.785 ]
+            rotation: [ 1, 0, 0, 145 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_17
+            type: Transform
+            translation: [ 7.219, 3.1745, 2.8045 ]
+            rotation: [ 1, 0, 0, 162 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_18
+            type: Transform
+            translation: [ 7.219, 2.393, 2.811 ]
+            elements: &PIPE_Y_18
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 1.546 } }
+          -
+            name: PIPE_Y_19
+            type: Transform
+            translation: [ 7.212, 1.611, 2.811 ]
+            rotation: [ 0, 0, 1, -18 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_20
+            type: Transform
+            translation: [ 7.192, 1.571, 2.811 ]
+            rotation: [ 0, 0, 1, -35 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_21
+            type: Transform
+            translation: [ 7.164, 1.543, 2.811 ]
+            rotation: [ 0, 0, 1, -56 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_22
+            type: Transform
+            translation: [ 7.123, 1.523, 2.811 ]
+            rotation: [ 0, 0, 1, -72 ]
+            elements: *PIPE_Y_2
+  -
+    name: PIPE1-5
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_23
+            type: Transform
+            translation: [ 4.532, 1.516, 2.811 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 5.168 } }
+  -
+    name: PIPE2-1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_24
+            type: Transform
+            translation: [ 7.549, 6.505, 0.3685 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *PIPE_Y_1
+          -
+            name: PIPE_Y_25
+            type: Transform
+            translation: [ 7.549, 6.4985, 0.746 ]
+            rotation: [ 1, 0, 0, 108 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_26
+            type: Transform
+            translation: [ 7.549, 6.4785, 0.787 ]
+            rotation: [ 1, 0, 0, 124 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_27
+            type: Transform
+            translation: [ 7.549, 6.451, 0.816 ]
+            rotation: [ 1, 0, 0, 145 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_28
+            type: Transform
+            translation: [ 7.549, 6.413, 0.8355 ]
+            rotation: [ 1, 0, 0, 162 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_29
+            type: Transform
+            translation: [ 7.549, 6.323, 0.843 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 0.162 } }
+  -
+    name: PIPE2-2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATTACHMENT3
+            type: Transform
+            translation: [ 7.557, 6.215, 0.849 ]
+            elements: *ATTACHMENT1
+          -
+            name: PIPE_Y_30
+            type: Transform
+            translation: [ 7.549, 4.808, 0.843 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 2.7608 } }
+          -
+            name: ATTACHMENT4
+            type: Transform
+            translation: [ 7.543, 3.43, 0.853 ]
+            elements: *ATTACHMENT1
+  -
+    name: PIPE2_Meter
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_2
+            type: Transform
+            translation: [ 7.5512, 4.8159, 0.9462 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *METER_PIPE_1
+          -
+            name: METER_VALVE_2
+            type: Transform
+            translation: [ 7.5513, 4.8313, 0.9634 ]
+            elements: *METER_VALVE_1
+          -
+            name: METER_HANDLE_2
+            type: Transform
+            translation: [ 7.5513, 4.8395, 0.9635 ]
+            elements: *METER_HANDLE_1
+          -
+            name: METER_DISPLAY_2
+            type: Transform
+            translation: [ 7.5438, 4.817, 1.044 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *METER_DISPLAY_1
+  -
+    name: PIPE2-3
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_31
+            type: Transform
+            translation: [ 7.549, 3.4, 0.843 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_32
+            type: Transform
+            translation: [ 7.549, 3.36, 0.8495 ]
+            rotation: [ 1, 0, 0, -18 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_33
+            type: Transform
+            translation: [ 7.549, 3.32, 0.87 ]
+            rotation: [ 1, 0, 0, -35 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_34
+            type: Transform
+            translation: [ 7.549, 3.2925, 0.899 ]
+            rotation: [ 1, 0, 0, -56 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_35
+            type: Transform
+            translation: [ 7.549, 3.2725, 0.94 ]
+            rotation: [ 1, 0, 0, -72 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_36
+            type: Transform
+            translation: [ 7.549, 3.2655, 1.9135 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 1.931 } }
+  -
+    name: PIPE2-4
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_37
+            type: Transform
+            translation: [ 7.549, 3.26, 2.882 ]
+            rotation: [ 1, 0, 0, 108 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_38
+            type: Transform
+            translation: [ 7.549, 3.24, 2.923 ]
+            rotation: [ 1, 0, 0, 124 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_39
+            type: Transform
+            translation: [ 7.549, 3.2125, 2.952 ]
+            rotation: [ 1, 0, 0, 145 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_40
+            type: Transform
+            translation: [ 7.549, 3.1745, 2.9715 ]
+            rotation: [ 1, 0, 0, 162 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_41
+            type: Transform
+            translation: [ 7.549, 2.393, 2.978 ]
+            elements: *PIPE_Y_18
+          -
+            name: PIPE_Y_42
+            type: Transform
+            translation: [ 7.542, 1.611, 2.978 ]
+            rotation: [ 0, 0, 1, -18 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_43
+            type: Transform
+            translation: [ 7.522, 1.571, 2.978 ]
+            rotation: [ 0, 0, 1, -35 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_44
+            type: Transform
+            translation: [ 7.494, 1.543, 2.978 ]
+            rotation: [ 0, 0, 1, -56 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_45
+            type: Transform
+            translation: [ 7.453, 1.523, 2.978 ]
+            rotation: [ 0, 0, 1, -72 ]
+            elements: *PIPE_Y_2
+  -
+    name: PIPE2-5
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_46
+            type: Transform
+            translation: [ 4.697, 1.516, 2.978 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 5.498 } }
+  -
+    name: PIPE3-1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_47
+            type: Transform
+            translation: [ 7.8115, 6.4945, 0.388 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *PIPE_Y_1
+          -
+            name: PIPE_Y_48
+            type: Transform
+            translation: [ 7.8115, 6.488, 0.7655 ]
+            rotation: [ 1, 0, 0, 108 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_49
+            type: Transform
+            translation: [ 7.8115, 6.468, 0.8065 ]
+            rotation: [ 1, 0, 0, 124 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_50
+            type: Transform
+            translation: [ 7.8115, 6.4405, 0.8355 ]
+            rotation: [ 1, 0, 0, 145 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_51
+            type: Transform
+            translation: [ 7.8115, 6.4025, 0.855 ]
+            rotation: [ 1, 0, 0, 162 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_52
+            type: Transform
+            translation: [ 7.8115, 6.357, 0.8625 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 0.073 } }
+  -
+    name: PIPE3-2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATTACHMENT5
+            type: Transform
+            translation: [ 7.808, 6.2915, 0.871 ]
+            elements: *ATTACHMENT1
+          -
+            name: PIPE_Y_53
+            type: Transform
+            translation: [ 7.8115, 4.852, 0.8625 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 2.8278 } }
+          -
+            name: ATTACHMENT6
+            type: Transform
+            translation: [ 7.8105, 3.4405, 0.848 ]
+            elements: *ATTACHMENT1
+  -
+    name: PIPE3_Meter1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_3
+            type: Transform
+            translation: [ 7.8127, 4.2599, 0.9556 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *METER_PIPE_1
+          -
+            name: METER_VALVE_3
+            type: Transform
+            translation: [ 7.8128, 4.2753, 0.973 ]
+            elements: *METER_VALVE_1
+          -
+            name: METER_HANDLE_3
+            type: Transform
+            translation: [ 7.8128, 4.2835, 0.9729 ]
+            elements: *METER_HANDLE_1
+          -
+            name: METER_DISPLAY_3
+            type: Transform
+            translation: [ 7.8056, 4.261, 1.0534 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *METER_DISPLAY_1
+  -
+    name: PIPE3-3
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_54
+            type: Transform
+            translation: [ 7.8115, 3.3895, 0.8625 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_55
+            type: Transform
+            translation: [ 7.8115, 3.3495, 0.869 ]
+            rotation: [ 1, 0, 0, -18 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_56
+            type: Transform
+            translation: [ 7.8115, 3.3095, 0.8895 ]
+            rotation: [ 1, 0, 0, -35 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_57
+            type: Transform
+            translation: [ 7.8115, 3.282, 0.9185 ]
+            rotation: [ 1, 0, 0, -56 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_58
+            type: Transform
+            translation: [ 7.8115, 3.262, 0.9595 ]
+            rotation: [ 1, 0, 0, -72 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_59
+            type: Transform
+            translation: [ 7.8115, 3.255, 2.021 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 2.097 } }
+  -
+    name: PIPE3-4
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_60
+            type: Transform
+            translation: [ 7.8115, 3.2495, 3.0675 ]
+            rotation: [ 1, 0, 0, 108 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_61
+            type: Transform
+            translation: [ 7.8115, 3.2295, 3.1085 ]
+            rotation: [ 1, 0, 0, 124 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_62
+            type: Transform
+            translation: [ 7.8115, 3.202, 3.1375 ]
+            rotation: [ 1, 0, 0, 145 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_63
+            type: Transform
+            translation: [ 7.8115, 3.164, 3.157 ]
+            rotation: [ 1, 0, 0, 162 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_64
+            type: Transform
+            translation: [ 7.8115, 2.3825, 3.1635 ]
+            elements: *PIPE_Y_18
+          -
+            name: PIPE_Y_65
+            type: Transform
+            translation: [ 7.8045, 1.6005, 3.1635 ]
+            rotation: [ 0, 0, 1, -18 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_66
+            type: Transform
+            translation: [ 7.7845, 1.5605, 3.1635 ]
+            rotation: [ 0, 0, 1, -35 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_67
+            type: Transform
+            translation: [ 7.7565, 1.5325, 3.1635 ]
+            rotation: [ 0, 0, 1, -56 ]
+            elements: *PIPE_Y_2
+          -
+            name: PIPE_Y_68
+            type: Transform
+            translation: [ 7.7155, 1.5125, 3.1635 ]
+            rotation: [ 0, 0, 1, -72 ]
+            elements: *PIPE_Y_2
+  -
+    name: PIPE3-5
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_Y_69
+            type: Transform
+            translation: [ 4.827, 1.5055, 3.1635 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.075, height: 5.758 } }
+  -
+    name: PIPE3_Meter2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_4
+            type: Transform
+            translation: [ 5.496, 1.5003, 3.2692 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *METER_PIPE_1
+          -
+            name: METER_VALVE_4
+            type: Transform
+            translation: [ 5.5128, 1.5002, 3.2864 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *METER_VALVE_1
+          -
+            name: METER_HANDLE_4
+            type: Transform
+            translation: [ 5.5219, 1.5003, 3.2864 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *METER_HANDLE_1
+          -
+            name: METER_DISPLAY_4
+            type: Transform
+            translation: [ 5.4989, 1.5075, 3.367 ]
+            elements: *METER_DISPLAY_1

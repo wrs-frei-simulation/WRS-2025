@@ -1,0 +1,64 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Ramp.body # WRS_P_1F_cp_ramp
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    translation: [ 0, 0, -0.015 ]
+    mass: 20.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      -
+        type: Visual
+        elements:
+          Resource: { uri: "resource/Ramp.dae" }
+      -
+        type: Collision
+        elements:
+          -
+            type: Transform
+            translation: [ 1.07207, 7.846, 0.1815 ]
+            elements:
+              Shape: { geometry: { type: Box, size: [ 0.9, 0.2, 0.005] } }
+          -
+            type: Transform
+            translation: [ 1.07207, 7.428, 0.0965 ]
+            rotation: [ 1, 0, 0, 15 ]
+            elements:
+              Shape: { geometry: { type: Box, size: [ 0.9, 0.66, 0.005] } }
+          -
+            type: Transform
+            translation: [ 1.07207, 8.26, 0.0965 ]
+            rotation: [ 1, 0, 0, -15 ]
+            elements:
+              Shape: { geometry: { type: Box, size: [ 0.9, 0.66, 0.005] } }
+          -
+            name: TRIANGLE_POLE1
+            type: Transform
+            translation: [ 1.07207, 15.692, 0.0 ]
+            rotation: [ 0, 0, 1, -90 ]
+            elements: &TRIANGLE_POLE1
+              Shape:
+                geometry:
+                  type: Extrusion
+                  crossSection: [
+                    7.746, 0.014,
+                    7.746, 0.180,
+                    7.112, 0.014,
+                    7.746, 0.014,
+                    7.746, 0.180
+                    ]
+                  spine: [ 0.0, -0.45, 0.0, 0.0, 0.45, 0.0 ]
+          -
+            name: TRIANGLE_POLE2
+            type: Transform
+            translation: [ 1.07207, 0.0, 0.0 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *TRIANGLE_POLE1

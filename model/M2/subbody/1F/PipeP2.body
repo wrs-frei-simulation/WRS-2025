@@ -1,0 +1,413 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: PipeP2 # WRS_P_1F_pipe_p_2
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    translation: [ 0.41, 1.7, -0.16 ]
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      Visual:
+        resource: { uri: "resource/PipeP2.dae" }
+  -
+    name: PIPE1-1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_1
+            type: Transform
+            translation: [ 8.48255, 7.1487, 1.4215 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &PIPE_P_1
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 2.943 } }
+  -
+    name: PIPE1-2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_2
+            type: Transform
+            translation: [ 8.4839, 7.1487, 2.897 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -11 ] ]
+            elements: &PIPE_P_2
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 0.022 } }
+          -
+            name: PIPE_P_3
+            type: Transform
+            translation: [ 8.4883, 7.1487, 2.909 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -30 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_4
+            type: Transform
+            translation: [ 8.4975, 7.1487, 2.9205 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -47 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_5
+            type: Transform
+            translation: [ 8.509, 7.1487, 2.9285 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -64 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_6
+            type: Transform
+            translation: [ 8.522, 7.1487, 2.9325 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -81 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_7
+            type: Transform
+            translation: [ 8.632, 7.1487, 2.934 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &PIPE_P_7
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 0.206 } }
+          -
+            name: PIPE_P_8
+            type: Transform
+            translation: [ 8.7378, 7.1466, 2.934 ]
+            rotation: [ 0, 0, 1, 72 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_9
+            type: Transform
+            translation: [ 8.751, 7.1405, 2.934 ]
+            rotation: [ 0, 0, 1, 57 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_10
+            type: Transform
+            translation: [ 8.761, 7.1315, 2.934 ]
+            rotation: [ 0, 0, 1, 41 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_11
+            type: Transform
+            translation: [ 8.7685, 7.1198, 2.934 ]
+            rotation: [ 0, 0, 1, 24 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_12
+            type: Transform
+            translation: [ 8.772, 7.1068, 2.934 ]
+            rotation: [ 0, 0, 1, 5 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_13
+            type: Transform
+            translation: [ 8.773, 3.5815, 2.934 ]
+            elements: &PIPE_P_13
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 7.0337 } }
+          -
+            name: PIPE_P_14
+            type: Transform
+            translation: [ 8.7713, 0.06, 2.934 ]
+            rotation: [ 0, 0, 1, -12 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_15
+            type: Transform
+            translation: [ 8.7665, 0.048, 2.934 ]
+            rotation: [ 0, 0, 1, -30 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_16
+            type: Transform
+            translation: [ 8.7585, 0.038, 2.934 ]
+            rotation: [ 0, 0, 1, -47 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_17
+            type: Transform
+            translation: [ 8.7485, 0.0315, 2.934 ]
+            rotation: [ 0, 0, 1, -65 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_18
+            type: Transform
+            translation: [ 8.735, 0.0275, 2.934 ]
+            rotation: [ 0, 0, 1, -83 ]
+            elements: *PIPE_P_2
+  -
+    name: PIPE1-3
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_19
+            type: Transform
+            translation: [ 6.054, 0.0265, 2.934 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &PIPE_P_19
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 5.356 } }
+  -
+    name: PIPE1-4
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_20
+            type: Transform
+            translation: [ 3.371, 0.0265, 2.9325 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -81 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_21
+            type: Transform
+            translation: [ 3.358, 0.0265, 2.9285 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -64 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_22
+            type: Transform
+            translation: [ 3.3465, 0.0265, 2.9205 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -47 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_23
+            type: Transform
+            translation: [ 3.3373, 0.0265, 2.909 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -30 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_24
+            type: Transform
+            translation: [ 3.3329, 0.0265, 2.897 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -11 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_25
+            type: Transform
+            translation: [ 3.33145, 0.0265, 2.3425 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &PIPE_P_25
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 1.11 } }
+  -
+    name: PIPE2-1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_26
+            type: Transform
+            translation: [ 8.48495, 7.0428, 1.4715 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *PIPE_P_1
+  -
+    name: PIPE2-2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_27
+            type: Transform
+            translation: [ 8.4863, 7.0428, 2.947 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -11 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_28
+            type: Transform
+            translation: [ 8.4907, 7.0428, 2.959 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -30 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_29
+            type: Transform
+            translation: [ 8.4999, 7.0428, 2.9705 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -47 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_30
+            type: Transform
+            translation: [ 8.5114, 7.0428, 2.9785 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -64 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_31
+            type: Transform
+            translation: [ 8.5244, 7.0428, 2.9825 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -81 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_32
+            type: Transform
+            translation: [ 8.6344, 7.0428, 2.984 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *PIPE_P_7
+          -
+            name: PIPE_P_33
+            type: Transform
+            translation: [ 8.7402, 7.0407, 2.984 ]
+            rotation: [ 0, 0, 1, 72 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_34
+            type: Transform
+            translation: [ 8.7534, 7.0346, 2.984 ]
+            rotation: [ 0, 0, 1, 57 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_35
+            type: Transform
+            translation: [ 8.7634, 7.0256, 2.984 ]
+            rotation: [ 0, 0, 1, 41 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_36
+            type: Transform
+            translation: [ 8.7709, 7.0139, 2.984 ]
+            rotation: [ 0, 0, 1, 24 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_37
+            type: Transform
+            translation: [ 8.7744, 7.0009, 2.984 ]
+            rotation: [ 0, 0, 1, 5 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_38
+            type: Transform
+            translation: [ 8.7754, 3.5275, 2.984 ]
+            elements: &PIPE_P_38
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 6.93 } }
+          -
+            name: PIPE_P_39
+            type: Transform
+            translation: [ 8.7737, 0.06, 2.984 ]
+            rotation: [ 0, 0, 1, -12 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_40
+            type: Transform
+            translation: [ 8.7689, 0.048, 2.984 ]
+            rotation: [ 0, 0, 1, -30 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_41
+            type: Transform
+            translation: [ 8.7609, 0.038, 2.984 ]
+            rotation: [ 0, 0, 1, -47 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_42
+            type: Transform
+            translation: [ 8.7509, 0.0315, 2.984 ]
+            rotation: [ 0, 0, 1, -65 ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_43
+            type: Transform
+            translation: [ 8.7374, 0.0275, 2.984 ]
+            rotation: [ 0, 0, 1, -83 ]
+            elements: *PIPE_P_2
+  -
+    name: PIPE2-3
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_44
+            type: Transform
+            translation: [ 5.264, 0.0265, 2.984 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &PIPE_P_44
+              Shape: { geometry: { type: Cylinder, radius: 0.025, height: 6.945 } }
+  -
+    name: PIPE2-4
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_P_45
+            type: Transform
+            translation: [ 1.785, 0.0265, 2.9825 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -81 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_46
+            type: Transform
+            translation: [ 1.772, 0.0265, 2.9785 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -64 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_47
+            type: Transform
+            translation: [ 1.7605, 0.0265, 2.9705 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -47 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_48
+            type: Transform
+            translation: [ 1.7513, 0.0265, 2.959 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -30 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_49
+            type: Transform
+            translation: [ 1.7469, 0.0265, 2.947 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 0, 1, -11 ] ]
+            elements: *PIPE_P_2
+          -
+            name: PIPE_P_50
+            type: Transform
+            translation: [ 1.74545, 0.0265, 2.3925 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *PIPE_P_25
+  -
+    name: PIPE2_METER
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_DISPLAY
+            type: Transform
+            translation: [ 8.772, 1.0315, 3.129 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0525, height: 0.03 } }
+          -
+            name: METER_PIPE
+            type: Transform
+            translation: [ 8.7795, 1.0295, 3.031 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0135, height: 0.094 } }
+          -
+            name: METER_VALVE
+            type: Transform
+            translation: [ 8.7794, 1.046, 3.048 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.005, height: 0.012 } }
+          -
+            name: METER_HANDLE
+            type: Transform
+            translation: [ 8.7795, 1.0551, 3.048 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0155, height: 0.0055 } }

@@ -1,0 +1,44 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: M2-A3
+
+links:
+  -
+    name: Root
+    translation: [ 0, 0, 0 ]
+    joint_type: fixed
+    elements:
+      -
+        type: SmokeDevice
+        name: Smoke1
+        translation: [ 6.0, 7.0, 1.8 ]
+      -
+        type: SmokeDevice
+        name: Smoke2
+        translation: [ 6.0, 9.5, 1.0 ]
+        tint_color: [ 0, 0, 0 ]
+#      -
+#        type: FireDevice
+#        name: Fire1
+#        translation: [ 6.0, 7.0, 1.8 ]
+#      -
+#        type: FireDevice
+#        name: Fire2
+#        translation: [ 6.0, 9.5, 1.0 ]
+  -
+    type: SubBody
+    uri: "subbody/floor.body"
+    parent: Root
+    prefix: SB1_
+    translation: [ 7.0, 7.0, -0.1 ]
+    rotation: [ 0, 0, 1, 180 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "subbody/path.body"
+    parent: Root
+    prefix: SB2_
+    translation: [ 0, 7.0, 0 ]
+    rotation: [ 1, 0, 0, 5 ]
+    joint_type: fixed

@@ -1,0 +1,27 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: SteelPlae # WRS_P_1F_cp
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 10.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      -
+        type: Visual
+        elements:
+          Resource: { uri: "resource/SteelPlate.dae" }
+      -
+        type: Collision
+        elements:
+          Shape:
+            translation: [ 4.342, 9.091, 0.01 ]
+            geometry: { type: Box, size: [0.9, 0.9, 0.02 ] }

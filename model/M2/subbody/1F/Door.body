@@ -1,0 +1,327 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Door
+
+OFFSET: &OFFSET [ 0, 0, -2.5 ]
+
+SILVER: &SILVER
+  material:
+    diffuseColor: [ 0.96, 0.96, 0.96 ]
+    specularColor: [ 0.96, 0.96, 0.96 ]
+    shininess: 0.12
+    
+BLACK: &BLACK
+  material:
+    diffuseColor: [ 0.34, 0.34, 0.34 ]
+    specularColor: [ 0.34, 0.34, 0.34 ]
+    shininess: 0.12
+    
+HANDRAIL_1: &HANDRAIL_1
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 5.45 }
+    appearance: *SILVER
+    
+HANDRAIL_2: &HANDRAIL_2
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 0.9 }
+    appearance: *SILVER
+    
+HANDRAIL_22: &HANDRAIL_22
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 4.027 }
+    appearance: *SILVER
+    
+HANDRAIL_58: &HANDRAIL_58
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 3.854 }
+    appearance: *SILVER
+
+HANDRAIL_73: &HANDRAIL_73
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 6.65 }
+    appearance: *SILVER
+
+HANDRAIL_99: &HANDRAIL_99
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 4.658 }
+    appearance: *SILVER
+    
+HANDRAIL_419: &HANDRAIL_419
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 3.658 }
+    appearance: *SILVER
+    
+HANDRAIL_553: &HANDRAIL_553
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 6.683 }
+    appearance: *SILVER
+    
+HANDRAIL_577: &HANDRAIL_577
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 9.31 }
+    appearance: *SILVER
+    
+HANDRAIL_616: &HANDRAIL_616
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 7.65 }
+    appearance: *SILVER
+    
+HANDRAIL_647: &HANDRAIL_647
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 8.33 }
+    appearance: *SILVER
+    
+HANDRAIL_682: &HANDRAIL_682
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 0.786 }
+    appearance: *SILVER
+    
+HANDRAIL_687: &HANDRAIL_687
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 0.056 }
+    appearance: *SILVER
+    
+HANDRAIL_688: &HANDRAIL_688
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 3.612 }
+    appearance: *SILVER
+    
+HANDRAIL_689: &HANDRAIL_689
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 0.794 }
+    appearance: *SILVER
+    
+HANDRAIL_695: &HANDRAIL_695
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 0.809 }
+    appearance: *SILVER
+
+DOOR_FRAME_1: &DOOR_FRAME_1
+  Shape:
+    geometry: { type: Box, size: [ 0.045, 0.96, 0.045 ] }
+    appearance: *BLACK
+    
+DOOR_FRAME_3: &DOOR_FRAME_3
+  Shape:
+    geometry: { type: Box, size: [ 0.045, 0.045, 1.8 ] }
+    appearance: *BLACK
+    
+DOOR_1: &DOOR_1
+  Shape:
+    geometry: { type: Box, size: [ 0.03, 0.87, 1.8 ] }
+    appearance: *BLACK
+
+DOOR_KNOB_1: &DOOR_KNOB_1
+  Shape:
+    geometry: { type: Cylinder, radius: 0.025, height: 0.005 }
+    appearance: *SILVER
+
+DOOR_KNOB_2: &DOOR_KNOB_2
+  Shape:
+    geometry: { type: Cylinder, radius: 0.01, height: 0.0505 }
+    appearance: *SILVER
+
+DOOR_KNOB_3: &DOOR_KNOB_3
+  Shape:
+    geometry: { type: Box, size: [ 0.015, 0.1, 0.03 ] }
+    appearance: *SILVER
+
+links:
+  -
+    name: BASE
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 200.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  -
+    name: HANDRAIL_23
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_419
+        type: Transform
+        translation: [ 10.3523, 3.1714, 3.4025 ]
+        elements:
+          Shape:
+            geometry: { type: Cylinder, radius: 0.017, height: 3.658 }
+      -
+        name: HANDRAIL_420
+        type: Transform
+        translation: [ 10.3523, 1.355, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_421
+        type: Transform
+        translation: [ 10.3523, 1.6175, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_422
+        type: Transform
+        translation: [ 10.3523, 1.8801, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_423
+        type: Transform
+        translation: [ 10.3523, 2.1426, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_424
+        type: Transform
+        translation: [ 10.3523, 2.4051, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_425
+        type: Transform
+        translation: [ 10.3523, 2.6677, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_426
+        type: Transform
+        translation: [ 10.3523, 2.9302, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_427
+        type: Transform
+        translation: [ 10.3523, 3.1927, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_428
+        type: Transform
+        translation: [ 10.3523, 3.4553, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_429
+        type: Transform
+        translation: [ 10.3523, 3.7178, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_430
+        type: Transform
+        translation: [ 10.3523, 3.9803, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_431
+        type: Transform
+        translation: [ 10.3523, 4.2429, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_432
+        type: Transform
+        translation: [ 10.3523, 4.5054, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_433
+        type: Transform
+        translation: [ 10.3523, 4.768, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: DOOR_FRAME
+    parent: BASE
+    translation: [ 0.018, 0, -2.495 ]
+    jointType: fixed
+    mass: 10.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      -
+        name: DOOR_FRAME_1
+        type: Transform
+        translation: [ 10.3342, 0.8586, 2.5249 ]
+        elements: *DOOR_FRAME_1
+      -
+        name: DOOR_FRAME_2
+        type: Transform
+        translation: [ 10.3342, 0.8586, 4.3699 ]
+        elements: *DOOR_FRAME_1
+      -
+        name: DOOR_FRAME_3
+        type: Transform
+        translation: [ 10.3342, 1.3161, 3.4474 ]
+        elements: *DOOR_FRAME_3
+      -
+        name: DOOR_FRAME_4
+        type: Transform
+        translation: [ 10.3342, 0.4011, 3.4474 ]
+        elements: *DOOR_FRAME_3
+  -
+    name: DOOR
+    parent: DOOR_FRAME
+    translation: [ 10.33, 0.425, 0.0 ]
+    jointType: revolute
+    jointAxis: Z
+    jointId: 0
+    jointRange: [ -100, 0 ]
+    mass: 10.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    jointMotor: true
+    jointMotorCompliance: 0.9
+    elements:
+      Transform:
+        translation: [ -10.33, -0.425, 0.0 ]
+        elements:
+          -
+            name: DOOR_1
+            type: Transform
+            translation: [ 10.3267, 0.8585, 3.4474 ]
+            elements: *DOOR_1
+          -
+            name: DOOR_KNOB_1
+            type: Transform
+            translation: [ 10.3092, 1.2235, 3.4474 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *DOOR_KNOB_1
+          -
+            name: DOOR_KNOB_2
+            type: Transform
+            translation: [ 10.2817, 1.22355, 3.4475 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *DOOR_KNOB_2
+          -
+            name: DOOR_KNOB_3
+            type: Transform
+            translation: [ 10.2492, 1.1886, 3.4475 ]
+            elements: *DOOR_KNOB_3
+          -
+            name: DOOR_KNOB_4
+            type: Transform
+            translation: [ 10.3442, 1.2235, 3.4474 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *DOOR_KNOB_1
+          -
+            name: DOOR_KNOB_5
+            type: Transform
+            translation: [ 10.3722, 1.22355, 3.4475 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *DOOR_KNOB_2
+          -
+            name: DOOR_KNOB_6
+            type: Transform
+            translation: [ 10.4042, 1.1886, 3.4475 ]
+            elements: *DOOR_KNOB_3

@@ -17,30 +17,6 @@ links:
         appearance: { material: { diffuse: [ 0.5, 0.3, 0 ] } }
       - { <<: *floor, translation: [ 0, -2.6, 1.6 ], geometry: { type: Box, size: [ 20.0, 0.2, 3.0 ] }, appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } } }
       - { <<: *floor, translation: [ 0,  2.6, 1.6 ], geometry: { type: Box, size: [ 20.0, 0.2, 3.0 ] }, appearance: { material: { diffuse: [ 0.5, 0.5, 0 ] } } }
-      - &light
-        type: SpotLight
-        name: Light1
-        translation: [ -5.0, 0.0, 2.9 ]
-        beamWidth: 90
-        cutOffAngle: 120
-        cutOffExponent: 6
-        attenuation: [ 1, 0, 0.01 ]
-        on: false
-        elements:
-          -
-            type: Shape
-            rotation: [ 1, 0, 0, 90 ]
-            geometry: { type: Cone, height: 0.1, radius: 0.05 }
-            appearance: { material: { diffuse: [ 1.0, 1.0, 0.4 ] } }
-      - { <<: *light, name: Light2, translation: [ 0.0, 0.0, 2.9 ] }
-      - { <<: *light, name: Light3, translation: [ 5.0, 0.0, 2.9 ] }
-  -
-    type: SubBody
-    uri: "misc/power_panel.body"
-    parent: Floor
-    translation: [ -7.5, -2.45, 1.5 ]
-    rotation: [ 0, 0, 1, 90 ]
-    joint_type: fixed
   - &line
     type: SubBody
     uri: "pipe_line.body"

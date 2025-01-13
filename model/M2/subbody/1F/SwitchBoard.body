@@ -1,0 +1,28 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: SwitchBoard # WRS_P_1F_switchboard
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      -
+        type: Visual
+        elements:
+          Resource: { uri: "resource/SwitchBoard.dae" }
+      -
+        type: Collision
+        elements:
+          -
+            name: BOX
+            type: Transform
+            translation: [ 10.152, 5.475, 0.911 ]
+            elements:
+              Shape: { geometry: { type: Box, size: [ 0.3, 1.0, 1.778 ] } }

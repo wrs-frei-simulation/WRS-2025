@@ -1,0 +1,75 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: TankPlatformStairs # WRS_P_1F_cw_stears_1
+
+links:
+  -
+    name: STAIRS
+    translation: [0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 10.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      -
+        type: Visual
+        elements:
+          Resource:
+            translation: [ -4.06, -4.7455, 0 ]
+            uri: "resource/TankPlatformStairs.dae"
+      -
+        type: Collision
+        elements:
+          Transform:
+            translation: [ -4.06, -4.7455, 0 ]
+            elements:
+              -
+                name: TRAPEZIUM_LEFT
+                type: Transform
+                translation: [ 3.387, 5.106, 0.531 ]
+                rotation: [ 0, 1, 0, -38.65 ]
+                elements: &BOX_LEFT
+                  Shape: { geometry: { type: Box, size: [ 1.85, 0.02, 0.162 ] } }
+              -
+                name: TRAPEZIUM_RIGHT
+                type: Transform
+                translation: [ 3.387, 4.385, 0.531 ]
+                rotation: [ 0, 1, 0, -38.65 ]
+                elements: *BOX_LEFT
+              -
+                name: BOX1
+                type: Transform
+                translation: [ 2.74, 4.7455, 0.0125 ]
+                elements: &BOX1
+                  Shape: { geometry: { type: Box, size: [ 0.24, 0.741 ,0.015 ] } }
+              -
+                name: BOX2
+                type: Transform
+                translation: [ 2.98, 4.7455, 0.2045 ]
+                elements: *BOX1
+              -
+                name: BOX3
+                type: Transform
+                translation: [ 3.22, 4.7455, 0.3965 ]
+                elements: *BOX1
+              -
+                name: BOX4
+                type: Transform
+                translation: [ 3.46, 4.7455, 0.5885 ]
+                elements: *BOX1
+              -
+                name: BOX5
+                type: Transform
+                translation: [ 3.7, 4.7455, 0.7805 ]
+                elements: *BOX1
+              -
+                name: BOX6
+                type: Transform
+                translation: [ 3.94, 4.7455, 0.9725 ]
+                elements: *BOX1
+

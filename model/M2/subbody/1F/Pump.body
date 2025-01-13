@@ -1,0 +1,1576 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Pump # WRS_P_1F_ponou3
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      Visual:
+        elements:
+          Resource: { uri: "resource/Pump.dae" }
+      Collision:
+        elements:
+          Transform:
+            name: BASE
+            translation: [ 2.0715, 10.219, 0.1051 ]
+            elements:
+              Shape: { geometry: { type: Box, size: [ 2.743, 1.298, 0.2 ] } }
+  -
+    name: PUMP1_BASE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: TURBINE_BASE_1
+            type: Transform
+            translation: [ 1.1555, 10.2245, 0.26 ]
+            elements: &TURBINE_BASE_1
+              Shape: { geometry: { type: Box, size: [ 0.391, 1.287, 0.11 ] } }
+          -
+            name: TURBINE_BASE_2
+            type: Transform
+            translation: [ 0.9545, 10.2245, 0.2425 ]
+            rotation: [ 0, 1, 0, 31 ]
+            elements: &TURBINE_BASE_2
+              Shape: { geometry: { type: Box, size: [ 0.065, 1.287, 0.13 ] } }
+          -
+            name: TURBINE_BASE_3
+            type: Transform
+            translation: [ 1.357, 10.2245, 0.2425 ]
+            rotation: [ 0, 1, 0, -31 ]
+            elements: *TURBINE_BASE_2
+          -
+            name: TURBINE_BASE_4
+            type: Transform
+            translation: [ 1.1555, 9.877, 0.3205 ]
+            elements: &TURBINE_BASE_4
+              Shape: { geometry: { type: Box, size: [ 0.391, 0.592, 0.011 ] } }
+  -
+    name: PUMP2_BASE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: TURBINE_BASE_5
+            type: Transform
+            translation: [ 2.0725, 10.2245, 0.26 ]
+            elements: *TURBINE_BASE_1
+          -
+            name: TURBINE_BASE_6
+            type: Transform
+            translation: [ 1.8715, 10.2245, 0.2425 ]
+            rotation: [ 0, 1, 0, 31 ]
+            elements: *TURBINE_BASE_2
+          -
+            name: TURBINE_BASE_7
+            type: Transform
+            translation: [ 2.274, 10.2245, 0.2425 ]
+            rotation: [ 0, 1, 0, -31 ]
+            elements: *TURBINE_BASE_2
+          -
+            name: TURBINE_BASE_8
+            type: Transform
+            translation: [ 2.0725, 9.877, 0.3205 ]
+            elements: *TURBINE_BASE_4
+  -
+    name: PUMP3_BASE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: TURBINE_BASE_9
+            type: Transform
+            translation: [ 2.9875, 10.214, 0.26 ]
+            elements: *TURBINE_BASE_1
+          -
+            name: TURBINE_BASE_10
+            type: Transform
+            translation: [ 2.7865, 10.214, 0.2425 ]
+            rotation: [ 0, 1, 0, 31 ]
+            elements: *TURBINE_BASE_2
+          -
+            name: TURBINE_BASE_11
+            type: Transform
+            translation: [ 3.189, 10.214, 0.2425 ]
+            rotation: [ 0, 1, 0, -31 ]
+            elements: *TURBINE_BASE_2
+          -
+            name: TURBINE_BASE_12
+            type: Transform
+            translation: [ 2.9875, 9.8665, 0.3205 ]
+            elements: *TURBINE_BASE_4
+  -
+    name: PUMP1
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: TURBINE_1
+            type: Transform
+            translation: [ 1.155, 9.6705, 0.539 ]
+            elements: &TURBINE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.168, height: 0.113 } }
+          -
+            name: TURBINE_2
+            type: Transform
+            translation: [ 1.156, 9.8515, 0.539 ]
+            elements: &TURBINE_2
+              Shape: { geometry: { type: Cylinder, radius: 0.183, height: 0.249 } }
+          -
+            name: TURBINE_3
+            type: Transform
+            translation: [ 1.155, 10.0325, 0.539 ]
+            elements: *TURBINE_1
+          -
+            name: TURBINE_4
+            type: Transform
+            translation: [ 0.9305, 9.8615, 0.5365 ]
+            elements: &TURBINE_4
+              Shape: { geometry: { type: Box, size: [ 0.105, 0.141, 0.141 ] } }
+          -
+            name: TURBINE_5
+            type: Transform
+            translation: [ 1.0615, 9.861, 0.3622 ]
+            rotation: [ 0, 1, 0, -34.2 ]
+            elements: &TURBINE_5
+              Shape: { geometry: { type: Box, size: [ 0.093, 0.2682, 0.023 ] } }
+          -
+            name: TURBINE_6
+            type: Transform
+            translation: [ 0.9945, 9.861, 0.3357 ]
+            elements: &TURBINE_6
+              Shape: { geometry: { type: Box, size: [ 0.07, 0.2682, 0.0195 ] } }
+          -
+            name: TURBINE_7
+            type: Transform
+            translation: [ 1.2495, 9.861, 0.3608 ]
+            rotation: [ 0, 1, 0, 32.5 ]
+            elements: *TURBINE_5
+          -
+            name: TURBINE_8
+            type: Transform
+            translation: [ 1.3165, 9.861, 0.3357 ]
+            elements: *TURBINE_6
+          -
+            name: TURBINE_9
+            type: Transform
+            translation: [ 1.1552, 10.102, 0.539 ]
+            elements: &TURBINE_9
+              Shape: { geometry: { type: Cylinder, radius: 0.0235, height: 0.026 } }
+          -
+            name: TURBINE_10
+            type: Transform
+            translation: [ 1.1555, 10.1275, 0.539 ]
+            elements: &TURBINE_10
+              Shape: { geometry: { type: Cylinder, radius: 0.0285, height: 0.025 } }
+          -
+            name: TURBINE_11
+            type: Transform
+            translation: [ 1.1552, 10.16, 0.539 ]
+            elements: &TURBINE_11
+              Shape: { geometry: { type: Cylinder, radius: 0.051, height: 0.04 } }
+          -
+            name: TURBINE_12
+            type: Transform
+            translation: [ 1.1555, 10.1925, 0.539 ]
+            elements: *TURBINE_10
+          -
+            name: TURBINE_13
+            type: Transform
+            translation: [ 1.1546, 10.2135, 0.5385 ]
+            elements: &TURBINE_13
+              Shape: { geometry: { type: Cylinder, radius: 0.018, height: 0.017 } }
+          -
+            name: TURBINE_14
+            type: Transform
+            translation: [ 1.1552, 10.2261, 0.539 ]
+            elements: &TURBINE_14
+              Shape: { geometry: { type: Cylinder, radius: 0.03, height: 0.0082 } }
+          -
+            name: TURBINE_15
+            type: Transform
+            translation: [ 1.155, 10.236, 0.539 ]
+            elements: &TURBINE_15
+              Shape: { geometry: { type: Cylinder, radius: 0.062, height: 0.012 } }
+          -
+            name: TURBINE_16
+            type: Transform
+            translation: [ 1.155, 10.251, 0.539 ]
+            elements: &TURBINE_16
+              Shape: { geometry: { type: Cylinder, radius: 0.092, height: 0.018 } }
+          -
+            name: TURBINE_17
+            type: Transform
+            translation: [ 1.155, 10.428, 0.539 ]
+            elements: &TURBINE_17
+              Shape: { geometry: { type: Cylinder, radius: 0.09, height: 0.336 } }
+          -
+            name: TURBINE_18
+            type: Transform
+            translation: [ 1.155, 10.579, 0.6705 ]
+            rotation: [ 1, 0, 0, 7.4 ]
+            elements: &TURBINE_18
+              Shape: { geometry: { type: Box, size: [ 0.06, 0.048, 0.097 ] } }
+          -
+            name: TURBINE_19
+            type: Transform
+            translation: [ 1.155, 10.546, 0.6617 ]
+            rotation: [ 1, 0, 0, 22.5 ]
+            elements: *TURBINE_18
+          -
+            name: TURBINE_20
+            type: Transform
+            translation: [ 1.155, 10.498, 0.643 ]
+            rotation: [ 1, 0, 0, 37.4 ]
+            elements: &TURBINE_20
+              Shape: { geometry: { type: Box, size: [ 0.06, 0.078, 0.077 ] } }
+          -
+            name: TURBINE_21
+            type: Transform
+            translation: [ 1.155, 10.447, 0.614 ]
+            rotation: [ 1, 0, 0, 27.5 ]
+            elements: &TURBINE_21
+              Shape: { geometry: { type: Box, size: [ 0.06, 0.04, 0.067 ] } }
+          -
+            name: TURBINE_22
+            type: Transform
+            translation: [ 1.155, 10.407, 0.598 ]
+            rotation: [ 1, 0, 0, 17 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_23
+            type: Transform
+            translation: [ 1.155, 10.37, 0.5914 ]
+            rotation: [ 1, 0, 0, 5.8 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_24
+            type: Transform
+            translation: [ 1.155, 10.4475, 0.3845 ]
+            elements: &TURBINE_24
+              Shape: { geometry: { type: Box, size: [ 0.088, 0.33, 0.139 ] } }
+          -
+            name: TURBINE_25
+            type: Transform
+            translation: [ 1.155, 10.285, 0.3845 ]
+            rotation: [ 1, 0, 0, -15 ]
+            elements: &TURBINE_25
+              Shape: { geometry: { type: Box, size: [ 0.088, 0.02, 0.139 ] } }
+          -
+            name: TURBINE_26
+            type: Transform
+            translation: [ 1.1105, 10.287, 0.4284 ]
+            rotation: [ [ 1, 0, 0, -14.5 ], [ 0, 1, 0, 9.7 ] ]
+            elements: &TURBINE_26
+              Shape: { geometry: { type: Box, size: [ 0.125, 0.015, 0.21 ] } }
+          -
+            name: TURBINE_27
+            type: Transform
+            translation: [ 1.2, 10.287, 0.4284 ]
+            rotation: [ [ 1, 0, 0, -14.5 ], [ 0, 1, 0, -9.7 ] ]
+            elements: *TURBINE_26
+          -
+            name: TURBINE_28
+            type: Transform
+            translation: [ 1.155, 10.4262, 0.327 ]
+            elements: &TURBINE_28
+              Shape: { geometry: { type: Box, size: [ 0.25, 0.35, 0.024 ] } }
+          -
+            name: TURBINE_29
+            type: Transform
+            translation: [ 1.155, 10.61, 0.539 ]
+            elements: &TURBINE_29
+              Shape: { geometry: { type: Cylinder, radius: 0.185, height: 0.028 } }
+          -
+            name: TURBINE_30
+            type: Transform
+            translation: [ 1.155, 10.653, 0.539 ]
+            elements: &TURBINE_30
+              Shape: { geometry: { type: Cylinder, radius: 0.19, height: 0.058 } }
+          -
+            name: TURBINE_31
+            type: Transform
+            translation: [ 1.155, 10.693, 0.539 ]
+            elements: &TURBINE_31
+              Shape: { geometry: { type: Cylinder, radius: 0.185, height: 0.022 } }
+          -
+            name: TURBINE_32
+            type: Transform
+            translation: [ 1.1455, 10.749, 0.528 ]
+            elements: &TURBINE_32
+              Shape: { geometry: { type: Cylinder, radius: 0.2, height: 0.09 } }
+          -
+            name: TURBINE_33
+            type: Transform
+            translation: [ 1.072, 10.742, 0.705 ]
+            rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -43 ] ]
+            elements: &TURBINE_33
+              Shape: { geometry: { type: Cylinder, radius: 0.038, height: 0.2 } }
+          -
+            name: TURBINE_34
+            type: Transform
+            translation: [ 1.0165, 10.7417, 0.686 ]
+            elements: &TURBINE_34
+              Shape: { geometry: { type: Box, size: [ 0.065, 0.063, 0.066 ] } }
+          -
+            name: TURBINE_35
+            type: Transform
+            translation: [ 0.987, 10.742, 0.654 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &TURBINE_35
+              Shape: { geometry: { type: Cylinder, radius: 0.0315, height: 0.13 } }
+          -
+            name: TURBINE_36
+            type: Transform
+            translation: [ 1.155, 10.742, 0.755 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &TURBINE_36
+              Shape: { geometry: { type: Cylinder, radius: 0.052, height: 0.074 } }
+          -
+            name: TURBINE_37
+            type: Transform
+            translation: [ 1.155, 10.742, 0.7875 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &TURBINE_37
+              Shape: { geometry: { type: Cylinder, radius: 0.066, height: 0.01 } }
+          -
+            name: TURBINE_38
+            type: Transform
+            translation: [ 1.155, 10.742, 0.8042 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &TURBINE_38
+              Shape: { geometry: { type: Cylinder, radius: 0.114, height: 0.024 } }
+          -
+            name: TURBINE_39
+            type: Transform
+            translation: [ 1.1555, 10.813, 0.5385 ]
+            elements: &TURBINE_39
+              Shape: { geometry: { type: Cylinder, radius: 0.0895, height: 0.039 } }
+          -
+            name: TURBINE_40
+            type: Transform
+            translation: [ 1.155, 10.847, 0.539 ]
+            elements: &TURBINE_40
+              Shape: { geometry: { type: Cylinder, radius: 0.07, height: 0.03 } }
+          -
+            name: ATACHMENT_1
+            type: Transform
+            translation: [ 1.1485, 10.874, 0.5355 ]
+            elements: &ATACHMENT_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 0.025 } }
+          -
+            name: ATACHMENT_2
+            type: Transform
+            translation: [ 1.1485, 10.8995, 0.5355 ]
+            elements: &ATACHMENT_2
+              Shape: { geometry: { type: Cylinder, radius: 0.1075, height: 0.026 } }
+  -
+    name: PUMP1_SIDE_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATACHMENT_3
+            type: Transform
+            translation: [ 1.1485, 11.218, 0.53 ]
+            elements: *ATACHMENT_2
+          -
+            name: ATACHMENT_4
+            type: Transform
+            translation: [ 1.149, 11.2435, 0.53 ]
+            elements: *ATACHMENT_1
+          -
+            name: PIPE_R_1
+            type: Transform
+            translation: [ 1.148, 11.39, 0.53 ]
+            elements: &PIPE_R_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 0.27 } }
+          -
+            name: PIPE_R_2
+            type: Transform
+            translation: [ 1.148, 11.5305, 0.5275 ]
+            rotation: [ 1, 0, 0, -12 ]
+            elements: &PIPE_R_2
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 0.035 } }
+          -
+            name: PIPE_R_3
+            type: Transform
+            translation: [ 1.148, 11.552, 0.5205 ]
+            rotation: [ 1, 0, 0, -24 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_4
+            type: Transform
+            translation: [ 1.148, 11.57, 0.5095 ]
+            rotation: [ 1, 0, 0, -38 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_5
+            type: Transform
+            translation: [ 1.148, 11.586, 0.494 ]
+            rotation: [ 1, 0, 0, -51 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_6
+            type: Transform
+            translation: [ 1.148, 11.599, 0.474 ]
+            rotation: [ 1, 0, 0, -62 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_7
+            type: Transform
+            translation: [ 1.148, 11.6065, 0.455 ]
+            rotation: [ 1, 0, 0, -76 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_8
+            type: Transform
+            translation: [ 1.148, 11.6095, 0.2255 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &PIPE_R_8
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 0.451 } }
+  -
+    name: PUMP1_UPPER_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATACHMENT_5
+            type: Transform
+            translation: [ 1.153, 10.7415, 0.8325 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *ATACHMENT_2
+          -
+            name: ATACHMENT_6
+            type: Transform
+            translation: [ 1.153, 10.7415, 0.858 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *ATACHMENT_1
+          -
+            name: PIPE_R_9
+            type: Transform
+            translation: [ 1.153, 10.7425, 1.5975 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 1.4545 } }
+          -
+            name: PIPE_R_10
+            type: Transform
+            translation: [ 1.153, 10.7455, 2.329 ]
+            rotation: [ 1, 0, 0, -103 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_11
+            type: Transform
+            translation: [ 1.153, 10.7535, 2.351 ]
+            rotation: [ 1, 0, 0, -115 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_12
+            type: Transform
+            translation: [ 1.153, 10.7645, 2.3685 ]
+            rotation: [ 1, 0, 0, -129 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_13
+            type: Transform
+            translation: [ 1.153, 10.78, 2.3835 ]
+            rotation: [ 1, 0, 0, -142 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_14
+            type: Transform
+            translation: [ 1.153, 10.8, 2.396 ]
+            rotation: [ 1, 0, 0, -153 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_15
+            type: Transform
+            translation: [ 1.153, 10.82, 2.403 ]
+            rotation: [ 1, 0, 0, -167 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_16
+            type: Transform
+            translation: [ 1.153, 11.315, 2.405 ]
+            elements: &PIPE_R_16
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 0.98 } }
+          -
+            name: PIPE_R_17
+            type: Transform
+            translation: [ 1.156, 11.8075, 2.405 ]
+            rotation: [ 0, 0, 1, -15 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_18
+            type: Transform
+            translation: [ 1.164, 11.829, 2.405 ]
+            rotation: [ 0, 0, 1, -26 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_19
+            type: Transform
+            translation: [ 1.175, 11.846, 2.405 ]
+            rotation: [ 0, 0, 1, -40 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_20
+            type: Transform
+            translation: [ 1.1915, 11.862, 2.405 ]
+            rotation: [ 0, 0, 1, -52 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_21
+            type: Transform
+            translation: [ 1.21, 11.8735, 2.405 ]
+            rotation: [ 0, 0, 1, -65 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_22
+            type: Transform
+            translation: [ 1.232, 11.881, 2.405 ]
+            rotation: [ 0, 0, 1, -77 ]
+            elements: *PIPE_R_2
+  -
+    name: PUMP1_CEILING_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_R_23
+            type: Transform
+            translation: [ 5.76825, 11.884, 2.405 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 9.0635 } }
+  -
+    name: PUMP1_METER
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_1
+            type: Transform
+            translation: [ 1.1525, 10.665, 1.56 ]
+            elements: &METER_PIPE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.015, height: 0.058 } }
+          -
+            name: METER_PIPE_2
+            type: Transform
+            translation: [ 1.1525, 10.6365, 1.5608 ]
+            rotation: [ 1, 0, 0, -16 ]
+            elements: &METER_PIPE_2
+              Shape: { geometry: { type: Cylinder, radius: 0.015, height: 0.01 } }
+          -
+            name: METER_PIPE_3
+            type: Transform
+            translation: [ 1.1525, 10.632, 1.5629 ]
+            rotation: [ 1, 0, 0, -34 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_4
+            type: Transform
+            translation: [ 1.1525, 10.6283, 1.566 ]
+            rotation: [ 1, 0, 0, -52 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_5
+            type: Transform
+            translation: [ 1.1525, 10.6253, 1.571 ]
+            rotation: [ 1, 0, 0, -68 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_6
+            type: Transform
+            translation: [ 1.1525, 10.6245, 1.634 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &METER_PIPE_6
+              Shape: { geometry: { type: Cylinder, radius: 0.015, height: 0.129 } }
+          -
+            name: METER_VALVE_1
+            type: Transform
+            translation: [ 1.1525, 10.605, 1.666 ]
+            elements: &METER_VALVE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0055, height: 0.014 } }
+          -
+            name: METER_HANDLE_1
+            type: Transform
+            translation: [ 1.1525, 10.5954, 1.666 ]
+            elements: &METER_HANDLE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0175, height: 0.006 } }
+          -
+            name: METER_DISPLAY_1
+            type: Transform
+            translation: [ 1.1605, 10.6215, 1.7575 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &METER_DISPLAY_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0595, height: 0.033 } }
+  -
+    name: PUMP2
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: TURBINE_41
+            type: Transform
+            translation: [ 2.071, 9.6705, 0.539 ]
+            elements: *TURBINE_1
+          -
+            name: TURBINE_42
+            type: Transform
+            translation: [ 2.072, 9.8515, 0.539 ]
+            elements: *TURBINE_2
+          -
+            name: TURBINE_43
+            type: Transform
+            translation: [ 2.071, 10.0325, 0.539 ]
+            elements: *TURBINE_1
+          -
+            name: TURBINE_44
+            type: Transform
+            translation: [ 1.8465, 9.8615, 0.5365 ]
+            elements: *TURBINE_4
+          -
+            name: TURBINE_45
+            type: Transform
+            translation: [ 1.9775, 9.861, 0.3622 ]
+            rotation: [ 0, 1, 0, -34.2 ]
+            elements: *TURBINE_5
+          -
+            name: TURBINE_46
+            type: Transform
+            translation: [ 1.9105, 9.861, 0.3357 ]
+            elements: *TURBINE_6
+          -
+            name: TURBINE_47
+            type: Transform
+            translation: [ 2.1655, 9.861, 0.3608 ]
+            rotation: [ 0, 1, 0, 32.5 ]
+            elements: *TURBINE_5
+          -
+            name: TURBINE_48
+            type: Transform
+            translation: [ 2.2325, 9.861, 0.3357 ]
+            elements: *TURBINE_6
+          -
+            name: TURBINE_49
+            type: Transform
+            translation: [ 2.0712, 10.102, 0.539 ]
+            elements: *TURBINE_9
+          -
+            name: TURBINE_50
+            type: Transform
+            translation: [ 2.0715, 10.1275, 0.539 ]
+            elements: *TURBINE_10
+          -
+            name: TURBINE_51
+            type: Transform
+            translation: [ 2.0712, 10.16, 0.539 ]
+            elements: *TURBINE_11
+          -
+            name: TURBINE_52
+            type: Transform
+            translation: [ 2.0715, 10.1925, 0.539 ]
+            elements: *TURBINE_10
+          -
+            name: TURBINE_53
+            type: Transform
+            translation: [ 2.0706, 10.2135, 0.5385 ]
+            elements: *TURBINE_13
+          -
+            name: TURBINE_54
+            type: Transform
+            translation: [ 2.0712, 10.2261, 0.539 ]
+            elements: *TURBINE_14
+          -
+            name: TURBINE_55
+            type: Transform
+            translation: [ 2.071, 10.236, 0.539 ]
+            elements: *TURBINE_15
+          -
+            name: TURBINE_56
+            type: Transform
+            translation: [ 2.071, 10.251, 0.539 ]
+            elements: *TURBINE_16
+          -
+            name: TURBINE_57
+            type: Transform
+            translation: [ 2.071, 10.428, 0.539 ]
+            elements: *TURBINE_17
+          -
+            name: TURBINE_58
+            type: Transform
+            translation: [ 2.071, 10.579, 0.6705 ]
+            rotation: [ 1, 0, 0, 7.4 ]
+            elements: *TURBINE_18
+          -
+            name: TURBINE_59
+            type: Transform
+            translation: [ 2.071, 10.546, 0.6617 ]
+            rotation: [ 1, 0, 0, 22.5 ]
+            elements: *TURBINE_18
+          -
+            name: TURBINE_60
+            type: Transform
+            translation: [ 2.071, 10.498, 0.643 ]
+            rotation: [ 1, 0, 0, 37.4 ]
+            elements: *TURBINE_20
+          -
+            name: TURBINE_61
+            type: Transform
+            translation: [ 2.071, 10.447, 0.614 ]
+            rotation: [ 1, 0, 0, 27.5 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_62
+            type: Transform
+            translation: [ 2.071, 10.407, 0.598 ]
+            rotation: [ 1, 0, 0, 17 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_63
+            type: Transform
+            translation: [ 2.071, 10.37, 0.5914 ]
+            rotation: [ 1, 0, 0, 5.8 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_64
+            type: Transform
+            translation: [ 2.071, 10.4475, 0.3845 ]
+            elements: *TURBINE_24
+          -
+            name: TURBINE_65
+            type: Transform
+            translation: [ 2.071, 10.285, 0.3845 ]
+            rotation: [ 1, 0, 0, -15 ]
+            elements: *TURBINE_25
+          -
+            name: TURBINE_66
+            type: Transform
+            translation: [ 2.0265, 10.287, 0.4284 ]
+            rotation: [ [ 1, 0, 0, -14.5 ], [ 0, 1, 0, 9.7 ] ]
+            elements: *TURBINE_26
+          -
+            name: TURBINE_67
+            type: Transform
+            translation: [ 2.116, 10.287, 0.4284 ]
+            rotation: [ [ 1, 0, 0, -14.5 ], [ 0, 1, 0, -9.7 ] ]
+            elements: *TURBINE_26
+          -
+            name: TURBINE_68
+            type: Transform
+            translation: [ 2.071, 10.4262, 0.327 ]
+            elements: *TURBINE_28
+          -
+            name: TURBINE_69
+            type: Transform
+            translation: [ 2.071, 10.61, 0.539 ]
+            elements: *TURBINE_29
+          -
+            name: TURBINE_70
+            type: Transform
+            translation: [ 2.071, 10.653, 0.539 ]
+            elements: *TURBINE_30
+          -
+            name: TURBINE_71
+            type: Transform
+            translation: [ 2.071, 10.693, 0.539 ]
+            elements: *TURBINE_31
+          -
+            name: TURBINE_72
+            type: Transform
+            translation: [ 2.0615, 10.749, 0.528 ]
+            elements: *TURBINE_32
+          -
+            name: TURBINE_73
+            type: Transform
+            translation: [ 1.988, 10.742, 0.705 ]
+            rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -43 ] ]
+            elements: *TURBINE_33
+          -
+            name: TURBINE_74
+            type: Transform
+            translation: [ 1.9325, 10.7417, 0.686 ]
+            elements: *TURBINE_34
+          -
+            name: TURBINE_75
+            type: Transform
+            translation: [ 1.903, 10.742, 0.654 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_35
+          -
+            name: TURBINE_76
+            type: Transform
+            translation: [ 2.071, 10.742, 0.755 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_36
+          -
+            name: TURBINE_77
+            type: Transform
+            translation: [ 2.071, 10.742, 0.7875 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_37
+          -
+            name: TURBINE_78
+            type: Transform
+            translation: [ 2.071, 10.742, 0.8042 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_38
+          -
+            name: TURBINE_79
+            type: Transform
+            translation: [ 2.0715, 10.813, 0.5385 ]
+            elements: *TURBINE_39
+          -
+            name: TURBINE_80
+            type: Transform
+            translation: [ 2.071, 10.847, 0.539 ]
+            elements: *TURBINE_40
+          -
+            name: ATACHMENT_7
+            type: Transform
+            translation: [ 2.0645, 10.874, 0.5355 ]
+            elements: *ATACHMENT_1
+          -
+            name: ATACHMENT_8
+            type: Transform
+            translation: [ 2.0645, 10.8995, 0.5355 ]
+            elements: *ATACHMENT_2
+  -
+    name: PUMP2_SIDE_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATACHMENT_9
+            type: Transform
+            translation: [ 2.0645, 11.218, 0.53 ]
+            elements: *ATACHMENT_2
+          -
+            name: ATACHMENT_10
+            type: Transform
+            translation: [ 2.065, 11.2435, 0.53 ]
+            elements: *ATACHMENT_1
+          -
+            name: PIPE_R_24
+            type: Transform
+            translation: [ 2.064, 11.39, 0.53 ]
+            elements: *PIPE_R_1
+          -
+            name: PIPE_R_25
+            type: Transform
+            translation: [ 2.064, 11.5305, 0.5275 ]
+            rotation: [ 1, 0, 0, -12 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_26
+            type: Transform
+            translation: [ 2.064, 11.552, 0.5205 ]
+            rotation: [ 1, 0, 0, -24 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_27
+            type: Transform
+            translation: [ 2.064, 11.57, 0.5095 ]
+            rotation: [ 1, 0, 0, -38 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_28
+            type: Transform
+            translation: [ 2.064, 11.586, 0.494 ]
+            rotation: [ 1, 0, 0, -51 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_29
+            type: Transform
+            translation: [ 2.064, 11.599, 0.474 ]
+            rotation: [ 1, 0, 0, -62 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_30
+            type: Transform
+            translation: [ 2.064, 11.6065, 0.455 ]
+            rotation: [ 1, 0, 0, -76 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_31
+            type: Transform
+            translation: [ 2.064, 11.6095, 0.2255 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *PIPE_R_8
+  -
+    name: PUMP2_UPPER_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATACHMENT_11
+            type: Transform
+            translation: [ 2.069, 10.7415, 0.8325 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *ATACHMENT_2
+          -
+            name: ATACHMENT_12
+            type: Transform
+            translation: [ 2.069, 10.7415, 0.858 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *ATACHMENT_1
+          -
+            name: PIPE_R_32
+            type: Transform
+            translation: [ 2.07, 10.7425, 1.5425 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 1.345 } }
+          -
+            name: PIPE_R_33
+            type: Transform
+            translation: [ 2.07, 10.7455, 2.219 ]
+            rotation: [ 1, 0, 0, -103 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_34
+            type: Transform
+            translation: [ 2.07, 10.7535, 2.241 ]
+            rotation: [ 1, 0, 0, -115 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_35
+            type: Transform
+            translation: [ 2.07, 10.7645, 2.2585 ]
+            rotation: [ 1, 0, 0, -129 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_36
+            type: Transform
+            translation: [ 2.07, 10.78, 2.2735 ]
+            rotation: [ 1, 0, 0, -142 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_37
+            type: Transform
+            translation: [ 2.07, 10.8, 2.286 ]
+            rotation: [ 1, 0, 0, -153 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_38
+            type: Transform
+            translation: [ 2.07, 10.82, 2.293 ]
+            rotation: [ 1, 0, 0, -167 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_39
+            type: Transform
+            translation: [ 2.07, 11.315, 2.295 ]
+            elements: *PIPE_R_16
+          -
+            name: PIPE_R_40
+            type: Transform
+            translation: [ 2.073, 11.8075, 2.295 ]
+            rotation: [ 0, 0, 1, -15 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_41
+            type: Transform
+            translation: [ 2.0812, 11.829, 2.295 ]
+            rotation: [ 0, 0, 1, -26 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_42
+            type: Transform
+            translation: [ 2.092, 11.846, 2.295 ]
+            rotation: [ 0, 0, 1, -40 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_43
+            type: Transform
+            translation: [ 2.108, 11.862, 2.295 ]
+            rotation: [ 0, 0, 1, -52 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_44
+            type: Transform
+            translation: [ 2.1265, 11.8735, 2.295 ]
+            rotation: [ 0, 0, 1, -65 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_45
+            type: Transform
+            translation: [ 2.1485, 11.881, 2.295 ]
+            rotation: [ 0, 0, 1, -77 ]
+            elements: *PIPE_R_2
+  -
+    name: PUMP2_CEILING_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_R_46
+            type: Transform
+            translation: [ 6.2265, 11.8835, 2.295 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 8.147 } }
+  -
+    name: PUMP2_METER
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_7
+            type: Transform
+            translation: [ 2.0605, 10.673, 1.547 ]
+            elements: *METER_PIPE_1
+          -
+            name: METER_PIPE_8
+            type: Transform
+            translation: [ 2.0605, 10.6445, 1.5478 ]
+            rotation: [ 1, 0, 0, -16 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_9
+            type: Transform
+            translation: [ 2.0605, 10.64, 1.5499 ]
+            rotation: [ 1, 0, 0, -34 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_10
+            type: Transform
+            translation: [ 2.0605, 10.6363, 1.553 ]
+            rotation: [ 1, 0, 0, -52 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_11
+            type: Transform
+            translation: [ 2.0605, 10.6333, 1.558 ]
+            rotation: [ 1, 0, 0, -68 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_12
+            type: Transform
+            translation: [ 2.0605, 10.6325, 1.621 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *METER_PIPE_6
+          -
+            name: METER_VALVE_2
+            type: Transform
+            translation: [ 2.0605, 10.613, 1.653 ]
+            elements: *METER_VALVE_1
+          -
+            name: METER_HANDLE_2
+            type: Transform
+            translation: [ 2.0605, 10.6034, 1.653 ]
+            elements: *METER_HANDLE_1
+          -
+            name: METER_DISPLAY_2
+            type: Transform
+            translation: [ 2.0685, 10.6295, 1.7445 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *METER_DISPLAY_1
+  -
+    name: PUMP3
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: TURBINE_81
+            type: Transform
+            translation: [ 2.987, 9.66, 0.539 ]
+            elements: *TURBINE_1
+          -
+            name: TURBINE_82
+            type: Transform
+            translation: [ 2.988, 9.841, 0.539 ]
+            elements: *TURBINE_2
+          -
+            name: TURBINE_83
+            type: Transform
+            translation: [ 2.987, 10.022, 0.539 ]
+            elements: *TURBINE_1
+          -
+            name: TURBINE_84
+            type: Transform
+            translation: [ 2.7625, 9.851, 0.5365 ]
+            elements: *TURBINE_4
+          -
+            name: TURBINE_85
+            type: Transform
+            translation: [ 2.8935, 9.8505, 0.3622 ]
+            rotation: [ 0, 1, 0, -34.2 ]
+            elements: *TURBINE_5
+          -
+            name: TURBINE_86
+            type: Transform
+            translation: [ 2.8265, 9.8505, 0.3357 ]
+            elements: *TURBINE_6
+          -
+            name: TURBINE_87
+            type: Transform
+            translation: [ 3.0815, 9.8505, 0.3608 ]
+            rotation: [ 0, 1, 0, 32.5 ]
+            elements: *TURBINE_5
+          -
+            name: TURBINE_88
+            type: Transform
+            translation: [ 3.1485, 9.8505, 0.3357 ]
+            elements: *TURBINE_6
+          -
+            name: TURBINE_89
+            type: Transform
+            translation: [ 2.9872, 10.0915, 0.539 ]
+            elements: *TURBINE_9
+          -
+            name: TURBINE_90
+            type: Transform
+            translation: [ 2.9875, 10.117, 0.539 ]
+            elements: *TURBINE_10
+          -
+            name: TURBINE_91
+            type: Transform
+            translation: [ 2.9872, 10.1495, 0.539 ]
+            elements: *TURBINE_11
+          -
+            name: TURBINE_92
+            type: Transform
+            translation: [ 2.9875, 10.182, 0.539 ]
+            elements: *TURBINE_10
+          -
+            name: TURBINE_93
+            type: Transform
+            translation: [ 2.9866, 10.203, 0.5385 ]
+            elements: *TURBINE_13
+          -
+            name: TURBINE_94
+            type: Transform
+            translation: [ 2.9872, 10.2156, 0.539 ]
+            elements: *TURBINE_14
+          -
+            name: TURBINE_95
+            type: Transform
+            translation: [ 2.987, 10.2255, 0.539 ]
+            elements: *TURBINE_15
+          -
+            name: TURBINE_96
+            type: Transform
+            translation: [ 2.987, 10.2405, 0.539 ]
+            elements: *TURBINE_16
+          -
+            name: TURBINE_97
+            type: Transform
+            translation: [ 2.987, 10.4175, 0.539 ]
+            elements: *TURBINE_17
+          -
+            name: TURBINE_98
+            type: Transform
+            translation: [ 2.987, 10.5685, 0.6705 ]
+            rotation: [ 1, 0, 0, 7.4 ]
+            elements: *TURBINE_18
+          -
+            name: TURBINE_99
+            type: Transform
+            translation: [ 2.987, 10.5355, 0.6617 ]
+            rotation: [ 1, 0, 0, 22.5 ]
+            elements: *TURBINE_18
+          -
+            name: TURBINE_100
+            type: Transform
+            translation: [ 2.987, 10.4875, 0.643 ]
+            rotation: [ 1, 0, 0, 37.4 ]
+            elements: *TURBINE_20
+          -
+            name: TURBINE_101
+            type: Transform
+            translation: [ 2.987, 10.4365, 0.614 ]
+            rotation: [ 1, 0, 0, 27.5 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_102
+            type: Transform
+            translation: [ 2.987, 10.3965, 0.598 ]
+            rotation: [ 1, 0, 0, 17 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_103
+            type: Transform
+            translation: [ 2.987, 10.3595, 0.5914 ]
+            rotation: [ 1, 0, 0, 5.8 ]
+            elements: *TURBINE_21
+          -
+            name: TURBINE_104
+            type: Transform
+            translation: [ 2.987, 10.437, 0.3845 ]
+            elements: *TURBINE_24
+          -
+            name: TURBINE_105
+            type: Transform
+            translation: [ 2.987, 10.2745, 0.3845 ]
+            rotation: [ 1, 0, 0, -15 ]
+            elements: *TURBINE_25
+          -
+            name: TURBINE_106
+            type: Transform
+            translation: [ 2.9425, 10.2765, 0.4284 ]
+            rotation: [ [ 1, 0, 0, -14.5 ], [ 0, 1, 0, 9.7 ] ]
+            elements: *TURBINE_26
+          -
+            name: TURBINE_107
+            type: Transform
+            translation: [ 3.032, 10.2765, 0.4284 ]
+            rotation: [ [ 1, 0, 0, -14.5 ], [ 0, 1, 0, -9.7 ] ]
+            elements: *TURBINE_26
+          -
+            name: TURBINE_108
+            type: Transform
+            translation: [ 2.987, 10.4157, 0.327 ]
+            elements: *TURBINE_28
+          -
+            name: TURBINE_109
+            type: Transform
+            translation: [ 2.987, 10.5995, 0.539 ]
+            elements: *TURBINE_29
+          -
+            name: TURBINE_110
+            type: Transform
+            translation: [ 2.987, 10.6425, 0.539 ]
+            elements: *TURBINE_30
+          -
+            name: TURBINE_111
+            type: Transform
+            translation: [ 2.987, 10.6825, 0.539 ]
+            elements: *TURBINE_31
+          -
+            name: TURBINE_112
+            type: Transform
+            translation: [ 2.9775, 10.7385, 0.528 ]
+            elements: *TURBINE_32
+          -
+            name: TURBINE_113
+            type: Transform
+            translation: [ 2.904, 10.7315, 0.705 ]
+            rotation: [ [ 0, 0, 1, 90 ], [ 1, 0, 0, -43 ] ]
+            elements: *TURBINE_33
+          -
+            name: TURBINE_114
+            type: Transform
+            translation: [ 2.8485, 10.7312, 0.686 ]
+            elements: *TURBINE_34
+          -
+            name: TURBINE_115
+            type: Transform
+            translation: [ 2.819, 10.7315, 0.654 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_35
+          -
+            name: TURBINE_116
+            type: Transform
+            translation: [ 2.987, 10.7315, 0.755 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_36
+          -
+            name: TURBINE_117
+            type: Transform
+            translation: [ 2.987, 10.7315, 0.7875 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_37
+          -
+            name: TURBINE_118
+            type: Transform
+            translation: [ 2.987, 10.7315, 0.8042 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *TURBINE_38
+          -
+            name: TURBINE_119
+            type: Transform
+            translation: [ 2.9875, 10.8025, 0.5385 ]
+            elements: *TURBINE_39
+          -
+            name: TURBINE_120
+            type: Transform
+            translation: [ 2.987, 10.8365, 0.539 ]
+            elements: *TURBINE_40
+          -
+            name: ATACHMENT_13
+            type: Transform
+            translation: [ 2.9895, 10.8635, 0.54 ]
+            elements: *ATACHMENT_1
+          -
+            name: ATACHMENT_14
+            type: Transform
+            translation: [ 2.9895, 10.889, 0.54 ]
+            elements: *ATACHMENT_2
+  -
+    name: PUMP3_SIDE_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATACHMENT_15
+            type: Transform
+            translation: [ 2.9895, 11.2075, 0.5345 ]
+            elements: *ATACHMENT_2
+          -
+            name: ATACHMENT_16
+            type: Transform
+            translation: [ 2.99, 11.233, 0.5345 ]
+            elements: *ATACHMENT_1
+          -
+            name: PIPE_R_47
+            type: Transform
+            translation: [ 2.989, 11.3795, 0.5345 ]
+            elements: *PIPE_R_1
+          -
+            name: PIPE_R_48
+            type: Transform
+            translation: [ 2.989, 11.52, 0.532 ]
+            rotation: [ 1, 0, 0, -12 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_49
+            type: Transform
+            translation: [ 2.989, 11.5415, 0.525 ]
+            rotation: [ 1, 0, 0, -24 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_50
+            type: Transform
+            translation: [ 2.989, 11.5595, 0.514 ]
+            rotation: [ 1, 0, 0, -38 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_51
+            type: Transform
+            translation: [ 2.989, 11.5755, 0.4985 ]
+            rotation: [ 1, 0, 0, -51 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_52
+            type: Transform
+            translation: [ 2.989, 11.5885, 0.4785 ]
+            rotation: [ 1, 0, 0, -62 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_53
+            type: Transform
+            translation: [ 2.989, 11.596, 0.4595 ]
+            rotation: [ 1, 0, 0, -76 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_54
+            type: Transform
+            translation: [ 2.989, 11.599, 0.23 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *PIPE_R_8
+  -
+    name: PUMP3_UPPER_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: ATACHMENT_17
+            type: Transform
+            translation: [ 2.989, 10.731, 0.837 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *ATACHMENT_2
+          -
+            name: ATACHMENT_18
+            type: Transform
+            translation: [ 2.9885, 10.734, 0.858 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *ATACHMENT_1
+          -
+            name: PIPE_R_55
+            type: Transform
+            translation: [ 2.9885, 10.734, 1.4855 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 1.239 } }
+          -
+            name: PIPE_R_56
+            type: Transform
+            translation: [ 2.988, 10.7365, 2.109 ]
+            rotation: [ 1, 0, 0, -103 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_57
+            type: Transform
+            translation: [ 2.988, 10.7455, 2.132 ]
+            rotation: [ 1, 0, 0, -115 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_58
+            type: Transform
+            translation: [ 2.988, 10.756, 2.1485 ]
+            rotation: [ 1, 0, 0, -129 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_59
+            type: Transform
+            translation: [ 2.988, 10.771, 2.1635 ]
+            rotation: [ 1, 0, 0, -142 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_60
+            type: Transform
+            translation: [ 2.988, 10.791, 2.176 ]
+            rotation: [ 1, 0, 0, -153 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_61
+            type: Transform
+            translation: [ 2.988, 10.811, 2.183 ]
+            rotation: [ 1, 0, 0, -167 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_62
+            type: Transform
+            translation: [ 2.988, 11.306, 2.185 ]
+            elements: *PIPE_R_16
+          -
+            name: PIPE_R_63
+            type: Transform
+            translation: [ 2.991, 11.7985, 2.185 ]
+            rotation: [ 0, 0, 1, -15 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_64
+            type: Transform
+            translation: [ 2.998, 11.818, 2.185 ]
+            rotation: [ 0, 0, 1, -26 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_65
+            type: Transform
+            translation: [ 3.008, 11.835, 2.185 ]
+            rotation: [ 0, 0, 1, -40 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_66
+            type: Transform
+            translation: [ 3.024, 11.8515, 2.185 ]
+            rotation: [ 0, 0, 1, -52 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_67
+            type: Transform
+            translation: [ 3.0425, 11.863, 2.185 ]
+            rotation: [ 0, 0, 1, -65 ]
+            elements: *PIPE_R_2
+          -
+            name: PIPE_R_68
+            type: Transform
+            translation: [ 3.0645, 11.871, 2.185 ]
+            rotation: [ 0, 0, 1, -77 ]
+            elements: *PIPE_R_2
+  -
+    name: PUMP3_CEILING_PIPE
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: PIPE_R_69
+            type: Transform
+            translation: [ 6.6845, 11.874, 2.185 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements:
+              Shape: { geometry: { type: Cylinder, radius: 0.0545, height: 7.231 } }
+  -
+    name: PUMP3_METER
+    parent: BASE
+    jointType: fixed
+    elements:
+      Collision:
+        elements:
+          -
+            name: METER_PIPE_13
+            type: Transform
+            translation: [ 2.9885, 10.65, 1.5565 ]
+            elements: *METER_PIPE_1
+          -
+            name: METER_PIPE_14
+            type: Transform
+            translation: [ 2.9885, 10.6215, 1.557 ]
+            rotation: [ 1, 0, 0, -16 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_15
+            type: Transform
+            translation: [ 2.9885, 10.617, 1.559 ]
+            rotation: [ 1, 0, 0, -34 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_16
+            type: Transform
+            translation: [ 2.9885, 10.6133, 1.562 ]
+            rotation: [ 1, 0, 0, -52 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_17
+            type: Transform
+            translation: [ 2.9885, 10.6103, 1.567 ]
+            rotation: [ 1, 0, 0, -68 ]
+            elements: *METER_PIPE_2
+          -
+            name: METER_PIPE_18
+            type: Transform
+            translation: [ 2.9885, 10.6095, 1.63 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: *METER_PIPE_6
+          -
+            name: METER_VALVE_3
+            type: Transform
+            translation: [ 2.9885, 10.59, 1.662 ]
+            elements: *METER_VALVE_1
+          -
+            name: METER_HANDLE_3
+            type: Transform
+            translation: [ 2.9885, 10.5804, 1.662 ]
+            elements: *METER_HANDLE_1
+          -
+            name: METER_DISPLAY_3
+            type: Transform
+            translation: [ 2.9965, 10.6065, 1.7535 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *METER_DISPLAY_1

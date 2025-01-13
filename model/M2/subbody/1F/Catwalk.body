@@ -1,0 +1,97 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Catwalk # 1F_surface_2
+
+STAIRS: &STAIRS
+  Collision:
+    resource:
+      uri: "../resource/CommonParts.yaml"
+      node: STAIRS
+
+links:
+  -
+    name: BASE
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 200.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      -
+        type: Visual
+        elements:
+          Resource: { uri: "resource/Catwalk.dae" }
+  -
+    name: CATWALK1
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+      Collision:
+        elements:
+          Transform:
+            translation: [ 0.675, 6.005, 2.63 ]
+            elements: &CATWALK1_SHAPE
+              Shape:
+                geometry: { type: Box, size: [ 1.35, 9.31, 0.1 ] }
+  -
+    name: CATWALK2
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+      Collision:
+        shape:
+          translation: [ 10.2625, 6.005, 2.63 ]
+          geometry: { type: Box, size: [ 2.524, 9.31, 0.1 ] }
+  -
+    name: CATWALK3
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+      Collision:
+        elements:
+          Transform:
+            translation: [ 19.85, 6.005, 2.63 ]
+            elements: *CATWALK1_SHAPE
+  -
+    name: CATWALK4
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+      Collision:
+        shape:
+          translation: [ 10.2625, 0.675, 2.63 ]
+          geometry: { type: Box, size: [ 20.525, 1.35, 0.1 ] }
+  -
+    name: CATWALK5
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    elements:
+      Collision:
+        shape:
+          translation: [ 10.2625, 11.505, 2.63 ]
+          geometry: { type: Box, size: [ 20.525, 1.69, 0.1 ] }
+  -
+    name: STAIRS1
+    parent: BASE
+    jointType: fixed
+    translation: [ 8.5, 0, 0 ]
+    material: Ground
+    elements: *STAIRS
+  -
+    name: STAIRS2
+    parent: BASE
+    jointType: fixed
+    material: Ground
+    translation: [ 18.675, 0, 0 ]
+    elements: *STAIRS
+

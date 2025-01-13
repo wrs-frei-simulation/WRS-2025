@@ -1,0 +1,163 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: TankPlatformStageHandrail # WRS_P_1F_cw_handrail
+
+SILIVER: &SILVER
+  material:
+    diffuseColor: [ 0.96, 0.96, 0.96 ]
+    specularColor: [ 0.96, 0.96, 0.96 ]
+    shininess: 0.12
+
+CYLINDER1: &CYLINDER1
+  Shape: 
+    geometry: { type: Cylinder, radius: 0.02, height: 0.809 }
+    appearance: *SILVER
+
+CYLINDER27: &CYLINDER27
+  Shape:
+    geometry: { type: Cylinder, radius: 0.02, height: 3.0 }
+    appearance: *SILVER
+
+CYLINDER28: &CYLINDER28
+  Shape: 
+    geometry: { type: Cylinder, radius: 0.02, height: 2.3333 }
+    appearance: *SILVER
+
+links:
+  -
+    name: BASE
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 10.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  - 
+    name: HANDRAIL1
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: CYLINDER4
+        type: Transform
+        translation: [ 4.0795, 4.417, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER5
+        type: Transform
+        translation: [ 4.994, 4.4134, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER6
+        type: Transform
+        translation: [ 5.9941, 4.4134, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER32
+        type: Transform
+        translation: [ 5.55975, 4.4088, 1.973 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *CYLINDER27
+  - 
+    name: HANDRAIL2
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: CYLINDER7
+        type: Transform
+        translation: [ 7.04, 4.4091, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER8
+        type: Transform
+        translation: [ 7.04, 5.4091, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER9
+        type: Transform
+        translation: [ 7.0439, 6.3236, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER10
+        type: Transform
+        translation: [ 7.0399, 6.7074, 1.5715 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER31
+        type: Transform
+        translation: [ 7.0398, 5.55775, 1.975 ]
+        elements: *CYLINDER28
+  - 
+    name: HANDRAIL3
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: CYLINDER21
+        type: Transform
+        translation: [ 4.9977, 7.3686, 1.573 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER22
+        type: Transform
+        translation: [ 5.9977, 7.3686, 1.573 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER23
+        type: Transform
+        translation: [ 7.0522, 7.36845, 1.573 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER27
+        type: Transform
+        translation: [ 5.55975, 7.3689, 1.968 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *CYLINDER27
+  - 
+    name: HANDRAIL4
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: CYLINDER17
+        type: Transform
+        translation: [ 4.069, 5.0477, 1.5765 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER18
+        type: Transform
+        translation: [ 4.0795, 5.458, 1.573 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER19
+        type: Transform
+        translation: [ 4.0795, 6.458, 1.573 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER20
+        type: Transform
+        translation: [ 4.0833, 7.3725, 1.573 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *CYLINDER1
+      -
+        name: CYLINDER28
+        type: Transform
+        translation: [ 4.0768, 6.21475, 1.9665 ]
+        elements: *CYLINDER28

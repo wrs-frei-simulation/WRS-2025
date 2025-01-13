@@ -1,0 +1,378 @@
+
+# Collision model for valve_226.dae
+VALVE_226_COLLISION: &VALVE_226_COLLISION
+  -
+    name: main_capsule
+    type: Transform
+    translation: [ 0.004, 0.005, 0.0 ]
+    rotation: [ 1, 0, 0, 90 ]
+    elements:
+      Shape:
+        geometry: { type: Capsule, radius: 0.062, height: 0.07 }
+  -
+    name: Valve226Cylinder1
+    type: Transform
+    translation: [ 0.004, 0.005, 0.089325 ]
+    rotation: [ 1, 0, 0, 90 ]
+    elements: &Valve226Cylinder1
+      Shape:
+        geometry: { type: Cylinder, radius: 0.0926, height: 0.018 }
+  -
+    name: Valve226Cylinder2
+    type: Transform
+    translation: [ 0.004, 0.005, -0.08933 ]
+    rotation: [ 1, 0, 0, 90 ]
+    elements: *Valve226Cylinder1
+  -
+    name: Valve226Cylinder3
+    type: Transform
+    translation: [ 0.04863, 0.005, 0.0 ]
+    rotation: [ 0, 0, 1, 86 ]
+    elements: 
+      Shape:
+        geometry: { type: Cylinder, radius: 0.03425, height: 0.0425 }
+  -
+    name: Valve226Cylinder4
+    type: Transform
+    translation: [ 0.07387, 0.0025, 0.0004 ]
+    rotation: [ 0, 0, 1, 86 ]
+    elements: &Valve226Cylinder4
+      Shape:
+        geometry: { type: Cylinder, radius: 0.04614, height: 0.00877 }
+  -
+    name: Valve226Cylinder5
+    type: Transform
+    translation: [ 0.07997, 0.0025, 0.0004 ]
+    rotation: [ 0, 0, 1, 86 ]
+    elements: 
+      Shape:
+        geometry: { type: Cylinder, radius: 0.03984, height: 0.00377 }
+  -
+    name: Valve226Cylinder6
+    type: Transform
+    translation: [ 0.08612, 0.0016, 0.0004 ]
+    rotation: [ 0, 0, 1, 86 ]
+    elements: *Valve226Cylinder4
+  -
+    name: Valve226Cylinder7
+    type: Transform
+    translation: [ 0.09442, 0.001, 0.0004 ]
+    rotation: [ 0, 0, 1, 86 ]
+    elements: 
+      Shape:
+        geometry: { type: Cylinder, radius: 0.01914, height: 0.00787 }
+  -
+    name: Valve226Cylinder8
+    type: Transform
+    translation: [ 0.10092, 0.00056, 0.00045 ]
+    rotation: [ 0, 0, 1, 86 ]
+    elements: 
+      Shape:
+        geometry: { type: Cylinder, radius: 0.01054, height: 0.00507 }
+
+
+# Collision model for valve_handle_213.dae
+HANDLE_213_COLLISION: &HANDLE_213_COLLISION
+  -
+    name: handle213_box1
+    type: Transform
+    translation: [ 0.0, 0.0, -0.0065 ]
+    rotation: [ 0, 0, 1, 30 ]
+    elements: &handle213_box1
+      Shape:
+        geometry: { type: Box, size: [ 0.2, 0.0159, 0.017 ] }
+  -
+    name: handle213_box2
+    type: Transform
+    translation: [ 0.0, 0.0, -0.0065 ]
+    rotation: [ 0, 0, 1, 90 ]
+    elements: *handle213_box1
+  -
+    name: handle213_box3
+    type: Transform
+    translation: [ 0.0, 0.0, -0.0065 ]
+    rotation: [ 0, 0, 1, 150 ]
+    elements: *handle213_box1
+  -
+    name: handle_cylinder
+    type: Transform
+    translation: [ 0.0, 0.0, -0.0065 ]
+    rotation: [ 1, 0, 0, 90 ]
+    elements:
+      Shape:
+        geometry: { type: Cylinder, radius: 0.0195, height: 0.017 }
+  -
+    name: handle213_box4
+    type: Transform
+    translation: [ 0.0, 0.0, 0.0086 ]
+    rotation: [ 0, 0, 1, 30 ]
+    elements: &handle213_box4
+      Shape:
+        geometry: { type: Box, size: [ 0.0232, 0.0136, 0.013 ] }
+  -
+    name: handle213_box5
+    type: Transform
+    translation: [ 0.0, 0.0, 0.0086 ]
+    rotation: [ 0, 0, 1, 90 ]
+    elements: *handle213_box4
+  -
+    name: handle213_box6
+    type: Transform
+    translation: [ 0.0, 0.0, 0.0086 ]
+    rotation: [ 0, 0, 1, 150 ]
+    elements: *handle213_box4
+  # Right half
+  -
+    name: handle213_box7
+    type: Transform
+    translation: [ -0.013, -0.0966, -0.0065 ]
+    rotation: [ 0, 0, 1, -7.5 ]
+    elements: &handle213_box7
+      Shape:
+        geometry: { type: Box, size: [ 0.028, 0.016, 0.017 ] }
+  -
+    name: handle213_box8
+    type: Transform
+    translation: [ -0.0377, -0.0899, -0.0065 ]
+    rotation: [ 0, 0, 1, -22.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box9
+    type: Transform
+    translation: [ -0.0597, -0.0772, -0.0065 ]
+    rotation: [ 0, 0, 1, -37.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box10
+    type: Transform
+    translation: [ -0.0777, -0.0592, -0.0065 ]
+    rotation: [ 0, 0, 1, -52.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box11
+    type: Transform
+    translation: [ -0.0902, -0.0372, -0.0065 ]
+    rotation: [ 0, 0, 1, -67.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box12
+    type: Transform
+    translation: [ -0.0967, -0.0127, -0.0065 ]
+    rotation: [ 0, 0, 1, -82.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box13
+    type: Transform
+    translation: [ -0.0967, 0.0127, -0.0065 ]
+    rotation: [ 0, 0, 1, -97.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box11
+    type: Transform
+    translation: [ -0.0902, 0.0372, -0.0065 ]
+    rotation: [ 0, 0, 1, -112.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box10
+    type: Transform
+    translation: [ -0.0777, 0.0592, -0.0065 ]
+    rotation: [ 0, 0, 1, -127.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box9
+    type: Transform
+    translation: [ -0.0597, 0.0772, -0.0065 ]
+    rotation: [ 0, 0, 1, -142.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box8
+    type: Transform
+    translation: [ -0.0377, 0.0899, -0.0065 ]
+    rotation: [ 0, 0, 1, -157.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box7
+    type: Transform
+    translation: [ -0.013, 0.0966, -0.0065 ]
+    rotation: [ 0, 0, 1, -172.5 ]
+    elements: *handle213_box7
+  # Left half
+  -
+    name: handle213_box7
+    type: Transform
+    translation: [ 0.013, -0.0966, -0.0065 ]
+    rotation: [ 0, 0, 1, 7.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box8
+    type: Transform
+    translation: [ 0.0377, -0.0899, -0.0065 ]
+    rotation: [ 0, 0, 1, 22.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box9
+    type: Transform
+    translation: [ 0.0597, -0.0772, -0.0065 ]
+    rotation: [ 0, 0, 1, 37.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box10
+    type: Transform
+    translation: [ 0.0777, -0.0592, -0.0065 ]
+    rotation: [ 0, 0, 1, 52.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box11
+    type: Transform
+    translation: [ 0.0902, -0.0372, -0.0065 ]
+    rotation: [ 0, 0, 1, 67.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box12
+    type: Transform
+    translation: [ 0.0967, -0.0127, -0.0065 ]
+    rotation: [ 0, 0, 1, 82.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box13
+    type: Transform
+    translation: [ 0.0967, 0.0127, -0.0065 ]
+    rotation: [ 0, 0, 1, 97.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box11
+    type: Transform
+    translation: [ 0.0902, 0.0372, -0.0065 ]
+    rotation: [ 0, 0, 1, 112.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box10
+    type: Transform
+    translation: [ 0.0777, 0.0592, -0.0065 ]
+    rotation: [ 0, 0, 1, 127.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box9
+    type: Transform
+    translation: [ 0.0597, 0.0772, -0.0065 ]
+    rotation: [ 0, 0, 1, 142.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box8
+    type: Transform
+    translation: [ 0.0377, 0.0899, -0.0065 ]
+    rotation: [ 0, 0, 1, 157.5 ]
+    elements: *handle213_box7
+  -
+    name: handle213_box7
+    type: Transform
+    translation: [ 0.013, 0.0966, -0.0065 ]
+    rotation: [ 0, 0, 1, 172.5 ]
+    elements: *handle213_box7
+
+
+# Collision model for valve_298.dae
+VALVE_152_COLLISION: &VALVE_152_COLLISION
+  Transform:
+    scale: [ 0.51, 0.51, 0.51 ]
+    elements:
+      -
+        name: main_capsule
+        type: Transform
+        translation: [ 0.056, -0.036, 0.0 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements:
+          Shape:
+            geometry: { type: Capsule, radius: 0.10954, height: 0.0721 }
+      -
+        name: Valve152Cylinder1
+        type: Transform
+        translation: [ 0.056, -0.036, 0.1351 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: &Valve152Cylinder1
+          Shape:
+            geometry: { type: Cylinder, radius: 0.11454, height: 0.025 }
+      -
+        name: Valve152Cylinder2
+        type: Transform
+        translation: [ 0.056, -0.036, -0.1351 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *Valve152Cylinder1
+      -
+        name: Valve152Cylinder3
+        type: Transform
+        translation: [ -0.03053, -0.03592, 0.0 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: 
+          Shape:
+            geometry: { type: Cylinder, radius: 0.0635, height: 0.075 }
+      -
+        name: Valve152Cylinder4
+        type: Transform
+        translation: [ -0.07553, -0.03592, 0.0 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: &Valve152Cylinder4
+          Shape:
+            geometry: { type: Cylinder, radius: 0.08414, height: 0.01588 }
+      -
+        name: Valve152Cylinder5
+        type: Transform
+        translation: [ -0.08653, -0.03592, 0.0 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements:
+          Shape:
+            geometry: { type: Cylinder, radius: 0.07314, height: 0.00588 }
+      -
+        name: Valve152Cylinder6
+        type: Transform
+        translation: [ -0.09753, -0.03592, 0.0 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *Valve152Cylinder4 
+      -
+        name: Valve152Cylinder7
+        type: Transform
+        translation: [ -0.11253, -0.03592, 0.0 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements:
+          Shape:
+            geometry: { type: Cylinder, radius: 0.0345, height: 0.01418 }
+      -
+        name: Valve152Cylinder8
+        type: Transform
+        translation: [ -0.12453, -0.03592, 0.0 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements:
+          Shape:
+            geometry: { type: Cylinder, radius: 0.0185, height: 0.00968 }
+      -
+        name: Valve152Cylinder9
+        type: Transform
+        translation: [ -0.16753, -0.03592, -0.0005 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements:
+          Shape:
+            geometry: { type: Cylinder, radius: 0.0061, height: 0.07668 }
+
+
+VALVE_HANDLE_213_RIGID_BODY: &VALVE_HANDLE_213_RIGID_BODY
+  RigidBody:
+    mass: 4.0
+    inertia: [
+      0.1, 0.0, 0.0,
+      0.0, 0.1, 0.0,
+      0.0, 0.0, 0.1 ]
+    centerOfMass: [ -0.03, 0, 0 ]
+
+
+VALVE_HANDLE_213_SHAFT: &VALVE_HANDLE_213_SHAFT
+  type: Shape
+  rotation: [ 0, 0, 1, 90 ]
+  translation: [ -0.03, 0, 0 ]
+  geometry: { type: Cylinder, height: 0.1, radius: 0.006 }
+  appearance:
+    material:
+      ambientIntensity: 0.270269
+      diffuseColor: [ 0.37, 0.37, 0.37 ]
+      shininess: 0.13
+      specularColor: [ 0.9, 0.9, 0.9 ]
+

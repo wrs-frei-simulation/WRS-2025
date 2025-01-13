@@ -1,0 +1,61 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: ColumnsSub
+
+COLUMN: &COLUMN
+  type: Resource
+  uri: "../resource/CommonParts.yaml"
+  node: COLUMN_L
+  
+links:
+  - name: COLUMN_BASE
+    jointType: fixed
+  -
+    name: COLUMN3
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 0.174, 0.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN4
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 5.974, 0.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN5
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 10.174, 0.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN7
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 0.176, 5.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN8
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 10.175, 5.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN11
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 0.147, 12.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN12
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 5.974, 12.175, 2.5 ]
+    elements: *COLUMN
+  -
+    name: COLUMN13
+    parent: COLUMN_BASE
+    jointType: fixed
+    translation: [ 10.174, 12.175, 2.5 ]
+    elements: *COLUMN

@@ -19,7 +19,6 @@ items:
           1, 0, 0,
           0, 1, 0,
           0, 0, 1 ]
-        jointDisplacements: [ 0, 0 ]
         initialRootPosition: [ 0, 0, -0.1 ]
         initialRootAttitude: [
           1, 0, 0,
@@ -30,21 +29,8 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
-      children:
-        -
-          id: 2
-          name: "LightController"
-          plugin: Body
-          class: SimpleControllerItem
-          data:
-            isNoDelayMode: false
-            controllerOptions: ""
-            controller: "PlantLightController"
-            base_directory: "Controller directory"
-            reloading: false
-            export_symbols: false
     -
-      id: 3
+      id: 2
       name: "Ceiling"
       plugin: Body
       class: BodyItem
@@ -67,7 +53,7 @@ items:
         lock_location: false
         scene_sensitive: true
     -
-      id: 4
+      id: 3
       name: "Fire"
       plugin: Body
       class: BodyItem
@@ -93,7 +79,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 5
+          id: 4
           name: "FireController"
           plugin: Body
           class: SimpleControllerItem
@@ -105,7 +91,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 6
+      id: 5
       name: "FireCabinet"
       plugin: Body
       class: BodyItem
@@ -131,7 +117,7 @@ items:
         scene_sensitive: true
       children:
         -
-          id: 7
+          id: 6
           name: "HoseNozzleController"
           plugin: Body
           class: SimpleControllerItem
@@ -143,7 +129,7 @@ items:
             reloading: false
             export_symbols: false
     -
-      id: 8
+      id: 7
       name: "FireCircle"
       plugin: Body
       class: BodyItem
@@ -167,7 +153,7 @@ items:
         lock_location: false
         scene_sensitive: true
     -
-      id: 9
+      id: 8
       name: "CFDCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -206,7 +192,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 10
+      id: 9
       name: "TCCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -245,7 +231,7 @@ items:
         mosaic_chance: 0
         kernel: 16
     -
-      id: 11
+      id: 10
       name: "VFXCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -299,7 +285,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ ]
+      expanded: [ 1 ]
   -
     id: 3
     plugin: Base
@@ -460,22 +446,22 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
+        body_item: 2
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
         body_item: 3
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 4
+        body_item: 5
         show_cm: false
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 6
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 8
+        body_item: 7
         show_cm: false
         show_cm_projection: false
         show_zmp: false

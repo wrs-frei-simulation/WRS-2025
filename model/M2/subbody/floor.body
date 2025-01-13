@@ -1,0 +1,269 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: Floor
+links:
+  -
+    name: Floor
+    translation: [ 0, 0, -0.1 ]
+    joint_type: fixed
+    material: Ground
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 10.0, 10.0, 0.2 ] }
+        appearance: { material: { diffuseColor: [ 0.5, 0.5, 0.0 ] } }
+  -
+    type: SubBody
+    uri: "1F/PipeB.body"
+    parent: Floor
+    prefix: SB1_
+    translation: [ -6.55, 2.0, 4.42 ]
+    rotation: [ 1, 0, 0, 180 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "1F/PipeBG1.body"
+    parent: Floor
+    prefix: SB2_
+    translation: [ -11.3, -5.8, 1.6 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "1F/PipeBG2.body"
+    parent: Floor
+    prefix: SB3_
+    translation: [ 1.0, 0, 0.41 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "1F/PipeBG3.body"
+    parent: Floor
+    prefix: SB4_
+    translation: [ -9.0, -13.0, 0.41 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "1F/PipeG.body"
+    parent: Floor
+    prefix: SB5_
+    translation: [ -4.9, 3.0, -1.45 ]
+    rotation: [ 0, 0, 1, -90 ]
+    joint_type: fixed
+  -
+    type: SubBody
+    uri: "1F/PipeL.body"
+    parent: Floor
+    prefix: SB6_
+    translation: [ 5.0, 1.0, 0.68 ]
+    rotation: [ 0, 0, 1, 90 ]
+    joint_type: fixed
+  - &fence
+    type: SubBody
+    uri: "fence.body"
+    parent: Floor
+    prefix: SB7_
+    translation: [ 4.8, 3.9, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+    joint_type: fixed
+  - <<: *fence
+    prefix: SB8_
+    translation: [ 4.8, 2.7, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB9_
+    translation: [ 4.8, 1.5, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB10_
+    translation: [ 4.8, -1.5, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB11_
+    translation: [ 4.8, -2.7, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB12_
+    translation: [ 4.8, -3.9, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB13_
+    translation: [ -4.8, 3.9, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB14_
+    translation: [ -4.8, 2.7, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB15_
+    translation: [ -4.8, 1.5, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB16_
+    translation: [ -4.8, -1.5, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB17_
+    translation: [ -4.8, -2.7, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB18_
+    translation: [ -4.8, -3.9, 0 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *fence
+    prefix: SB19_
+    translation: [ 3.9, 4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB20_
+    translation: [ 2.7, 4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB21_
+    translation: [ 1.5, 4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB22_
+    translation: [ -1.5, 4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB23_
+    translation: [ -2.7, 4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB24_
+    translation: [ -3.9, 4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB25_
+    translation: [ 3.9, -4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB26_
+    translation: [ 2.7, -4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB27_
+    translation: [ 1.5, -4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB28_
+    translation: [ -1.5, -4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB29_
+    translation: [ -2.7, -4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *fence
+    prefix: SB30_
+    translation: [ -3.9, -4.8, 0 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - &debris
+    type: SubBody
+    uri: "debris.body"
+    parent: Floor
+    prefix: SB31_
+    translation: [ 0, 0, 0.15 ]
+    rotation: [ 0, 0, 1, 0 ]
+    joint_type: fixed
+  - <<: *debris
+    prefix: SB32_
+    translation: [ 2.0, 1.0, 0.15 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *debris
+    prefix: SB33_
+    translation: [ 4.0, -3.0, 0.15 ]
+    rotation: [ 0, 0, 1, -45 ]
+  - <<: *debris
+    prefix: SB34_
+    translation: [ 1.0, -4.0, 0.15 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *debris
+    prefix: SB35_
+    translation: [ -2.0, -2.0, 0.15 ]
+    rotation: [ 0, 0, 1, 45 ]
+  - <<: *debris
+    prefix: SB36_
+    translation: [ 2.0, -2.0, 0.15 ]
+    rotation: [ 0, 0, 1, -90 ]
+  - <<: *debris
+    prefix: SB37_
+    translation: [ 4.0, 3.0, 0.15 ]
+    rotation: [ 0, 0, 1, 180 ]
+  - <<: *debris
+    prefix: SB38_
+    translation: [ 2.0, 3.0, 0.15 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *debris
+    prefix: SB39_
+    translation: [ 0.0, 2.0, 0.15 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *debris
+    prefix: SB40_
+    translation: [ -3.0, 1.0, 0.15 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - <<: *debris
+    prefix: SB41_
+    translation: [ -4.0, -4.0, 0.15 ]
+    rotation: [ 0, 0, 1, 0 ]
+  - &board
+    type: SubBody
+    uri: "board.body"
+    parent: Floor
+    prefix: SB42_
+    translation: [ -4.0, -3.0, 1.0 ]
+    joint_type: fixed
+  - <<: *board
+    prefix: SB43_
+    translation: [ -4.0, -2.0, 1.0 ]
+  - <<: *board
+    prefix: SB44_
+    translation: [ -4.0, -0.7, 1.0 ]
+    rotation: [ 1, 0, 0, 20 ]
+  - <<: *board
+    prefix: SB45_
+    translation: [ 3.5, -2.0, 0.25 ]
+    rotation: [ [ 0, 1, 0, 90 ], [ 1, 0, 0, -45 ] ]
+  - &ceiling
+    type: SubBody
+    uri: "ceiling_board.body"
+    parent: Floor
+    prefix: SB46_
+    translation: [ 1.5, 4.5, 0.5 ]
+    rotation: [ [ 0, 0, 1, -60 ], [ 0, 1, 0, 60 ] ]
+    joint_type: fixed
+  - <<: *ceiling
+    prefix: SB47_
+    translation: [ -3.0, 2.0, 0.5 ]
+    rotation: [ 0, 1, 0, 45 ]
+  - <<: *ceiling
+    prefix: SB48_
+    translation: [ 3.0, -4.0, 0.5 ]
+    rotation: [ [ 0, 0, 1, -45 ], [ 0, 1, 0, -45 ] ]
+  - &straight
+    type: SubBody
+    uri: "straight_pipe.body"
+    parent: Floor
+    prefix: SB49_
+    translation: [ 0, -1.0, 0.2 ]
+    rotation: [ [ 0, 0, 1, 45 ], [ 0, 1, 0, -45 ] ]
+    joint_type: fixed
+  - <<: *straight
+    prefix: SB50_
+    translation: [ 0, -1.0, 1.0 ]
+    rotation: [ [ 0, 0, 1, -90 ], [ 1, 0, 0, 60 ] ]
+  - <<: *straight
+    prefix: SB51_
+    translation: [ 4.0, 2.0, 1.0 ]
+    rotation: [ 1, 0, 0, 60 ]
+  - <<: *straight
+    prefix: SB52_
+    translation: [ 3.7, 1.0, 1.0 ]
+    rotation: [ 1, 0, 0, -60 ]
+  - <<: *straight
+    prefix: SB53_
+    translation: [ -2.0, 2.0, 1.0 ]
+    rotation: [ [ 0, 0, 1, -45 ], [ 1, 0, 0, -60 ] ]
+  - <<: *straight
+    prefix: SB54_
+    translation: [ -2.0, -4.0, 1.0 ]
+    rotation: [ [ 0, 0, 1, -60 ], [ 1, 0, 0, 45 ] ]

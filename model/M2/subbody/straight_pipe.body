@@ -1,0 +1,14 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: StraightPipe
+links:
+  -
+    name: StraightPipe
+    translation: [ 0, 0, 0.1 ]
+    joint_type: fixed
+    material: Ground
+    elements:
+      -
+        type: Shape
+        geometry: { type: Cylinder, height: 2.0, radius: 0.1 }
+        appearance: { material: { diffuseColor: [ 0.3, 0.3, 0.3 ] } }

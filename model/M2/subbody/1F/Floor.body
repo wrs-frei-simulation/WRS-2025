@@ -1,0 +1,26 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Floor # 1F_surface
+
+links:
+  -
+    name: 1F_SURFACE
+    translation: [0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 200.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    material: Ground
+    elements:
+      Shape:  # 1F_surface.dae
+        translation: [ 10.2625, 6.175, -0.05 ]
+        geometry: { type: Box, size: [ 20.525, 12.35, 0.1 ] }
+        appearance:
+          material:
+            diffuseColor: [ 0.56, 0.56, 0.56 ]
+            specularColor: [ 0.56, 0.56, 0.56 ]
+            shininess: 0.12

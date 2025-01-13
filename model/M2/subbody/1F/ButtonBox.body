@@ -1,0 +1,81 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: ButtonBox # WRS_P_1F_button
+
+BOX_MATERIAL: &BOX_MATERIAL
+  material:
+    diffuseColor: [ 0.4, 0.4, 0.4 ]
+    specularColor: [ 0.4, 0.4, 0.4 ]
+    shininess: 0.12
+
+BLUE_BUTTON: &BLUE_BUTTON
+  Shape: 
+    geometry: { type: Cylinder, radius: 0.03, height: 0.01 }
+    appearance:
+      material:
+        diffuseColor: [ 0, 0, 1 ]
+        #emissiveColor: [ 0, 0, 1 ]
+
+RED_BUTTON: &RED_BUTTON
+  Shape: 
+    geometry: { type: Cylinder, radius: 0.03, height: 0.01 }
+    appearance:
+      material:
+        diffuseColor: [ 1, 0, 0 ]
+        #emissiveColor: [ 1, 0, 0 ]
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 100.0
+    inertia: [ 
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      -
+        name: MAIN
+        type: Transform
+        translation: [ 0.1, 8.857, 0.848 ]
+        elements:
+          Shape: 
+            geometry: { type: Box, size: [ 0.2, 0.9, 1.693] }
+            appearance: *BOX_MATERIAL
+      -
+        name: BUTTON_TOP_LEFT
+        type: Transform
+        translation: [ 0.205, 8.5568, 1.545 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *BLUE_BUTTON
+      -
+        name: BUTTON_TOP_CENTER
+        type: Transform
+        translation: [ 0.205, 8.8568, 1.545 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *BLUE_BUTTON
+      -
+        name: BUTTON_TOP_RIGHT
+        type: Transform
+        translation: [ 0.205, 9.1568, 1.545 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *BLUE_BUTTON
+      -
+        name: BUTTON_BOTTOM_LEFT
+        type: Transform
+        translation: [ 0.205, 8.5568, 1.345 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *RED_BUTTON
+      -
+        name: BUTTON_BOTTOM_CENTER
+        type: Transform
+        translation: [ 0.205, 8.8568, 1.345 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *RED_BUTTON
+      -
+        name: BUTTON_BOTTOM_RIGHT
+        type: Transform
+        translation: [ 0.205, 9.1568, 1.345 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *RED_BUTTON

@@ -1,0 +1,14 @@
+format: ChoreonoidBody
+format_version: 2.0
+name: CeilingBoard
+links:
+  -
+    name: CeilingBoard
+    translation: [ 0, 0, 0.05 ]
+    joint_type: fixed
+    material: Ground
+    elements:
+      -
+        type: Shape
+        geometry: { type: Box, size: [ 1.5, 1.5, 0.1 ] }
+        appearance: { material: { diffuseColor: [ 0.3, 0.3, 0.3 ] } }

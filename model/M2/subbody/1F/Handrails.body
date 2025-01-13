@@ -1,0 +1,5506 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Handrails #1F_handrail
+
+OFFSET: &OFFSET [ 0, 0, 0.18 ]
+
+SILVER: &SILVER
+  material:
+    diffuseColor: [ 0.96, 0.96, 0.96 ]
+    specularColor: [ 0.96, 0.96, 0.96 ]
+    shininess: 0.12
+    
+BLACK: &BLACK
+  material:
+    diffuseColor: [ 0.34, 0.34, 0.34 ]
+    specularColor: [ 0.34, 0.34, 0.34 ]
+    shininess: 0.12
+    
+HANDRAIL_1: &HANDRAIL_1
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 5.45 }
+    appearance: *SILVER
+    
+HANDRAIL_2: &HANDRAIL_2
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 0.9 }
+    appearance: *SILVER
+    
+HANDRAIL_22: &HANDRAIL_22
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 4.027 }
+    appearance: *SILVER
+    
+HANDRAIL_58: &HANDRAIL_58
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 3.854 }
+    appearance: *SILVER
+
+HANDRAIL_73: &HANDRAIL_73
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 6.65 }
+    appearance: *SILVER
+
+HANDRAIL_99: &HANDRAIL_99
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 4.658 }
+    appearance: *SILVER
+    
+HANDRAIL_419: &HANDRAIL_419
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 3.658 }
+    appearance: *SILVER
+    
+HANDRAIL_553: &HANDRAIL_553
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 6.683 }
+    appearance: *SILVER
+    
+HANDRAIL_577: &HANDRAIL_577
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 9.31 }
+    appearance: *SILVER
+    
+HANDRAIL_616: &HANDRAIL_616
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 7.65 }
+    appearance: *SILVER
+    
+HANDRAIL_647: &HANDRAIL_647
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 8.33 }
+    appearance: *SILVER
+    
+HANDRAIL_682: &HANDRAIL_682
+  Shape:
+    geometry: { type: Cylinder, radius: 0.017, height: 0.786 }
+    appearance: *SILVER
+    
+HANDRAIL_687: &HANDRAIL_687
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 0.056 }
+    appearance: *SILVER
+    
+HANDRAIL_688: &HANDRAIL_688
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 3.612 }
+    appearance: *SILVER
+    
+HANDRAIL_689: &HANDRAIL_689
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 0.794 }
+    appearance: *SILVER
+    
+HANDRAIL_695: &HANDRAIL_695
+  Shape:
+    geometry: { type: Cylinder, radius: 0.018, height: 0.809 }
+    appearance: *SILVER
+
+DOOR_FRAME_1: &DOOR_FRAME_1
+  Shape:
+    geometry: { type: Box, size: [ 0.045, 0.96, 0.045 ] }
+    appearance: *BLACK
+    
+DOOR_FRAME_3: &DOOR_FRAME_3
+  Shape:
+    geometry: { type: Box, size: [ 0.045, 0.045, 1.8 ] }
+    appearance: *BLACK
+    
+DOOR_1: &DOOR_1
+  Shape:
+    geometry: { type: Box, size: [ 0.03, 0.87, 1.8 ] }
+    appearance: *BLACK
+
+DOOR_KNOB_1: &DOOR_KNOB_1
+  Shape:
+    geometry: { type: Cylinder, radius: 0.025, height: 0.005 }
+    appearance: *SILVER
+
+DOOR_KNOB_2: &DOOR_KNOB_2
+  Shape:
+    geometry: { type: Cylinder, radius: 0.01, height: 0.0505 }
+    appearance: *SILVER
+
+DOOR_KNOB_3: &DOOR_KNOB_3
+  Shape:
+    geometry: { type: Box, size: [ 0.015, 0.1, 0.03 ] }
+    appearance: *SILVER
+
+links:
+  -
+    name: BASE
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    mass: 200.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  -
+    name: HANDRAIL_1
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_1
+        type: Transform
+        translation: [ 3.078, 0.021, 0.902 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_2
+        type: Transform
+        translation: [ 0.5781, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_3
+        type: Transform
+        translation: [ 0.8406, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_4
+        type: Transform
+        translation: [ 1.1031, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_5
+        type: Transform
+        translation: [ 1.3656, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_6
+        type: Transform
+        translation: [ 1.6282, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_7
+        type: Transform
+        translation: [ 1.8908, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_8
+        type: Transform
+        translation: [ 2.1533, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_9
+        type: Transform
+        translation: [ 2.4158, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_10
+        type: Transform
+        translation: [ 2.6783, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_11
+        type: Transform
+        translation: [ 2.9409, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_12
+        type: Transform
+        translation: [ 3.2035, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_13
+        type: Transform
+        translation: [ 3.466, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_14
+        type: Transform
+        translation: [ 3.7285, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_15
+        type: Transform
+        translation: [ 3.991, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_16
+        type: Transform
+        translation: [ 4.2535, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_17
+        type: Transform
+        translation: [ 4.5161, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_18
+        type: Transform
+        translation: [ 4.7786, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_19
+        type: Transform
+        translation: [ 5.0411, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_20
+        type: Transform
+        translation: [ 5.3037, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_21
+        type: Transform
+        translation: [ 5.5662, 0.021, 0.452 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_22
+        type: Transform
+        translation: [ 8.1635, 0.025, 0.905 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_22
+      -
+        name: HANDRAIL_23
+        type: Transform
+        translation: [ 6.4146, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_24
+        type: Transform
+        translation: [ 6.6771, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_25
+        type: Transform
+        translation: [ 6.9396, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_26
+        type: Transform
+        translation: [ 7.2022, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_27
+        type: Transform
+        translation: [ 7.4647, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_28
+        type: Transform
+        translation: [ 7.7272, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_29
+        type: Transform
+        translation: [ 7.9898, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_30
+        type: Transform
+        translation: [ 8.2523, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_31
+        type: Transform
+        translation: [ 8.5148, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_32
+        type: Transform
+        translation: [ 8.7774, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_33
+        type: Transform
+        translation: [ 9.0399, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_34
+        type: Transform
+        translation: [ 9.3024, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_35
+        type: Transform
+        translation: [ 9.5649, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_36
+        type: Transform
+        translation: [ 9.8275, 0.025, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_2
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_37
+        type: Transform
+        translation: [ 13.251, 0.017, 0.9 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_38
+        type: Transform
+        translation: [ 10.7506, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_39
+        type: Transform
+        translation: [ 11.0131, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_40
+        type: Transform
+        translation: [ 11.2757, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_41
+        type: Transform
+        translation: [ 11.5382, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_42
+        type: Transform
+        translation: [ 11.8007, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_43
+        type: Transform
+        translation: [ 12.0632, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_44
+        type: Transform
+        translation: [ 12.3258, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_45
+        type: Transform
+        translation: [ 12.5883, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_46
+        type: Transform
+        translation: [ 12.8508, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_47
+        type: Transform
+        translation: [ 13.1134, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_48
+        type: Transform
+        translation: [ 13.3759, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_49
+        type: Transform
+        translation: [ 13.6384, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_50
+        type: Transform
+        translation: [ 13.901, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_51
+        type: Transform
+        translation: [ 14.1635, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_52
+        type: Transform
+        translation: [ 14.426, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_53
+        type: Transform
+        translation: [ 14.6886, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_54
+        type: Transform
+        translation: [ 14.9511, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_55
+        type: Transform
+        translation: [ 15.2136, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_56
+        type: Transform
+        translation: [ 15.4762, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_57
+        type: Transform
+        translation: [ 15.7387, 0.017, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_58
+        type: Transform
+        translation: [ 18.2495, 0.021, 0.9025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_58
+      -
+        name: HANDRAIL_59
+        type: Transform
+        translation: [ 16.587, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_60
+        type: Transform
+        translation: [ 16.8495, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_61
+        type: Transform
+        translation: [ 17.112, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_62
+        type: Transform
+        translation: [ 17.3746, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_63
+        type: Transform
+        translation: [ 17.6371, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_64
+        type: Transform
+        translation: [ 17.8997, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_65
+        type: Transform
+        translation: [ 18.1622, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_66
+        type: Transform
+        translation: [ 18.4247, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_67
+        type: Transform
+        translation: [ 18.6872, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_68
+        type: Transform
+        translation: [ 18.9498, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_69
+        type: Transform
+        translation: [ 19.2123, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_70
+        type: Transform
+        translation: [ 19.4748, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_71
+        type: Transform
+        translation: [ 19.7374, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_72
+        type: Transform
+        translation: [ 19.9999, 0.021, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+     name: HANDRAIL_3
+     parent: BASE
+     jointType: fixed
+     elements:
+      -
+        name: HANDRAIL_73
+        type: Transform
+        translation: [ 0.017, 8.679, 0.9035 ]
+        elements: *HANDRAIL_73
+      -
+        name: HANDRAIL_74
+        type: Transform
+        translation: [ 0.017, 5.579, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_75
+        type: Transform
+        translation: [ 0.017, 5.8415, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_76
+        type: Transform
+        translation: [ 0.017, 6.1041, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_77
+        type: Transform
+        translation: [ 0.017, 6.3666, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_78
+        type: Transform
+        translation: [ 0.017, 6.6291, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_79
+        type: Transform
+        translation: [ 0.017, 6.8917, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_80
+        type: Transform
+        translation: [ 0.017, 7.1542, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_81
+        type: Transform
+        translation: [ 0.017, 7.4167, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_82
+        type: Transform
+        translation: [ 0.017, 7.6793, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_83
+        type: Transform
+        translation: [ 0.017, 7.9418, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_84
+        type: Transform
+        translation: [ 0.017, 8.2043, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_85
+        type: Transform
+        translation: [ 0.017, 8.4669, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_86
+        type: Transform
+        translation: [ 0.017, 8.7294, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_87
+        type: Transform
+        translation: [ 0.017, 8.9919, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_88
+        type: Transform
+        translation: [ 0.017, 9.2545, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_89
+        type: Transform
+        translation: [ 0.017, 9.517, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_90
+        type: Transform
+        translation: [ 0.017, 9.7795, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_91
+        type: Transform
+        translation: [ 0.017, 10.0421, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_92
+        type: Transform
+        translation: [ 0.017, 10.3046, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_93
+        type: Transform
+        translation: [ 0.017, 10.5671, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_94
+        type: Transform
+        translation: [ 0.017, 10.8297, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_95
+        type: Transform
+        translation: [ 0.017, 11.0922, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_96
+        type: Transform
+        translation: [ 0.017, 11.3548, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_97
+        type: Transform
+        translation: [ 0.017, 11.6173, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_98
+        type: Transform
+        translation: [ 0.017, 11.8798, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_99
+        type: Transform
+        translation: [ 0.0193, 2.683, 0.9025 ]
+        elements: *HANDRAIL_99
+      -
+        name: HANDRAIL_100
+        type: Transform
+        translation: [ 0.0193, 0.579, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_101
+        type: Transform
+        translation: [ 0.0193, 0.8415, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_102
+        type: Transform
+        translation: [ 0.0193, 1.1041, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_103
+        type: Transform
+        translation: [ 0.0193, 1.3666, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_104
+        type: Transform
+        translation: [ 0.0193, 1.6291, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_105
+        type: Transform
+        translation: [ 0.0193, 1.8917, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_106
+        type: Transform
+        translation: [ 0.0193, 2.1542, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_107
+        type: Transform
+        translation: [ 0.0193, 2.4167, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_108
+        type: Transform
+        translation: [ 0.0193, 2.6793, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_109
+        type: Transform
+        translation: [ 0.0193, 2.9418, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_110
+        type: Transform
+        translation: [ 0.0193, 3.2043, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_111
+        type: Transform
+        translation: [ 0.0193, 3.4669, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_112
+        type: Transform
+        translation: [ 0.0193, 3.7294, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_113
+        type: Transform
+        translation: [ 0.0193, 3.9919, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_114
+        type: Transform
+        translation: [ 0.0193, 4.2545, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_115
+        type: Transform
+        translation: [ 0.0193, 4.517, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_116
+        type: Transform
+        translation: [ 0.0193, 4.7796, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_4
+    parent: BASE
+    jointType: fixed
+    elements_: # disabled
+      -
+        name: HANDRAIL_117
+        type: Transform
+        translation: [ 10.35, 8.679, 0.9035 ]
+        elements: *HANDRAIL_73
+      -
+        name: HANDRAIL_118
+        type: Transform
+        translation: [ 10.35, 5.579, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_119
+        type: Transform
+        translation: [ 10.35, 5.8415, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_120
+        type: Transform
+        translation: [ 10.35, 6.1041, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_121
+        type: Transform
+        translation: [ 10.35, 6.3666, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_122
+        type: Transform
+        translation: [ 10.35, 6.6291, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_123
+        type: Transform
+        translation: [ 10.35, 6.8917, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_124
+        type: Transform
+        translation: [ 10.35, 7.1542, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_125
+        type: Transform
+        translation: [ 10.35, 7.4167, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_126
+        type: Transform
+        translation: [ 10.35, 7.6793, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_127
+        type: Transform
+        translation: [ 10.35, 7.9418, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_128
+        type: Transform
+        translation: [ 10.35, 8.2043, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_129
+        type: Transform
+        translation: [ 10.35, 8.4669, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_130
+        type: Transform
+        translation: [ 10.35, 8.7294, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_131
+        type: Transform
+        translation: [ 10.35, 8.9919, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_132
+        type: Transform
+        translation: [ 10.35, 9.2545, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_133
+        type: Transform
+        translation: [ 10.35, 9.517, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_134
+        type: Transform
+        translation: [ 10.35, 9.7795, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_135
+        type: Transform
+        translation: [ 10.35, 10.0421, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_136
+        type: Transform
+        translation: [ 10.35, 10.3046, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_137
+        type: Transform
+        translation: [ 10.35, 10.5671, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_138
+        type: Transform
+        translation: [ 10.35, 10.8297, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_139
+        type: Transform
+        translation: [ 10.35, 11.0922, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_140
+        type: Transform
+        translation: [ 10.35, 11.3548, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_141
+        type: Transform
+        translation: [ 10.35, 11.6173, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_142
+        type: Transform
+        translation: [ 10.35, 11.8798, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_143
+        type: Transform
+        translation: [ 10.3523, 2.683, 0.9025 ]
+        elements: *HANDRAIL_99
+      -
+        name: HANDRAIL_144
+        type: Transform
+        translation: [ 10.3523, 0.579, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_145
+        type: Transform
+        translation: [ 10.3523, 0.8415, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_146
+        type: Transform
+        translation: [ 10.3523, 1.1041, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_147
+        type: Transform
+        translation: [ 10.3523, 1.3666, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_148
+        type: Transform
+        translation: [ 10.3523, 1.6291, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_149
+        type: Transform
+        translation: [ 10.3523, 1.8917, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_150
+        type: Transform
+        translation: [ 10.3523, 2.1542, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_151
+        type: Transform
+        translation: [ 10.3523, 2.4167, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_152
+        type: Transform
+        translation: [ 10.3523, 2.6793, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_153
+        type: Transform
+        translation: [ 10.3523, 2.9418, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_154
+        type: Transform
+        translation: [ 10.3523, 3.2043, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_155
+        type: Transform
+        translation: [ 10.3523, 3.4669, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_156
+        type: Transform
+        translation: [ 10.3523, 3.7294, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_157
+        type: Transform
+        translation: [ 10.3523, 3.9919, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_158
+        type: Transform
+        translation: [ 10.3523, 4.2545, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_159
+        type: Transform
+        translation: [ 10.3523, 4.517, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_160
+        type: Transform
+        translation: [ 10.3523, 4.7796, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_5
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_161
+        type: Transform
+        translation: [ 20.508, 8.6825, 0.9035 ]
+        elements: *HANDRAIL_73
+      -
+        name: HANDRAIL_162
+        type: Transform
+        translation: [ 20.508, 5.5823, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_163
+        type: Transform
+        translation: [ 20.508, 5.8448, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_164
+        type: Transform
+        translation: [ 20.508, 6.1074, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_165
+        type: Transform
+        translation: [ 20.508, 6.3698, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_166
+        type: Transform
+        translation: [ 20.508, 6.6324, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_167
+        type: Transform
+        translation: [ 20.508, 6.895, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_168
+        type: Transform
+        translation: [ 20.508, 7.1575, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_169
+        type: Transform
+        translation: [ 20.508, 7.42, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_170
+        type: Transform
+        translation: [ 20.508, 7.6826, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_171
+        type: Transform
+        translation: [ 20.508, 7.9451, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_172
+        type: Transform
+        translation: [ 20.508, 8.2076, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_173
+        type: Transform
+        translation: [ 20.508, 8.4702, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_174
+        type: Transform
+        translation: [ 20.508, 8.7327, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_175
+        type: Transform
+        translation: [ 20.508, 8.9952, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_176
+        type: Transform
+        translation: [ 20.508, 9.2578, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_177
+        type: Transform
+        translation: [ 20.508, 9.5203, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_178
+        type: Transform
+        translation: [ 20.508, 9.7828, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_179
+        type: Transform
+        translation: [ 20.508, 10.0454, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_180
+        type: Transform
+        translation: [ 20.508, 10.3079, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_181
+        type: Transform
+        translation: [ 20.508, 10.5704, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_182
+        type: Transform
+        translation: [ 20.508, 10.833, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_183
+        type: Transform
+        translation: [ 20.508, 11.0955, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_184
+        type: Transform
+        translation: [ 20.508, 11.3581, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_185
+        type: Transform
+        translation: [ 20.508, 11.6206, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_186
+        type: Transform
+        translation: [ 20.508, 11.8831, 0.4535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_187
+        type: Transform
+        translation: [ 20.5103, 2.6865, 0.9025 ]
+        elements: *HANDRAIL_99
+      -
+        name: HANDRAIL_188
+        type: Transform
+        translation: [ 20.5103, 0.5823, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_189
+        type: Transform
+        translation: [ 20.5103, 0.8448, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_190
+        type: Transform
+        translation: [ 20.5103, 1.1074, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_191
+        type: Transform
+        translation: [ 20.5103, 1.3699, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_192
+        type: Transform
+        translation: [ 20.5103, 1.6324, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_193
+        type: Transform
+        translation: [ 20.5103, 1.895, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_194
+        type: Transform
+        translation: [ 20.5103, 2.1575, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_195
+        type: Transform
+        translation: [ 20.5103, 2.42, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_196
+        type: Transform
+        translation: [ 20.5103, 2.6826, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_197
+        type: Transform
+        translation: [ 20.5103, 2.9451, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_198
+        type: Transform
+        translation: [ 20.5103, 3.2076, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_199
+        type: Transform
+        translation: [ 20.5103, 3.4702, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_200
+        type: Transform
+        translation: [ 20.5103, 3.7327, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_201
+        type: Transform
+        translation: [ 20.5103, 3.9952, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_202
+        type: Transform
+        translation: [ 20.5103, 4.2578, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_203
+        type: Transform
+        translation: [ 20.5103, 4.5203, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_204
+        type: Transform
+        translation: [ 20.5103, 4.7829, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_6
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_205
+        type: Transform
+        translation: [ 3.078, 12.337, 0.9025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_206
+        type: Transform
+        translation: [ 0.5781, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_207
+        type: Transform
+        translation: [ 0.8406, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_208
+        type: Transform
+        translation: [ 1.1031, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_209
+        type: Transform
+        translation: [ 1.3656, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_210
+        type: Transform
+        translation: [ 1.6282, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_211
+        type: Transform
+        translation: [ 1.8908, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_212
+        type: Transform
+        translation: [ 2.1533, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_213
+        type: Transform
+        translation: [ 2.4158, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_214
+        type: Transform
+        translation: [ 2.6783, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_215
+        type: Transform
+        translation: [ 2.9409, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_216
+        type: Transform
+        translation: [ 3.2035, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_217
+        type: Transform
+        translation: [ 3.466, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_218
+        type: Transform
+        translation: [ 3.7285, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_219
+        type: Transform
+        translation: [ 3.991, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_220
+        type: Transform
+        translation: [ 4.2535, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_221
+        type: Transform
+        translation: [ 4.5161, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_222
+        type: Transform
+        translation: [ 4.7786, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_223
+        type: Transform
+        translation: [ 5.0411, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_224
+        type: Transform
+        translation: [ 5.3037, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_225
+        type: Transform
+        translation: [ 5.5662, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_226
+        type: Transform
+        translation: [ 8.1635, 12.341, 0.905 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_22
+      -
+        name: HANDRAIL_227
+        type: Transform
+        translation: [ 6.4146, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_228
+        type: Transform
+        translation: [ 6.6771, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_229
+        type: Transform
+        translation: [ 6.9396, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_230
+        type: Transform
+        translation: [ 7.2022, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_231
+        type: Transform
+        translation: [ 7.4647, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_232
+        type: Transform
+        translation: [ 7.7272, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_233
+        type: Transform
+        translation: [ 7.9898, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_234
+        type: Transform
+        translation: [ 8.2523, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_235
+        type: Transform
+        translation: [ 8.5148, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_236
+        type: Transform
+        translation: [ 8.7774, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_237
+        type: Transform
+        translation: [ 9.0399, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_238
+        type: Transform
+        translation: [ 9.3024, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_239
+        type: Transform
+        translation: [ 9.5649, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_240
+        type: Transform
+        translation: [ 9.8275, 12.341, 0.455 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_7
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_241
+        type: Transform
+        translation: [ 13.251, 12.333, 0.9 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_242
+        type: Transform
+        translation: [ 10.7506, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_243
+        type: Transform
+        translation: [ 11.0131, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_244
+        type: Transform
+        translation: [ 11.2757, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_245
+        type: Transform
+        translation: [ 11.5382, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_246
+        type: Transform
+        translation: [ 11.8007, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_247
+        type: Transform
+        translation: [ 12.0632, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_248
+        type: Transform
+        translation: [ 12.3258, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_249
+        type: Transform
+        translation: [ 12.5883, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_250
+        type: Transform
+        translation: [ 12.8508, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_251
+        type: Transform
+        translation: [ 13.1134, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_252
+        type: Transform
+        translation: [ 13.3759, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_253
+        type: Transform
+        translation: [ 13.6384, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_254
+        type: Transform
+        translation: [ 13.901, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_255
+        type: Transform
+        translation: [ 14.1635, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_256
+        type: Transform
+        translation: [ 14.426, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_257
+        type: Transform
+        translation: [ 14.6886, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_258
+        type: Transform
+        translation: [ 14.9511, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_259
+        type: Transform
+        translation: [ 15.2136, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_260
+        type: Transform
+        translation: [ 15.4762, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_261
+        type: Transform
+        translation: [ 15.7387, 12.333, 0.45 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_262
+        type: Transform
+        translation: [ 18.2495, 12.337, 0.9025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_58
+      -
+        name: HANDRAIL_263
+        type: Transform
+        translation: [ 16.587, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_264
+        type: Transform
+        translation: [ 16.8495, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_265
+        type: Transform
+        translation: [ 17.112, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_266
+        type: Transform
+        translation: [ 17.3746, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_267
+        type: Transform
+        translation: [ 17.6371, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_268
+        type: Transform
+        translation: [ 17.8997, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_269
+        type: Transform
+        translation: [ 18.1622, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_270
+        type: Transform
+        translation: [ 18.4247, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_271
+        type: Transform
+        translation: [ 18.6872, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_272
+        type: Transform
+        translation: [ 18.9498, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_273
+        type: Transform
+        translation: [ 19.2123, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_274
+        type: Transform
+        translation: [ 19.4748, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_275
+        type: Transform
+        translation: [ 19.7374, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_276
+        type: Transform
+        translation: [ 19.9999, 12.337, 0.4525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_8
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_277
+        type: Transform
+        translation: [ 3.0773, 0.021, 3.4025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_278
+        type: Transform
+        translation: [ 0.5773, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_279
+        type: Transform
+        translation: [ 0.8398, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_280
+        type: Transform
+        translation: [ 1.1023, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_281
+        type: Transform
+        translation: [ 1.3648, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_282
+        type: Transform
+        translation: [ 1.6274, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_283
+        type: Transform
+        translation: [ 1.89, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_284
+        type: Transform
+        translation: [ 2.1525, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_285
+        type: Transform
+        translation: [ 2.415, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_286
+        type: Transform
+        translation: [ 2.6775, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_287
+        type: Transform
+        translation: [ 2.9401, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_288
+        type: Transform
+        translation: [ 3.2027, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_289
+        type: Transform
+        translation: [ 3.4652, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_290
+        type: Transform
+        translation: [ 3.7277, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_291
+        type: Transform
+        translation: [ 3.9902, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_292
+        type: Transform
+        translation: [ 4.2527, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_293
+        type: Transform
+        translation: [ 4.5153, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_294
+        type: Transform
+        translation: [ 4.7778, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_295
+        type: Transform
+        translation: [ 5.0403, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_296
+        type: Transform
+        translation: [ 5.3029, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_297
+        type: Transform
+        translation: [ 5.5654, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_298
+        type: Transform
+        translation: [ 8.1635, 0.025, 3.405 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_22
+      -
+        name: HANDRAIL_299
+        type: Transform
+        translation: [ 6.4138, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_300
+        type: Transform
+        translation: [ 6.6763, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_301
+        type: Transform
+        translation: [ 6.9388, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_302
+        type: Transform
+        translation: [ 7.2014, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_303
+        type: Transform
+        translation: [ 7.4639, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_304
+        type: Transform
+        translation: [ 7.7264, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_305
+        type: Transform
+        translation: [ 7.989, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_306
+        type: Transform
+        translation: [ 8.2515, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_307
+        type: Transform
+        translation: [ 8.514, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_308
+        type: Transform
+        translation: [ 8.7766, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_309
+        type: Transform
+        translation: [ 9.0391, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_310
+        type: Transform
+        translation: [ 9.3016, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_311
+        type: Transform
+        translation: [ 9.5641, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_312
+        type: Transform
+        translation: [ 9.8267, 0.025, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_9
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_313
+        type: Transform
+        translation: [ 13.251, 0.017, 3.4 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_314
+        type: Transform
+        translation: [ 10.7506, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_315
+        type: Transform
+        translation: [ 11.0131, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_316
+        type: Transform
+        translation: [ 11.2757, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_317
+        type: Transform
+        translation: [ 11.5382, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_318
+        type: Transform
+        translation: [ 11.8007, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_319
+        type: Transform
+        translation: [ 12.0632, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_320
+        type: Transform
+        translation: [ 12.3258, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_321
+        type: Transform
+        translation: [ 12.5883, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_322
+        type: Transform
+        translation: [ 12.8508, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_323
+        type: Transform
+        translation: [ 13.1134, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_324
+        type: Transform
+        translation: [ 13.3759, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_325
+        type: Transform
+        translation: [ 13.6384, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_326
+        type: Transform
+        translation: [ 13.901, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_327
+        type: Transform
+        translation: [ 14.1635, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_328
+        type: Transform
+        translation: [ 14.426, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_329
+        type: Transform
+        translation: [ 14.6886, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_330
+        type: Transform
+        translation: [ 14.9511, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_331
+        type: Transform
+        translation: [ 15.2136, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_332
+        type: Transform
+        translation: [ 15.4762, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_333
+        type: Transform
+        translation: [ 15.7387, 0.017, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_334
+        type: Transform
+        translation: [ 18.2495, 0.021, 3.4025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_58
+      -
+        name: HANDRAIL_335
+        type: Transform
+        translation: [ 16.587, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_336
+        type: Transform
+        translation: [ 16.8495, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_337
+        type: Transform
+        translation: [ 17.112, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_338
+        type: Transform
+        translation: [ 17.3746, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_339
+        type: Transform
+        translation: [ 17.6371, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_340
+        type: Transform
+        translation: [ 17.8997, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_341
+        type: Transform
+        translation: [ 18.1622, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_342
+        type: Transform
+        translation: [ 18.4247, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_343
+        type: Transform
+        translation: [ 18.6872, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_344
+        type: Transform
+        translation: [ 18.9498, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_345
+        type: Transform
+        translation: [ 19.2123, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_346
+        type: Transform
+        translation: [ 19.4748, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_347
+        type: Transform
+        translation: [ 19.7374, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_348
+        type: Transform
+        translation: [ 19.9999, 0.021, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_10
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_349
+        type: Transform
+        translation: [ 0.017, 8.6674, 3.4035 ]
+        elements: *HANDRAIL_73
+      -
+        name: HANDRAIL_350
+        type: Transform
+        translation: [ 0.017, 5.5674, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_351
+        type: Transform
+        translation: [ 0.017, 5.8299, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_352
+        type: Transform
+        translation: [ 0.017, 6.0925, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_353
+        type: Transform
+        translation: [ 0.017, 6.355, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_354
+        type: Transform
+        translation: [ 0.017, 6.6175, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_355
+        type: Transform
+        translation: [ 0.017, 6.8801, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_356
+        type: Transform
+        translation: [ 0.017, 7.1426, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_357
+        type: Transform
+        translation: [ 0.017, 7.4051, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_358
+        type: Transform
+        translation: [ 0.017, 7.6677, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_359
+        type: Transform
+        translation: [ 0.017, 7.9302, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_360
+        type: Transform
+        translation: [ 0.017, 8.1927, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_361
+        type: Transform
+        translation: [ 0.017, 8.4553, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_362
+        type: Transform
+        translation: [ 0.017, 8.7178, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_363
+        type: Transform
+        translation: [ 0.017, 8.9803, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_364
+        type: Transform
+        translation: [ 0.017, 9.2429, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_365
+        type: Transform
+        translation: [ 0.017, 9.5054, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_366
+        type: Transform
+        translation: [ 0.017, 9.7679, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_367
+        type: Transform
+        translation: [ 0.017, 10.0305, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_368
+        type: Transform
+        translation: [ 0.017, 10.293, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_369
+        type: Transform
+        translation: [ 0.017, 10.5555, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_370
+        type: Transform
+        translation: [ 0.017, 10.8181, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_371
+        type: Transform
+        translation: [ 0.017, 11.0806, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_372
+        type: Transform
+        translation: [ 0.017, 11.3432, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_373
+        type: Transform
+        translation: [ 0.017, 11.6057, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_374
+        type: Transform
+        translation: [ 0.017, 11.8682, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_375
+        type: Transform
+        translation: [ 0.0193, 2.6714, 3.4025 ]
+        elements: *HANDRAIL_99
+      -
+        name: HANDRAIL_376
+        type: Transform
+        translation: [ 0.0193, 0.5674, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_377
+        type: Transform
+        translation: [ 0.0193, 0.8299, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_378
+        type: Transform
+        translation: [ 0.0193, 1.0925, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_379
+        type: Transform
+        translation: [ 0.0193, 1.355, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_380
+        type: Transform
+        translation: [ 0.0193, 1.6175, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_381
+        type: Transform
+        translation: [ 0.0193, 1.8801, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_382
+        type: Transform
+        translation: [ 0.0193, 2.1426, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_383
+        type: Transform
+        translation: [ 0.0193, 2.4051, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_384
+        type: Transform
+        translation: [ 0.0193, 2.6677, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_385
+        type: Transform
+        translation: [ 0.0193, 2.9302, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_386
+        type: Transform
+        translation: [ 0.0193, 3.1927, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_387
+        type: Transform
+        translation: [ 0.0193, 3.4553, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_388
+        type: Transform
+        translation: [ 0.0193, 3.7178, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_389
+        type: Transform
+        translation: [ 0.0193, 3.9803, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_390
+        type: Transform
+        translation: [ 0.0193, 4.2429, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_391
+        type: Transform
+        translation: [ 0.0193, 4.5054, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_392
+        type: Transform
+        translation: [ 0.0193, 4.768, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_11
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_393
+        type: Transform
+        translation: [ 10.35, 8.6674, 3.4035 ]
+        elements: *HANDRAIL_73
+      -
+        name: HANDRAIL_394
+        type: Transform
+        translation: [ 10.35, 5.5674, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_395
+        type: Transform
+        translation: [ 10.35, 5.8299, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_396
+        type: Transform
+        translation: [ 10.35, 6.0925, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_397
+        type: Transform
+        translation: [ 10.35, 6.355, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_398
+        type: Transform
+        translation: [ 10.35, 6.6175, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_399
+        type: Transform
+        translation: [ 10.35, 6.8801, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_400
+        type: Transform
+        translation: [ 10.35, 7.1426, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_401
+        type: Transform
+        translation: [ 10.35, 7.4051, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_402
+        type: Transform
+        translation: [ 10.35, 7.6677, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_403
+        type: Transform
+        translation: [ 10.35, 7.9302, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_404
+        type: Transform
+        translation: [ 10.35, 8.1927, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_405
+        type: Transform
+        translation: [ 10.35, 8.4553, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_406
+        type: Transform
+        translation: [ 10.35, 8.7178, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_407
+        type: Transform
+        translation: [ 10.35, 8.9803, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_408
+        type: Transform
+        translation: [ 10.35, 9.2429, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_409
+        type: Transform
+        translation: [ 10.35, 9.5054, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_410
+        type: Transform
+        translation: [ 10.35, 9.7679, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_411
+        type: Transform
+        translation: [ 10.35, 10.0305, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_412
+        type: Transform
+        translation: [ 10.35, 10.293, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_413
+        type: Transform
+        translation: [ 10.35, 10.5555, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_414
+        type: Transform
+        translation: [ 10.35, 10.8181, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_415
+        type: Transform
+        translation: [ 10.35, 11.0806, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_416
+        type: Transform
+        translation: [ 10.35, 11.3432, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_417
+        type: Transform
+        translation: [ 10.35, 11.6057, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_418
+        type: Transform
+        translation: [ 10.35, 11.8682, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_12
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_437
+        type: Transform
+        translation: [ 20.508, 8.6709, 3.4035 ]
+        elements: *HANDRAIL_73
+      -
+        name: HANDRAIL_438
+        type: Transform
+        translation: [ 20.508, 5.5707, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_439
+        type: Transform
+        translation: [ 20.508, 5.8332, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_440
+        type: Transform
+        translation: [ 20.508, 6.0958, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_441
+        type: Transform
+        translation: [ 20.508, 6.3582, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_442
+        type: Transform
+        translation: [ 20.508, 6.6208, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_443
+        type: Transform
+        translation: [ 20.508, 6.8834, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_444
+        type: Transform
+        translation: [ 20.508, 7.1459, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_445
+        type: Transform
+        translation: [ 20.508, 7.4084, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_446
+        type: Transform
+        translation: [ 20.508, 7.671, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_447
+        type: Transform
+        translation: [ 20.508, 7.9335, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_448
+        type: Transform
+        translation: [ 20.508, 8.196, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_449
+        type: Transform
+        translation: [ 20.508, 8.4586, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_450
+        type: Transform
+        translation: [ 20.508, 8.7211, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_451
+        type: Transform
+        translation: [ 20.508, 8.9836, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_452
+        type: Transform
+        translation: [ 20.508, 9.2462, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_453
+        type: Transform
+        translation: [ 20.508, 9.5087, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_454
+        type: Transform
+        translation: [ 20.508, 9.7712, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_455
+        type: Transform
+        translation: [ 20.508, 10.0338, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_456
+        type: Transform
+        translation: [ 20.508, 10.2963, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_457
+        type: Transform
+        translation: [ 20.508, 10.5588, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_458
+        type: Transform
+        translation: [ 20.508, 10.8214, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_459
+        type: Transform
+        translation: [ 20.508, 11.0839, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_460
+        type: Transform
+        translation: [ 20.508, 11.3465, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_461
+        type: Transform
+        translation: [ 20.508, 11.609, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_462
+        type: Transform
+        translation: [ 20.508, 11.8715, 2.9535 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_463
+        type: Transform
+        translation: [ 20.5103, 2.6749, 3.4025 ]
+        elements: *HANDRAIL_99
+      -
+        name: HANDRAIL_464
+        type: Transform
+        translation: [ 20.5103, 0.5707, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_465
+        type: Transform
+        translation: [ 20.5103, 0.8332, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_466
+        type: Transform
+        translation: [ 20.5103, 1.0958, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_467
+        type: Transform
+        translation: [ 20.5103, 1.3583, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_468
+        type: Transform
+        translation: [ 20.5103, 1.6208, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_469
+        type: Transform
+        translation: [ 20.5103, 1.8834, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_470
+        type: Transform
+        translation: [ 20.5103, 2.1459, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_471
+        type: Transform
+        translation: [ 20.5103, 2.4084, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_472
+        type: Transform
+        translation: [ 20.5103, 2.671, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_473
+        type: Transform
+        translation: [ 20.5103, 2.9335, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_474
+        type: Transform
+        translation: [ 20.5103, 3.196, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_475
+        type: Transform
+        translation: [ 20.5103, 3.4586, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_476
+        type: Transform
+        translation: [ 20.5103, 3.7211, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_477
+        type: Transform
+        translation: [ 20.5103, 3.9836, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_478
+        type: Transform
+        translation: [ 20.5103, 4.2462, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_479
+        type: Transform
+        translation: [ 20.5103, 4.5087, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_480
+        type: Transform
+        translation: [ 20.5103, 4.7713, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_13
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_481
+        type: Transform
+        translation: [ 3.078, 12.337, 3.4025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_482
+        type: Transform
+        translation: [ 0.5773, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_483
+        type: Transform
+        translation: [ 0.8398, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_484
+        type: Transform
+        translation: [ 1.1023, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_485
+        type: Transform
+        translation: [ 1.3648, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_486
+        type: Transform
+        translation: [ 1.6274, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_487
+        type: Transform
+        translation: [ 1.89, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_488
+        type: Transform
+        translation: [ 2.1525, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_489
+        type: Transform
+        translation: [ 2.415, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_490
+        type: Transform
+        translation: [ 2.6775, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_491
+        type: Transform
+        translation: [ 2.9401, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_492
+        type: Transform
+        translation: [ 3.2027, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_493
+        type: Transform
+        translation: [ 3.4652, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_494
+        type: Transform
+        translation: [ 3.7277, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_495
+        type: Transform
+        translation: [ 3.9902, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_496
+        type: Transform
+        translation: [ 4.2527, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_497
+        type: Transform
+        translation: [ 4.5153, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_498
+        type: Transform
+        translation: [ 4.7778, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_499
+        type: Transform
+        translation: [ 5.0403, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_500
+        type: Transform
+        translation: [ 5.3029, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_501
+        type: Transform
+        translation: [ 5.5654, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_502
+        type: Transform
+        translation: [ 8.1627, 12.341, 3.405 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_22
+      -
+        name: HANDRAIL_503
+        type: Transform
+        translation: [ 6.4138, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_504
+        type: Transform
+        translation: [ 6.6763, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_505
+        type: Transform
+        translation: [ 6.9388, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_506
+        type: Transform
+        translation: [ 7.2014, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_507
+        type: Transform
+        translation: [ 7.4639, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_508
+        type: Transform
+        translation: [ 7.7264, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_509
+        type: Transform
+        translation: [ 7.989, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_510
+        type: Transform
+        translation: [ 8.2515, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_511
+        type: Transform
+        translation: [ 8.514, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_512
+        type: Transform
+        translation: [ 8.7766, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_513
+        type: Transform
+        translation: [ 9.0391, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_514
+        type: Transform
+        translation: [ 9.3016, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_515
+        type: Transform
+        translation: [ 9.5641, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_516
+        type: Transform
+        translation: [ 9.8267, 12.341, 2.955 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_14
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_517
+        type: Transform
+        translation: [ 13.2502, 12.333, 3.4 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_1
+      -
+        name: HANDRAIL_518
+        type: Transform
+        translation: [ 10.7506, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_519
+        type: Transform
+        translation: [ 11.0131, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_520
+        type: Transform
+        translation: [ 11.2757, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_521
+        type: Transform
+        translation: [ 11.5382, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_522
+        type: Transform
+        translation: [ 11.8007, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_523
+        type: Transform
+        translation: [ 12.0632, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_524
+        type: Transform
+        translation: [ 12.3258, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_525
+        type: Transform
+        translation: [ 12.5883, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_526
+        type: Transform
+        translation: [ 12.8508, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_527
+        type: Transform
+        translation: [ 13.1134, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_528
+        type: Transform
+        translation: [ 13.3759, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_529
+        type: Transform
+        translation: [ 13.6384, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_530
+        type: Transform
+        translation: [ 13.901, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_531
+        type: Transform
+        translation: [ 14.1635, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_532
+        type: Transform
+        translation: [ 14.426, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_533
+        type: Transform
+        translation: [ 14.6886, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_534
+        type: Transform
+        translation: [ 14.9511, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_535
+        type: Transform
+        translation: [ 15.2136, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_536
+        type: Transform
+        translation: [ 15.4762, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_537
+        type: Transform
+        translation: [ 15.7387, 12.333, 2.95 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_538
+        type: Transform
+        translation: [ 18.2495, 12.337, 3.4025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_58
+      -
+        name: HANDRAIL_539
+        type: Transform
+        translation: [ 16.587, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_540
+        type: Transform
+        translation: [ 16.8495, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_541
+        type: Transform
+        translation: [ 17.112, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_542
+        type: Transform
+        translation: [ 17.3746, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_543
+        type: Transform
+        translation: [ 17.6371, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_544
+        type: Transform
+        translation: [ 17.8997, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_545
+        type: Transform
+        translation: [ 18.1622, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_546
+        type: Transform
+        translation: [ 18.4247, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_547
+        type: Transform
+        translation: [ 18.6872, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_548
+        type: Transform
+        translation: [ 18.9498, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_549
+        type: Transform
+        translation: [ 19.2123, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_550
+        type: Transform
+        translation: [ 19.4748, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_551
+        type: Transform
+        translation: [ 19.7374, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_552
+        type: Transform
+        translation: [ 19.9999, 12.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_15
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_553
+        type: Transform
+        translation: [ 4.6935, 1.3367, 3.4047 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_553
+      -
+        name: HANDRAIL_554
+        type: Transform
+        translation: [ 1.3692, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_555
+        type: Transform
+        translation: [ 1.6353, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_556
+        type: Transform
+        translation: [ 1.9014, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_556
+        type: Transform
+        translation: [ 2.1673, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_557
+        type: Transform
+        translation: [ 2.4333, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_558
+        type: Transform
+        translation: [ 2.6993, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_559
+        type: Transform
+        translation: [ 2.9653, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_560
+        type: Transform
+        translation: [ 3.2313, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_561
+        type: Transform
+        translation: [ 3.4973, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_561
+        type: Transform
+        translation: [ 3.7633, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_562
+        type: Transform
+        translation: [ 4.0293, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_563
+        type: Transform
+        translation: [ 4.2953, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_564
+        type: Transform
+        translation: [ 4.5613, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_565
+        type: Transform
+        translation: [ 4.8273, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_566
+        type: Transform
+        translation: [ 5.0933, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_567
+        type: Transform
+        translation: [ 5.3593, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_568
+        type: Transform
+        translation: [ 5.6253, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_568
+        type: Transform
+        translation: [ 5.8913, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_569
+        type: Transform
+        translation: [ 6.1573, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_570
+        type: Transform
+        translation: [ 6.4233, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_571
+        type: Transform
+        translation: [ 6.6893, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_572
+        type: Transform
+        translation: [ 6.9553, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_573
+        type: Transform
+        translation: [ 7.2213, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_574
+        type: Transform
+        translation: [ 7.4873, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_575
+        type: Transform
+        translation: [ 7.7533, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_576
+        type: Transform
+        translation: [ 8.0193, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_16
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_577
+        type: Transform
+        translation: [ 1.3353, 6.009, 3.4025 ]
+        elements: *HANDRAIL_577
+      -
+        name: HANDRAIL_578
+        type: Transform
+        translation: [ 1.3353, 1.3707, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_579
+        type: Transform
+        translation: [ 1.3353, 1.6215, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_580
+        type: Transform
+        translation: [ 1.3353, 1.8722, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_581
+        type: Transform
+        translation: [ 1.3353, 2.1229, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_582
+        type: Transform
+        translation: [ 1.3353, 2.3736, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_583
+        type: Transform
+        translation: [ 1.3353, 2.6243, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_584
+        type: Transform
+        translation: [ 1.3353, 2.875, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_585
+        type: Transform
+        translation: [ 1.3353, 3.1257, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_586
+        type: Transform
+        translation: [ 1.3353, 3.3764, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_587
+        type: Transform
+        translation: [ 1.3353, 3.6271, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_588
+        type: Transform
+        translation: [ 1.3353, 3.8778, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_589
+        type: Transform
+        translation: [ 1.3353, 4.1285, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_590
+        type: Transform
+        translation: [ 1.3353, 4.3792, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_591
+        type: Transform
+        translation: [ 1.3353, 4.6299, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_592
+        type: Transform
+        translation: [ 1.3353, 4.8806, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_593
+        type: Transform
+        translation: [ 1.3353, 5.1313, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_594
+        type: Transform
+        translation: [ 1.3353, 5.382, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_595
+        type: Transform
+        translation: [ 1.3353, 5.6327, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_596
+        type: Transform
+        translation: [ 1.3353, 5.8834, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_597
+        type: Transform
+        translation: [ 1.3353, 6.1341, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_598
+        type: Transform
+        translation: [ 1.3353, 6.3848, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_599
+        type: Transform
+        translation: [ 1.3353, 6.6355, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_600
+        type: Transform
+        translation: [ 1.3353, 6.8862, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_601
+        type: Transform
+        translation: [ 1.3353, 7.1369, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_602
+        type: Transform
+        translation: [ 1.3353, 7.3876, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_603
+        type: Transform
+        translation: [ 1.3353, 7.6383, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_604
+        type: Transform
+        translation: [ 1.3353, 7.889, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_605
+        type: Transform
+        translation: [ 1.3353, 8.1397, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_606
+        type: Transform
+        translation: [ 1.3353, 8.3904, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_607
+        type: Transform
+        translation: [ 1.3353, 8.6411, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_608
+        type: Transform
+        translation: [ 1.3353, 8.8918, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_609
+        type: Transform
+        translation: [ 1.3353, 9.1425, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_610
+        type: Transform
+        translation: [ 1.3353, 9.3932, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_611
+        type: Transform
+        translation: [ 1.3353, 9.6439, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_612
+        type: Transform
+        translation: [ 1.3353, 9.8946, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_613
+        type: Transform
+        translation: [ 1.3353, 10.1453, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_614
+        type: Transform
+        translation: [ 1.3353, 10.396, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_615
+        type: Transform
+        translation: [ 1.3353, 10.6467, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_17
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_616
+        type: Transform
+        translation: [ 5.177, 10.681, 3.4025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_616
+      -
+        name: HANDRAIL_617
+        type: Transform
+        translation: [ 1.3693, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_618
+        type: Transform
+        translation: [ 1.6319, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_619
+        type: Transform
+        translation: [ 1.8945, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_620
+        type: Transform
+        translation: [ 2.1571, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_621
+        type: Transform
+        translation: [ 2.4197, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_622
+        type: Transform
+        translation: [ 2.6823, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_623
+        type: Transform
+        translation: [ 2.9449, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_624
+        type: Transform
+        translation: [ 3.2075, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_625
+        type: Transform
+        translation: [ 3.4701, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_626
+        type: Transform
+        translation: [ 3.7329, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_627
+        type: Transform
+        translation: [ 3.9955, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_628
+        type: Transform
+        translation: [ 4.2581, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_629
+        type: Transform
+        translation: [ 4.5207, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_630
+        type: Transform
+        translation: [ 4.7833, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_631
+        type: Transform
+        translation: [ 5.0459, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_632
+        type: Transform
+        translation: [ 5.3085, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_633
+        type: Transform
+        translation: [ 5.5711, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_634
+        type: Transform
+        translation: [ 5.8338, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_635
+        type: Transform
+        translation: [ 6.0964, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_636
+        type: Transform
+        translation: [ 6.359, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_637
+        type: Transform
+        translation: [ 6.6217, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_638
+        type: Transform
+        translation: [ 6.8843, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_639
+        type: Transform
+        translation: [ 7.1469, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_640
+        type: Transform
+        translation: [ 7.4095, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_641
+        type: Transform
+        translation: [ 7.6721, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_642
+        type: Transform
+        translation: [ 7.9347, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_643
+        type: Transform
+        translation: [ 8.1973, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_644
+        type: Transform
+        translation: [ 8.4599, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_645
+        type: Transform
+        translation: [ 8.7225, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_646
+        type: Transform
+        translation: [ 8.9851, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_18
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_647
+        type: Transform
+        translation: [ 9.0187, 6.501, 3.4025 ]
+        elements: *HANDRAIL_647
+      -
+        name: HANDRAIL_648
+        type: Transform
+        translation: [ 9.0187, 2.3759, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_649
+        type: Transform
+        translation: [ 9.0187, 2.6266, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_650
+        type: Transform
+        translation: [ 9.0187, 2.8773, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_651
+        type: Transform
+        translation: [ 9.0187, 3.128, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_652
+        type: Transform
+        translation: [ 9.0187, 3.3787, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_653
+        type: Transform
+        translation: [ 9.0187, 3.6294, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_654
+        type: Transform
+        translation: [ 9.0187, 3.8801, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_655
+        type: Transform
+        translation: [ 9.0187, 4.1308, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_656
+        type: Transform
+        translation: [ 9.0187, 4.3815, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_657
+        type: Transform
+        translation: [ 9.0187, 4.6322, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_658
+        type: Transform
+        translation: [ 9.0187, 4.8829, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_659
+        type: Transform
+        translation: [ 9.0187, 5.1336, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_660
+        type: Transform
+        translation: [ 9.0187, 5.3843, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_661
+        type: Transform
+        translation: [ 9.0187, 5.635, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_662
+        type: Transform
+        translation: [ 9.0187, 5.8857, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_663
+        type: Transform
+        translation: [ 9.0187, 6.1364, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_664
+        type: Transform
+        translation: [ 9.0187, 6.3871, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_665
+        type: Transform
+        translation: [ 9.0187, 6.6378, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_666
+        type: Transform
+        translation: [ 9.0187, 6.8885, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_667
+        type: Transform
+        translation: [ 9.0187, 7.1393, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_668
+        type: Transform
+        translation: [ 9.0187, 7.39, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_669
+        type: Transform
+        translation: [ 9.0187, 7.6407, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_670
+        type: Transform
+        translation: [ 9.0187, 7.8914, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_671
+        type: Transform
+        translation: [ 9.0187, 8.1422, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_672
+        type: Transform
+        translation: [ 9.0187, 8.3929, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_673
+        type: Transform
+        translation: [ 9.0187, 8.6435, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_674
+        type: Transform
+        translation: [ 9.0187, 8.8942, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_675
+        type: Transform
+        translation: [ 9.0187, 9.1449, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_676
+        type: Transform
+        translation: [ 9.0187, 9.3956, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_677
+        type: Transform
+        translation: [ 9.0187, 9.6463, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_678
+        type: Transform
+        translation: [ 9.0187, 9.897, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_679
+        type: Transform
+        translation: [ 9.0187, 10.1477, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_680
+        type: Transform
+        translation: [ 9.0187, 10.3984, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_681
+        type: Transform
+        translation: [ 9.0187, 10.6491, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_19
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_705
+        type: Transform
+        translation: [ 14.8685, 1.3367, 3.4047 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_553
+      -
+        name: HANDRAIL_706
+        type: Transform
+        translation: [ 11.5442, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_707
+        type: Transform
+        translation: [ 11.8103, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_708
+        type: Transform
+        translation: [ 12.0764, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_709
+        type: Transform
+        translation: [ 12.3423, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_710
+        type: Transform
+        translation: [ 12.6083, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_711
+        type: Transform
+        translation: [ 12.8743, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_712
+        type: Transform
+        translation: [ 13.1403, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_713
+        type: Transform
+        translation: [ 13.4063, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_714
+        type: Transform
+        translation: [ 13.6723, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_715
+        type: Transform
+        translation: [ 13.9383, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_716
+        type: Transform
+        translation: [ 14.2043, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_717
+        type: Transform
+        translation: [ 14.4703, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_718
+        type: Transform
+        translation: [ 14.7363, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_719
+        type: Transform
+        translation: [ 15.0023, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_720
+        type: Transform
+        translation: [ 15.2683, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_721
+        type: Transform
+        translation: [ 15.5343, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_722
+        type: Transform
+        translation: [ 15.8003, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_723
+        type: Transform
+        translation: [ 16.0663, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_724
+        type: Transform
+        translation: [ 16.3323, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_725
+        type: Transform
+        translation: [ 16.5983, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_726
+        type: Transform
+        translation: [ 16.8643, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_727
+        type: Transform
+        translation: [ 17.1303, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_728
+        type: Transform
+        translation: [ 17.3963, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_729
+        type: Transform
+        translation: [ 17.6623, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_730
+        type: Transform
+        translation: [ 17.9283, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_731
+        type: Transform
+        translation: [ 18.1943, 1.337, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_20
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_732
+        type: Transform
+        translation: [ 11.5103, 6.009, 3.4025 ]
+        elements: *HANDRAIL_577
+      -
+        name: HANDRAIL_733
+        type: Transform
+        translation: [ 11.5103, 1.3707, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_734
+        type: Transform
+        translation: [ 11.5103, 1.6215, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_735
+        type: Transform
+        translation: [ 11.5103, 1.8722, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_736
+        type: Transform
+        translation: [ 11.5103, 2.1229, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_737
+        type: Transform
+        translation: [ 11.5103, 2.3736, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_738
+        type: Transform
+        translation: [ 11.5103, 2.6243, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_739
+        type: Transform
+        translation: [ 11.5103, 2.875, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_740
+        type: Transform
+        translation: [ 11.5103, 3.1257, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_741
+        type: Transform
+        translation: [ 11.5103, 3.3764, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_742
+        type: Transform
+        translation: [ 11.5103, 3.6271, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_743
+        type: Transform
+        translation: [ 11.5103, 3.8778, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_744
+        type: Transform
+        translation: [ 11.5103, 4.1285, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_745
+        type: Transform
+        translation: [ 11.5103, 4.3792, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_746
+        type: Transform
+        translation: [ 11.5103, 4.6299, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_747
+        type: Transform
+        translation: [ 11.5103, 4.8806, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_748
+        type: Transform
+        translation: [ 11.5103, 5.1313, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_749
+        type: Transform
+        translation: [ 11.5103, 5.382, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_750
+        type: Transform
+        translation: [ 11.5103, 5.6327, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_751
+        type: Transform
+        translation: [ 11.5103, 5.8835, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_752
+        type: Transform
+        translation: [ 11.5103, 6.1342, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_753
+        type: Transform
+        translation: [ 11.5103, 6.3849, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_754
+        type: Transform
+        translation: [ 11.5103, 6.6356, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_755
+        type: Transform
+        translation: [ 11.5103, 6.8863, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_756
+        type: Transform
+        translation: [ 11.5103, 7.137, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_757
+        type: Transform
+        translation: [ 11.5103, 7.3878, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_758
+        type: Transform
+        translation: [ 11.5103, 7.6385, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_759
+        type: Transform
+        translation: [ 11.5103, 7.8892, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_760
+        type: Transform
+        translation: [ 11.5103, 8.1399, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_761
+        type: Transform
+        translation: [ 11.5103, 8.3906, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_762
+        type: Transform
+        translation: [ 11.5103, 8.6413, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_763
+        type: Transform
+        translation: [ 11.5103, 8.892, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_764
+        type: Transform
+        translation: [ 11.5103, 9.1427, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_765
+        type: Transform
+        translation: [ 11.5103, 9.3934, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_766
+        type: Transform
+        translation: [ 11.5103, 9.6441, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_767
+        type: Transform
+        translation: [ 11.5103, 9.8948, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_768
+        type: Transform
+        translation: [ 11.5103, 10.1455, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_769
+        type: Transform
+        translation: [ 11.5103, 10.3962, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_770
+        type: Transform
+        translation: [ 11.5103, 10.6469, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_21
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_771
+        type: Transform
+        translation: [ 15.352, 10.681, 3.4025 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *HANDRAIL_616
+      -
+        name: HANDRAIL_772
+        type: Transform
+        translation: [ 11.5443, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_773
+        type: Transform
+        translation: [ 11.8069, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_774
+        type: Transform
+        translation: [ 12.0695, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_775
+        type: Transform
+        translation: [ 12.3321, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_776
+        type: Transform
+        translation: [ 12.5947, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_777
+        type: Transform
+        translation: [ 12.8573, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_778
+        type: Transform
+        translation: [ 13.1199, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_779
+        type: Transform
+        translation: [ 13.3826, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_780
+        type: Transform
+        translation: [ 13.6453, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_782
+        type: Transform
+        translation: [ 13.9079, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_783
+        type: Transform
+        translation: [ 14.1705, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_784
+        type: Transform
+        translation: [ 14.4331, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_785
+        type: Transform
+        translation: [ 14.6957, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_786
+        type: Transform
+        translation: [ 14.9583, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_787
+        type: Transform
+        translation: [ 15.2209, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_788
+        type: Transform
+        translation: [ 15.4835, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_789
+        type: Transform
+        translation: [ 15.7461, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_790
+        type: Transform
+        translation: [ 16.0088, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_791
+        type: Transform
+        translation: [ 16.2714, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_792
+        type: Transform
+        translation: [ 16.534, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_793
+        type: Transform
+        translation: [ 16.7967, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_794
+        type: Transform
+        translation: [ 17.0593, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_795
+        type: Transform
+        translation: [ 17.3219, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_796
+        type: Transform
+        translation: [ 17.5845, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_797
+        type: Transform
+        translation: [ 17.8471, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_798
+        type: Transform
+        translation: [ 18.1097, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_799
+        type: Transform
+        translation: [ 18.3723, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_800
+        type: Transform
+        translation: [ 18.6349, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_801
+        type: Transform
+        translation: [ 18.8975, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_802
+        type: Transform
+        translation: [ 19.1601, 10.681, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_22
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_803
+        type: Transform
+        translation: [ 19.1937, 6.501, 3.4025 ]
+        elements: *HANDRAIL_647
+      -
+        name: HANDRAIL_804
+        type: Transform
+        translation: [ 19.1937, 2.3759, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_805
+        type: Transform
+        translation: [ 19.1937, 2.6266, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_806
+        type: Transform
+        translation: [ 19.1937, 2.8773, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_807
+        type: Transform
+        translation: [ 19.1937, 3.128, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_808
+        type: Transform
+        translation: [ 19.1937, 3.3787, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_809
+        type: Transform
+        translation: [ 19.1937, 3.6294, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_810
+        type: Transform
+        translation: [ 19.1937, 3.8801, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_811
+        type: Transform
+        translation: [ 19.1937, 4.1308, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_812
+        type: Transform
+        translation: [ 19.1937, 4.3815, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_813
+        type: Transform
+        translation: [ 19.1937, 4.6322, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_814
+        type: Transform
+        translation: [ 19.1937, 4.8829, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_815
+        type: Transform
+        translation: [ 19.1937, 5.1336, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_816
+        type: Transform
+        translation: [ 19.1937, 5.3843, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_817
+        type: Transform
+        translation: [ 19.1937, 5.635, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_818
+        type: Transform
+        translation: [ 19.1937, 5.8857, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_819
+        type: Transform
+        translation: [ 19.1937, 6.1364, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_820
+        type: Transform
+        translation: [ 19.1937, 6.3872, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_821
+        type: Transform
+        translation: [ 19.1937, 6.6379, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_822
+        type: Transform
+        translation: [ 19.1937, 6.8886, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_823
+        type: Transform
+        translation: [ 19.1937, 7.1394, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_824
+        type: Transform
+        translation: [ 19.1937, 7.3901, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_825
+        type: Transform
+        translation: [ 19.1937, 7.6408, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_826
+        type: Transform
+        translation: [ 19.1937, 7.8915, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_827
+        type: Transform
+        translation: [ 19.1937, 8.1423, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_828
+        type: Transform
+        translation: [ 19.1937, 8.393, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_829
+        type: Transform
+        translation: [ 19.1937, 8.6436, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_830
+        type: Transform
+        translation: [ 19.1937, 8.8943, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_831
+        type: Transform
+        translation: [ 19.1937, 9.145, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_832
+        type: Transform
+        translation: [ 19.1937, 9.3957, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_833
+        type: Transform
+        translation: [ 19.1937, 9.6464, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_834
+        type: Transform
+        translation: [ 19.1937, 9.8971, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_835
+        type: Transform
+        translation: [ 19.1937, 10.1478, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_836
+        type: Transform
+        translation: [ 19.1937, 10.3985, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_837
+        type: Transform
+        translation: [ 19.1937, 10.6492, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: HANDRAIL_23
+    parent: BASE
+    jointType: fixed
+    translation: *OFFSET
+    elements:
+      -
+        name: HANDRAIL_419
+        type: Transform
+        translation: [ 10.3523, 3.1714, 3.4025 ]
+        elements:
+          Shape:
+            geometry: { type: Cylinder, radius: 0.017, height: 3.658 }
+      -
+        name: HANDRAIL_420
+        type: Transform
+        translation: [ 10.3523, 1.355, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_421
+        type: Transform
+        translation: [ 10.3523, 1.6175, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_422
+        type: Transform
+        translation: [ 10.3523, 1.8801, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_423
+        type: Transform
+        translation: [ 10.3523, 2.1426, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_424
+        type: Transform
+        translation: [ 10.3523, 2.4051, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_425
+        type: Transform
+        translation: [ 10.3523, 2.6677, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_426
+        type: Transform
+        translation: [ 10.3523, 2.9302, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_427
+        type: Transform
+        translation: [ 10.3523, 3.1927, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_428
+        type: Transform
+        translation: [ 10.3523, 3.4553, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_429
+        type: Transform
+        translation: [ 10.3523, 3.7178, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_430
+        type: Transform
+        translation: [ 10.3523, 3.9803, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_431
+        type: Transform
+        translation: [ 10.3523, 4.2429, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_432
+        type: Transform
+        translation: [ 10.3523, 4.5054, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_433
+        type: Transform
+        translation: [ 10.3523, 4.768, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+  -
+    name: DOOR_FRAME
+    parent: BASE
+    translation: *OFFSET
+    jointType: fixed
+    mass: 10.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      -
+        name: DOOR_FRAME_1
+        type: Transform
+        translation: [ 10.3342, 0.8586, 2.5249 ]
+        elements: *DOOR_FRAME_1
+      -
+        name: DOOR_FRAME_2
+        type: Transform
+        translation: [ 10.3342, 0.8586, 4.3699 ]
+        elements: *DOOR_FRAME_1
+      -
+        name: DOOR_FRAME_3
+        type: Transform
+        translation: [ 10.3342, 1.3161, 3.4474 ]
+        elements: *DOOR_FRAME_3
+      -
+        name: DOOR_FRAME_4
+        type: Transform
+        translation: [ 10.3342, 0.4011, 3.4474 ]
+        elements: *DOOR_FRAME_3
+  -
+    name: DOOR
+    parent: DOOR_FRAME
+    jointType: fixed
+    mass: 10.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+    elements:
+      -
+        name: DOOR_1
+        type: Transform
+        translation: [ 10.3267, 0.8585, 3.4474 ]
+        elements: *DOOR_1
+      -
+        name: DOOR_KNOB_1
+        type: Transform
+        translation: [ 10.3092, 1.2235, 3.4474 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *DOOR_KNOB_1
+      -
+        name: DOOR_KNOB_2
+        type: Transform
+        translation: [ 10.2817, 1.22355, 3.4475 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *DOOR_KNOB_2
+      -
+        name: DOOR_KNOB_3
+        type: Transform
+        translation: [ 10.2492, 1.1886, 3.4475 ]
+        elements: *DOOR_KNOB_3
+      -
+        name: DOOR_KNOB_4
+        type: Transform
+        translation: [ 10.3442, 1.2235, 3.4474 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *DOOR_KNOB_1
+      -
+        name: DOOR_KNOB_5
+        type: Transform
+        translation: [ 10.3722, 1.22355, 3.4475 ]
+        rotation: [ 0, 0, 1, 90 ]
+        elements: *DOOR_KNOB_2
+      -
+        name: DOOR_KNOB_6
+        type: Transform
+        translation: [ 10.4042, 1.1886, 3.4475 ]
+        elements: *DOOR_KNOB_3
+  -
+    name: STAIRS_1
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_682
+        type: Transform
+        translation: [ 8.0187, 1.9365, 3.4025 ]
+        elements: *HANDRAIL_682
+      -
+        name: HANDRAIL_683
+        type: Transform
+        translation: [ 8.0187, 1.56, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_684
+        type: Transform
+        translation: [ 8.0187, 1.81, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_685
+        type: Transform
+        translation: [ 8.0187, 2.06, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_686
+        type: Transform
+        translation: [ 8.0187, 2.31, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_687
+        type: Transform
+        translation: [ 8.0213, 2.364, 3.3025 ]
+        elements: *HANDRAIL_687
+      -
+        name: HANDRAIL_688
+        type: Transform
+        translation: [ 8.0213, 3.766, 2.149 ]
+        rotation: [ 1, 0, 0, -39.9 ]
+        elements: *HANDRAIL_688
+      -
+        name: HANDRAIL_689
+        type: Transform
+        translation: [ 8.0213, 2.386, 2.8995 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_690
+        type: Transform
+        translation: [ 8.0213, 2.846, 2.515 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_691
+        type: Transform
+        translation: [ 8.0213, 3.306, 2.1305 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_692
+        type: Transform
+        translation: [ 8.0213, 3.766, 1.746 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_693
+        type: Transform
+        translation: [ 8.0213, 4.226, 1.3615 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_694
+        type: Transform
+        translation: [ 8.0213, 4.686, 0.977 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_695
+        type: Transform
+        translation: [ 8.0213, 5.146, 0.599 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_695
+  -
+    name: STAIRS_2
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_696
+        type: Transform
+        translation: [ 8.9833, 2.364, 3.3025 ]
+        elements: *HANDRAIL_687
+      -
+        name: HANDRAIL_697
+        type: Transform
+        translation: [ 8.9833, 3.766, 2.149 ]
+        rotation: [ 1, 0, 0, -39.9 ]
+        elements: *HANDRAIL_688
+      -
+        name: HANDRAIL_698
+        type: Transform
+        translation: [ 8.9833, 2.386, 2.8995 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_699
+        type: Transform
+        translation: [ 8.9833, 2.846, 2.515 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_700
+        type: Transform
+        translation: [ 8.9833, 3.306, 2.1305 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_701
+        type: Transform
+        translation: [ 8.9833, 3.766, 1.746 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_702
+        type: Transform
+        translation: [ 8.9833, 4.226, 1.3615 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_703
+        type: Transform
+        translation: [ 8.9833, 4.686, 0.977 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_704
+        type: Transform
+        translation: [ 8.9833, 5.146, 0.599 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_695
+  -
+    name: STAIRS_3
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_838
+        type: Transform
+        translation: [ 18.1937, 1.9365, 3.4025 ]
+        elements: *HANDRAIL_682
+      -
+        name: HANDRAIL_839
+        type: Transform
+        translation: [ 18.1937, 1.56, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_840
+        type: Transform
+        translation: [ 18.1937, 1.81, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_841
+        type: Transform
+        translation: [ 18.1937, 2.06, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_842
+        type: Transform
+        translation: [ 18.1937, 2.31, 2.9525 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_2
+      -
+        name: HANDRAIL_843
+        type: Transform
+        translation: [ 18.1963, 2.364, 3.3025 ]
+        elements: *HANDRAIL_687
+      -
+        name: HANDRAIL_844
+        type: Transform
+        translation: [ 18.1963, 3.766, 2.149 ]
+        rotation: [ 1, 0, 0, -39.9 ]
+        elements: *HANDRAIL_688
+      -
+        name: HANDRAIL_845
+        type: Transform
+        translation: [ 18.1963, 2.386, 2.8995 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_846
+        type: Transform
+        translation: [ 18.1963, 2.846, 2.515 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_847
+        type: Transform
+        translation: [ 18.1963, 3.306, 2.1305 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_848
+        type: Transform
+        translation: [ 18.1963, 3.766, 1.746 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_849
+        type: Transform
+        translation: [ 18.1963, 4.226, 1.3615 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_850
+        type: Transform
+        translation: [ 18.1963, 4.686, 0.977 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_851
+        type: Transform
+        translation: [ 18.1963, 5.146, 0.599 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_695
+  -
+    name: STAIRS_4
+    parent: BASE
+    jointType: fixed
+    elements:
+      -
+        name: HANDRAIL_852
+        type: Transform
+        translation: [ 19.1583, 2.364, 3.3025 ]
+        elements: *HANDRAIL_687
+      -
+        name: HANDRAIL_853
+        type: Transform
+        translation: [ 19.1583, 3.766, 2.149 ]
+        rotation: [ 1, 0, 0, -39.9 ]
+        elements: *HANDRAIL_688
+      -
+        name: HANDRAIL_854
+        type: Transform
+        translation: [ 19.1583, 2.386, 2.8995 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_855
+        type: Transform
+        translation: [ 19.1583, 2.846, 2.515 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_856
+        type: Transform
+        translation: [ 19.1583, 3.306, 2.1305 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_857
+        type: Transform
+        translation: [ 19.1583, 3.766, 1.746 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_858
+        type: Transform
+        translation: [ 19.1583, 4.226, 1.3615 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_859
+        type: Transform
+        translation: [ 19.1583, 4.686, 0.977 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_689
+      -
+        name: HANDRAIL_860
+        type: Transform
+        translation: [ 19.1583, 5.146, 0.599 ]
+        rotation: [ 1, 0, 0, 90 ]
+        elements: *HANDRAIL_695
