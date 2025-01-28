@@ -14,12 +14,16 @@ using namespace cnoid;
 class LeakedLineController : public SimpleController
 {
     SimpleControllerIO* io;
+    int handActuationMode;
     Link* valve;
     Link* hand;
     DeviceList<FireDevice> fires;
     DeviceList<FountainDevice> fountains;
     DeviceList<SmokeDevice> smokes;
     bool is_lever;
+    double qref;
+    double qprev;
+    double dt;
 
 public:
 
@@ -34,13 +38,20 @@ public:
         is_lever = false;
 
         std::string prefix;
-
+        handActuationMode = Link::JointEffort;
         for(auto& option : io->options()) {
             if(option == "lever") {
                 is_lever = true;
             } else {
-                prefix = option;
-                io->os() << "prefix: " << prefix << std::endl;
+                // prefix = option;
+                // io->os() << "prefix: " << prefix << std::endl;
+            }
+            if(option == "position") {
+                handActuationMode = Link::JointDisplacement;
+                os << "The joint-position command mode is used." << std::endl;
+            } else if(option == "velocity") {
+                handActuationMode = Link::JointVelocity;
+                os << "The joint-velocity command mode is used." << std::endl;
             }
         }
 
@@ -60,8 +71,11 @@ public:
             os << "The hand is not found." << std::endl;
             return false;
         }
-        hand->setActuationMode(Link::JointDisplacement);
+        qref = qprev = hand->q();
+        hand->setActuationMode(handActuationMode);
         io->enableIO(hand);
+
+        dt = io->timeStep();
 
         for(auto& fire : fires) {
             fire->on(true);
@@ -131,7 +145,23 @@ public:
             q2_target = q2_lower;
         }
 
-        hand->q_target() = q2_target;
+        static const double P = 0.00002;
+        static const double D = 0.0005;
+
+        if(handActuationMode == Link::JointDisplacement) {
+            hand->q_target() = q2_target;
+        } else if(handActuationMode == Link::JointVelocity) {
+            hand->dq_target() = 0.0;
+        } else if(handActuationMode == Link::JointEffort) {
+            double q = hand->q();
+            double dq = (q - qprev) / dt;
+            double dqref = 0.0;
+            double deltaq = 0.002 * degree(q2_target - q);
+            qref += deltaq;
+            dqref = deltaq / dt;
+            hand->u() = P * (qref - q) + D * (dqref - dq);
+            qprev = q;
+        }
 
         return true;
     }
