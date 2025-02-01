@@ -24,7 +24,8 @@ links:
     parent: SWITCH_ROOT
     translation: [ 0.005, 0, 0.025 ]
     jointType: prismatic
-    jointAxis: X
+#    jointAxis: X
+    jointAxis: Y
     jointRange: [ 0.000, 0.005 ]
     maxJointVelocity: 90
     jointId: 0
