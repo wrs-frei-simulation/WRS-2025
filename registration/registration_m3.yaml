@@ -3,14 +3,16 @@ robot_list: &RobotList [ AizuSpiderDS-ROS2, HobbyDrone-ROS2 ]
 
 registrations:
   - &Mission3
-    name: ValveOperation
-    task_project: [ M3/ValveOperation ]
+    name: M3-A1
+    task_project: [ M3/A1, M3/Common ]
     robot_project: *RobotList
     robot_alignment: X+
-    start_position: [ -9.0, 0.0, 0.0 ]
+    start_position: [ -3.5, 0.0, 0.0 ]
     simulator_project: [ AGXSimulator, AISTSimulator ]
     view_project: M3/RefereeView
     enable_recording: true
     # enable_tracking: true
     enable_ros: true
-  - { <<: *Mission3, name: FireFighting, task_project: [ M3/FireFighting ] }
+  - { <<: *Mission3, name: M3-A2, task_project: [ M3/A2, M3/Common ] }
+  - { <<: *Mission3, name: M3-A3, task_project: [ M3/A3, M3/Common ] }
+  - { <<: *Mission3, name: M3-A4, task_project: [ M3/A4, M3/Common ] }

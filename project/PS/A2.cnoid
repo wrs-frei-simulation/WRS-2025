@@ -29,6 +29,216 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
+    -
+      id: 2
+      name: "Fire1"
+      plugin: Base
+      class: FolderItem
+      children:
+        -
+          id: 3
+          name: "Fire"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "${SHARE}/WRS2018/model/Fire.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 3, -8, 0 ]
+            rootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            jointDisplacements: [ 4.58366 ]
+            initialRootPosition: [ 3, -8, 0 ]
+            initialRootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+          children:
+            -
+              id: 4
+              name: "FireController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "FireController"
+                base_directory: "Controller directory"
+                reloading: false
+                export_symbols: false
+        -
+          id: 5
+          name: "FireCabinet"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "${SHARE}/WRS2018/model/FullFeaturedFireCabinet.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 5, -10, 0 ]
+            rootAttitude: [
+              6.123234e-17, -1, 0,
+              1, 6.123234e-17, -0,
+              0, 0, 1 ]
+            jointDisplacements: [ 0, 0, 0, 0, 45, 0, 0, 0, 0 ]
+            initialRootPosition: [ 5, -10, 0 ]
+            initialRootAttitude: [
+              2.22044605e-16, -1, 0,
+              1, 2.22044605e-16, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: true
+            lock_location: false
+            scene_sensitive: true
+          children:
+            -
+              id: 6
+              name: "HoseNozzleController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "HoseNozzleController"
+                base_directory: "Controller directory"
+                reloading: false
+                export_symbols: false
+        -
+          id: 7
+          name: "FireCircle"
+          plugin: Body
+          class: BodyItem
+          data:
+            file: "${SHARE}/WRS2018/model/T5_NoEntryAreaCircle.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 3, -8, 0 ]
+            rootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            initialRootPosition: [ 3, -8, 0 ]
+            initialRootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+    -
+      id: 8
+      name: "Fire2"
+      plugin: Base
+      class: FolderItem
+      children:
+        -
+          id: 9
+          name: "Fire"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "${SHARE}/WRS2018/model/Fire.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 5, -3, 0 ]
+            rootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            jointDisplacements: [ 4.58366 ]
+            initialRootPosition: [ 5, -3, 0 ]
+            initialRootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+          children:
+            -
+              id: 10
+              name: "FireController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "FireController"
+                base_directory: "Controller directory"
+                reloading: false
+                export_symbols: false
+        -
+          id: 11
+          name: "FireCabinet"
+          plugin: Body
+          class: BodyItem
+          is_checked: true
+          data:
+            file: "${SHARE}/WRS2018/model/FullFeaturedFireCabinet.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 10, -1, 0 ]
+            rootAttitude: [
+              -1, -1.2246468e-16, 0,
+              1.2246468e-16, -1, 0,
+              0, 0, 1 ]
+            jointDisplacements: [ 0, 0, 0, 0, 45, 0, 0, 0, 0 ]
+            initialRootPosition: [ 10, -1, 0 ]
+            initialRootAttitude: [
+              -1, -1.2246468e-16, 0,
+              1.2246468e-16, -1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: true
+            lock_location: false
+            scene_sensitive: true
+          children:
+            -
+              id: 12
+              name: "HoseNozzleController"
+              plugin: Body
+              class: SimpleControllerItem
+              data:
+                isNoDelayMode: false
+                controllerOptions: ""
+                controller: "HoseNozzleController"
+                base_directory: "Controller directory"
+                reloading: false
+                export_symbols: false
+        -
+          id: 13
+          name: "FireCircle"
+          plugin: Body
+          class: BodyItem
+          data:
+            file: "${SHARE}/WRS2018/model/T5_NoEntryAreaCircle.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 5, -3, 0 ]
+            rootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            initialRootPosition: [ 5, -3, 0 ]
+            initialRootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
 views:
   -
     id: 0
@@ -77,9 +287,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 3, 1.5, 1.2 ]
-          direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787497, 0.984374 ]
+          eye: [ 16.5656, 6.27964, 5.39363 ]
+          direction: [ -0.681917, -0.666076, -0.302213 ]
+          up: [ -0.216193, -0.211171, 0.953241 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -135,6 +345,10 @@ views:
     state:
       element_type: all
       listing_mode: list
+      body_items:
+        -
+          id: 3
+          selected_links: [ 1 ]
   -
     id: 8
     plugin: Body
@@ -198,6 +412,36 @@ Body:
     scene_bodies:
       -
         body_item: 1
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 3
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 5
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 7
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 9
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 11
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 13
         show_cm: false
         show_cm_projection: false
         show_zmp: false

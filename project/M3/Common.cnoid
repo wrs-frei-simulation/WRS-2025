@@ -4,6 +4,85 @@ items:
   plugin: Base
   class: RootItem
   is_builtin_item: true
+  children:
+    -
+      id: 1
+      name: "CFDCollider"
+      plugin: SimpleCollider
+      class: MultiColliderItem
+      is_checked: true
+      data:
+        translation: [ 0, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 10, 10, 10 ]
+        diffuse_color: [ 0, 1, 1 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 1
+        scene_type: Box
+        collider_type: CFD
+        density: 0
+        viscosity: 0
+        steady_flow: [ 0, 0, 0 ]
+        inbound_delay: 0
+        inbound_rate: 0
+        inbound_loss: 0
+        outbound_delay: 0
+        outbound_rate: 0
+        outbound_loss: 0
+        source: 0.0.0.0/0
+        destination: 0.0.0.0/0
+        hsv: [ 0, 0, 0 ]
+        rgb: [ 0, 0, 0 ]
+        coef_b: 0
+        coef_d: 0
+        std_dev: 0
+        salt_amount: 0
+        salt_chance: 0
+        pepper_amount: 0
+        pepper_chance: 0
+        mosaic_chance: 0
+        kernel: 16
+    -
+      id: 2
+      name: "VFXCollider"
+      plugin: SimpleCollider
+      class: MultiColliderItem
+      is_checked: true
+      data:
+        translation: [ 0, 0, 0 ]
+        rotation: [ 0, -0, 0 ]
+        size: [ 10, 10, 10 ]
+        diffuse_color: [ 1, 0, 1 ]
+        radius: 0.5
+        height: 1
+        specular_exponent: 25
+        transparency: 1
+        scene_type: Box
+        collider_type: VFX
+        density: 0
+        viscosity: 0
+        steady_flow: [ 0, 0, 0 ]
+        inbound_delay: 0
+        inbound_rate: 0
+        inbound_loss: 0
+        outbound_delay: 0
+        outbound_rate: 0
+        outbound_loss: 0
+        source: 0.0.0.0/0
+        destination: 0.0.0.0/0
+        hsv: [ 0, 0, 0 ]
+        rgb: [ 0, 0, 0 ]
+        coef_b: 0
+        coef_d: 0
+        std_dev: 0
+        salt_amount: 0
+        salt_chance: 0
+        pepper_amount: 0
+        pepper_chance: 0
+        mosaic_chance: 0
+        kernel: 16
 views:
   -
     id: 0
@@ -48,9 +127,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ -9.1268, 5.32221, 3.14923 ]
-          direction: [ 0.77046, -0.571185, -0.283089 ]
-          up: [ 0.227411, -0.168593, 0.959094 ]
+          eye: [ 15.4245, 11.6761, 16.9577 ]
+          direction: [ -0.560123, -0.500837, -0.659867 ]
+          up: [ -0.491902, -0.439837, 0.751382 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -197,7 +276,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 756, 252 ]
+              sizes: [ 757, 251 ]
               children:
                 -
                   type: pane
@@ -240,4 +319,3 @@ layoutOfToolBars:
       - { name: "GraphBar", x: 0, priority: 3 }
       - { name: "CaptureBar", x: 0, priority: 4 }
       - { name: "DisplayValueFormatBar", x: 0, priority: 5 }
-      - { name: "WRSUtilBar", x: 1600, priority: 0 }

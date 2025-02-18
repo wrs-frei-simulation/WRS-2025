@@ -4,6 +4,31 @@ items:
   plugin: Base
   class: RootItem
   is_builtin_item: true
+  children:
+    -
+      id: 1
+      name: "Floor"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/model/misc/floor.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0, -0.1 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 0, 0, -0.1 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
 views:
   -
     id: 0
@@ -48,9 +73,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ -9.1268, 5.32221, 3.14923 ]
-          direction: [ 0.77046, -0.571185, -0.283089 ]
-          up: [ 0.227411, -0.168593, 0.959094 ]
+          eye: [ 15.4245, 11.6761, 16.9577 ]
+          direction: [ -0.560123, -0.500837, -0.659867 ]
+          up: [ -0.491902, -0.439837, 0.751382 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -153,6 +178,9 @@ toolbars:
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
 Body:
+  "BodySelectionManager":
+    current_body_item: 1
+    current_link: "Floor"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -162,7 +190,13 @@ Body:
     targetJoints: all
     checkSelfCollisions: true
     onlyTimeBarRange: false
-  "OperableSceneBody": { }
+  "OperableSceneBody":
+    scene_bodies:
+      -
+        body_item: 1
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
   "SplineFilterDialog":
     isInputFrameRateSpecified: false
     inputFrameRate: 200
@@ -197,7 +231,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 756, 252 ]
+              sizes: [ 757, 251 ]
               children:
                 -
                   type: pane
@@ -240,4 +274,3 @@ layoutOfToolBars:
       - { name: "GraphBar", x: 0, priority: 3 }
       - { name: "CaptureBar", x: 0, priority: 4 }
       - { name: "DisplayValueFormatBar", x: 0, priority: 5 }
-      - { name: "WRSUtilBar", x: 1600, priority: 0 }
