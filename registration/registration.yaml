@@ -2,51 +2,34 @@ format_version: 2.0
 robot_list: &RobotList [ AizuSpiderDS-ROS2, HobbyDrone-ROS2 ]
 
 registrations:
-  - &Mission2
+  - &PS
+    name: PS-ALL
+    task_project: [ PS/A1, PS/A2, PS/A3, PS/A4, PS/Common ]
+    robot_project: *RobotList
+    robot_alignment: X+
+    start_position: [ -8.5, -5.0, 0.0 ]
+    simulator_project: [ AGXSimulator, AISTSimulator ]
+    view_project: PS/RefereeView
+    enable_recording: true
+    # enable_tracking: true
+    enable_ros: true
+  - <<: *PS
     name: PS-1
-    task_project: [ M2/A1, M2/Common ]
-    robot_project: *RobotList
-    robot_alignment: Y-
-    start_position: [ -7.0, -4.0, 0.0 ]
-    simulator_project: [ AGXSimulator, AISTSimulator ]
-    view_project: M2/RefereeView
-    enable_recording: true
-    # enable_tracking: true
-    enable_ros: true
-  - <<: *Mission2
+    task_project: [ PS/A1, PS/Common ]
+    robot_alignment: X+
+    start_position: [ -8.5, -5.0, 0.0 ]
+  - <<: *PS
     name: PS-2
-    task_project: [ M2/A2, M2/Common ]
-    robot_alignment: X+
-    start_position: [ 4.0, -7.0, 0.0 ]
-  - <<: *Mission2
-    name: PS-3
-    task_project: [ M2/A3, M2/Common ]
-    robot_alignment: Y+
-    start_position: [ 7.0, 4.0, 0.0 ]
-  - <<: *Mission2
-    name: PS-4
-    task_project: [ M2/A4, M2/Common ]
+    task_project: [ PS/A2, PS/Common ]
     robot_alignment: X-
-    start_position: [ -4.0, 7.0, 0.0 ]
-  - <<: *Mission2
-    name: PS-12
-    task_project: [ M2/A1, M2/A2, M2/Common ]
-    robot_alignment: Y-
-    start_position: [ -7.0, -4.0, 0.0 ]
-  - <<: *Mission2
-    name: PS-34
-    task_project: [ M2/A3, M2/A4, M2/Common ]
-    robot_alignment: Y+
-    start_position: [ 7.0, 4.0, 0.0 ]
-  - &Mission3
-    name: ValveOperation
-    task_project: [ M3/ValveOperation ]
-    robot_project: *RobotList
+    start_position: [ 8.5, -5.0, 0.0 ]
+  - <<: *PS
+    name: PS-3
+    task_project: [ PS/A3, PS/Common ]
+    robot_alignment: X-
+    start_position: [ 8.5, 5.0, 0.0 ]
+  - <<: *PS
+    name: PS-4
+    task_project: [ PS/A4, PS/Common ]
     robot_alignment: X+
-    start_position: [ -9.0, 0.0, 0.0 ]
-    simulator_project: [ AGXSimulator, AISTSimulator ]
-    view_project: M3/RefereeView
-    enable_recording: true
-    # enable_tracking: true
-    enable_ros: true
-  - { <<: *Mission3, name: FireFighting, task_project: [ M3/FireFighting ] }
+    start_position: [ -8.5, 5.0, 0.0 ]

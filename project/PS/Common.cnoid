@@ -7,20 +7,19 @@ items:
   children:
     -
       id: 1
-      name: "Floor"
+      name: "Vessel"
       plugin: Body
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/PS/Common/path.body"
+        file: "${SHARE}/WRS2025/model/PS/Common/vessel.body"
         format: CHOREONOID-BODY
-        rootPosition: [ 0, 0, -0.1 ]
+        rootPosition: [ 0, 0, 0 ]
         rootAttitude: [
           1, 0, 0,
           0, 1, 0,
           0, 0, 1 ]
-        jointDisplacements: [ 0, 0 ]
-        initialRootPosition: [ 0, 0, -0.1 ]
+        initialRootPosition: [ 0, 0, 0 ]
         initialRootAttitude: [
           1, 0, 0,
           0, 1, 0,
@@ -30,152 +29,38 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
-      children:
-        -
-          id: 2
-          name: "SwitchController"
-          plugin: Body
-          class: SimpleControllerItem
-          data:
-            isNoDelayMode: false
-            controllerOptions: ""
-            controller: "SwitchButtonController"
-            base_directory: "Controller directory"
-            reloading: false
-            export_symbols: false
+    -
+      id: 2
+      name: "Structure"
+      plugin: Body
+      class: BodyItem
+      data:
+        file: "${SHARE}/WRS2025/model/PS/Common/structure.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 0, 0, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
     -
       id: 3
-      name: "Ceiling"
-      plugin: Body
-      class: BodyItem
-      data:
-        file: "${SHARE}/WRS2025/model/PS/Common/ceiling.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ 0, 0, 3.1 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ 0, 0, 3.1 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 4
-      name: "Fire"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2018/model/Fire.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -2, 0, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        jointDisplacements: [ 4.58366 ]
-        initialRootPosition: [ -2, 0, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-      children:
-        -
-          id: 5
-          name: "FireController"
-          plugin: Body
-          class: SimpleControllerItem
-          data:
-            isNoDelayMode: false
-            controllerOptions: ""
-            controller: "FireController"
-            base_directory: "Controller directory"
-            reloading: false
-            export_symbols: false
-    -
-      id: 6
-      name: "FireCabinet"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2018/model/FullFeaturedFireCabinet.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -2.5, 2.5, 0 ]
-        rootAttitude: [
-          2.83276945e-16, 1, -0,
-          -1, 2.83276945e-16, 0,
-          0, 0, 1 ]
-        jointDisplacements: [ 0, 0, 0, 0, 45, 0, 0, 0, 0 ]
-        initialRootPosition: [ -2.5, 2.5, 0 ]
-        initialRootAttitude: [
-          2.22044605e-16, 1, -0,
-          -1, 2.22044605e-16, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: true
-        lock_location: false
-        scene_sensitive: true
-      children:
-        -
-          id: 7
-          name: "HoseNozzleController"
-          plugin: Body
-          class: SimpleControllerItem
-          data:
-            isNoDelayMode: false
-            controllerOptions: ""
-            controller: "HoseNozzleController"
-            base_directory: "Controller directory"
-            reloading: false
-            export_symbols: false
-    -
-      id: 8
-      name: "FireCircle"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2018/model/T5_NoEntryAreaCircle.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -2, 0, 0 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -2, 0, 0 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 9
       name: "CFDCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
-      is_checked: true
       data:
         translation: [ 0, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 100, 100, 100 ]
+        size: [ 20, 20, 20 ]
         diffuse_color: [ 0, 1, 1 ]
         radius: 0.5
         height: 1
@@ -200,60 +85,20 @@ items:
         coef_d: 0
         std_dev: 0
         salt_amount: 0
-        salt_chance: 0
+        salt_chance: 1
         pepper_amount: 0
-        pepper_chance: 0
-        mosaic_chance: 0
+        pepper_chance: 1
+        mosaic_chance: 1
         kernel: 16
     -
-      id: 10
-      name: "TCCollider"
-      plugin: SimpleCollider
-      class: MultiColliderItem
-      is_checked: true
-      data:
-        translation: [ 0, 0, 0 ]
-        rotation: [ 0, -0, 0 ]
-        size: [ 100, 100, 100 ]
-        diffuse_color: [ 1, 1, 0 ]
-        radius: 0.5
-        height: 1
-        specular_exponent: 25
-        transparency: 1
-        scene_type: Box
-        collider_type: TC
-        density: 0
-        viscosity: 0
-        steady_flow: [ 0, 0, 0 ]
-        inbound_delay: 0
-        inbound_rate: 0
-        inbound_loss: 0
-        outbound_delay: 0
-        outbound_rate: 0
-        outbound_loss: 0
-        source: 0.0.0.0/0
-        destination: 0.0.0.0/0
-        hsv: [ 0, 0, 0 ]
-        rgb: [ 0, 0, 0 ]
-        coef_b: 0
-        coef_d: 0
-        std_dev: 0
-        salt_amount: 0
-        salt_chance: 0
-        pepper_amount: 0
-        pepper_chance: 0
-        mosaic_chance: 0
-        kernel: 16
-    -
-      id: 11
+      id: 4
       name: "VFXCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
-      is_checked: true
       data:
         translation: [ 0, 0, 0 ]
         rotation: [ 0, -0, 0 ]
-        size: [ 100, 100, 100 ]
+        size: [ 20, 20, 20 ]
         diffuse_color: [ 1, 0, 1 ]
         radius: 0.5
         height: 1
@@ -299,7 +144,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 1 ]
+      expanded: [ ]
   -
     id: 3
     plugin: Base
@@ -331,9 +176,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 15.4245, 11.6761, 16.9577 ]
-          direction: [ -0.560123, -0.500837, -0.659867 ]
-          up: [ -0.491902, -0.439837, 0.751382 ]
+          eye: [ 24.6768, 23.0867, 18.0454 ]
+          direction: [ -0.660668, -0.619992, -0.423235 ]
+          up: [ -0.308622, -0.289621, 0.90602 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -389,10 +234,6 @@ views:
     state:
       element_type: all
       listing_mode: list
-      body_items:
-        -
-          id: 1
-          selected_links: [ 0 ]
   -
     id: 8
     plugin: Body
@@ -441,8 +282,8 @@ toolbars:
     lazyCollisionDetectionMode: true
 Body:
   "BodySelectionManager":
-    current_body_item: 1
-    current_link: "Floor"
+    current_body_item: 2
+    current_link: "Structure"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -460,22 +301,7 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 3
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 4
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 6
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 8
+        body_item: 2
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -513,7 +339,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 757, 251 ]
+              sizes: [ 756, 252 ]
               children:
                 -
                   type: pane

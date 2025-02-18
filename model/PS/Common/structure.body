@@ -1,0 +1,28 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+name: Structure
+links:
+  -
+    name: Structure
+    translation: [ 0, 0, 0 ]
+    jointType: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      - &wall_ns
+        type: Shape
+        translation: [ 10.1, 0, 0 ]
+        geometry: { type: Box, size: [ 0.2, 20.0, 10.0 ] }
+        appearance: &BodyAppearance { material: { diffuseColor: [ 0.5, 0.5, 0.5 ] } }
+      - { <<: *wall_ns, translation: [ -10.1, 0, 0 ] }
+      - &wall_we
+        type: Shape
+        translation: [ 0, 10.1, 0 ]
+        geometry: { type: Box, size: [ 20.0, 0.2, 10.0 ] }
+        appearance: *BodyAppearance
+      - { <<: *wall_we, translation: [ 0, -10.1, 0 ] }
+      -
+        type: Shape
+        translation: [ 0, 0, 5.1 ]
+        geometry: { type: Box, size: [ 20.0, 20.0, 0.2 ] }
+        appearance: *BodyAppearance
