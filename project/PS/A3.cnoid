@@ -29,6 +29,82 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
+    -
+      id: 2
+      name: "SmokeLeakedLine"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/PS/Common/smoke_leaked_line.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 5, 7, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        jointDisplacements: [ -180, 0 ]
+        initialRootPosition: [ 5, 7, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
+        -
+          id: 3
+          name: "ValveController"
+          plugin: Body
+          class: SimpleControllerItem
+          data:
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
+    -
+      id: 4
+      name: "SmallTank"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/PS/Common/small_tank.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 5, 3, 0 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        jointDisplacements: [ -180, 0 ]
+        initialRootPosition: [ 5, 3, 0 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+      children:
+        -
+          id: 5
+          name: "ValveController"
+          plugin: Body
+          class: SimpleControllerItem
+          data:
+            isNoDelayMode: false
+            controllerOptions: ""
+            controller: "LeakedLineController"
+            base_directory: "Controller directory"
+            reloading: false
+            export_symbols: false
 views:
   -
     id: 0
@@ -45,7 +121,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ ]
+      expanded: [ 2, 4 ]
   -
     id: 3
     plugin: Base
@@ -77,9 +153,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 3, 1.5, 1.2 ]
-          direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787498, 0.984374 ]
+          eye: [ 16.1331, 13.7034, 11.9277 ]
+          direction: [ -0.570346, -0.42789, -0.701153 ]
+          up: [ -0.560861, -0.420774, 0.713011 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -198,6 +274,16 @@ Body:
     scene_bodies:
       -
         body_item: 1
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 2
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 4
         show_cm: false
         show_cm_projection: false
         show_zmp: false
