@@ -71,3 +71,9 @@ links:
 
       - { <<: *box, translation: [ -4.5,  4.5, 0.6 ] }
       - { <<: *box, translation: [ -4.5, -4.5, 0.6 ] }
+      - &smoke_device
+        type: SmokeDevice
+        name: Smoke1
+        translation: [ -0.5, 1.5, 0.0 ]
+      - { <<: *smoke_device, name: Smoke2, translation: [ -0.5, -3.5, 0.0 ] }
+      - { <<: *smoke_device, name: Smoke3, translation: [  4.5,  1.0, 0.0 ] }
