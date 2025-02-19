@@ -77,54 +77,6 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
-    -
-      id: 4
-      name: "Duct"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/PS/A4/duct.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ 5, -4.5, 4.5 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ 5, -4.5, 4.5 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
-    -
-      id: 5
-      name: "opening"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/PS/A4/opening.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ 1.5, -1, 4 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ 1.5, -1, 4 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
 views:
   -
     id: 0
@@ -304,16 +256,6 @@ Body:
         show_zmp: false
       -
         body_item: 3
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 4
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 5
         show_cm: false
         show_cm_projection: false
         show_zmp: false

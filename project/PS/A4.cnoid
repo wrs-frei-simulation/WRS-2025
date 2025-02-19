@@ -53,30 +53,6 @@ items:
         selfCollisionDetection: false
         lock_location: false
         scene_sensitive: true
-    -
-      id: 3
-      name: "opening"
-      plugin: Body
-      class: BodyItem
-      is_checked: true
-      data:
-        file: "${SHARE}/WRS2025/model/PS/A4/opening.body"
-        format: CHOREONOID-BODY
-        rootPosition: [ -3.5, 4, 4 ]
-        rootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        initialRootPosition: [ -3.5, 4, 4 ]
-        initialRootAttitude: [
-          1, 0, 0,
-          0, 1, 0,
-          0, 0, 1 ]
-        fix_root: true
-        collisionDetection: true
-        selfCollisionDetection: false
-        lock_location: false
-        scene_sensitive: true
 views:
   -
     id: 0
@@ -125,9 +101,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 9.8116, 19.4675, 14.4934 ]
-          direction: [ -0.618301, -0.603938, -0.502954 ]
-          up: [ -0.359797, -0.351439, 0.864313 ]
+          eye: [ -9.98135, 13.8851, 20.3111 ]
+          direction: [ 0.528502, -0.359976, -0.768832 ]
+          up: [ 0.635435, -0.432811, 0.63945 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -251,11 +227,6 @@ Body:
         show_zmp: false
       -
         body_item: 2
-        show_cm: false
-        show_cm_projection: false
-        show_zmp: false
-      -
-        body_item: 3
         show_cm: false
         show_cm_projection: false
         show_zmp: false
