@@ -12,7 +12,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/PS/Common/vessel.body"
+        file: "${SHARE}/WRS2025/model/PS/A4/vessel.body"
         format: CHOREONOID-BODY
         rootPosition: [ 0, 0, 0 ]
         rootAttitude: [
@@ -31,6 +31,30 @@ items:
         scene_sensitive: true
     -
       id: 2
+      name: "Duct"
+      plugin: Body
+      class: BodyItem
+      is_checked: true
+      data:
+        file: "${SHARE}/WRS2025/model/PS/A4/duct.body"
+        format: CHOREONOID-BODY
+        rootPosition: [ 0, 0.5, 4.5 ]
+        rootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        initialRootPosition: [ 0, 0.5, 4.5 ]
+        initialRootAttitude: [
+          1, 0, 0,
+          0, 1, 0,
+          0, 0, 1 ]
+        fix_root: true
+        collisionDetection: true
+        selfCollisionDetection: false
+        lock_location: false
+        scene_sensitive: true
+    -
+      id: 3
       name: "Structure"
       plugin: Body
       class: BodyItem
@@ -53,7 +77,7 @@ items:
         lock_location: false
         scene_sensitive: true
     -
-      id: 3
+      id: 4
       name: "CFDCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -91,7 +115,7 @@ items:
         mosaic_chance: 1
         kernel: 16
     -
-      id: 4
+      id: 5
       name: "VFXCollider"
       plugin: SimpleCollider
       class: MultiColliderItem
@@ -282,8 +306,8 @@ toolbars:
     lazyCollisionDetectionMode: true
 Body:
   "BodySelectionManager":
-    current_body_item: 2
-    current_link: "Structure"
+    current_body_item: 1
+    current_link: "Root"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -302,6 +326,11 @@ Body:
         show_zmp: false
       -
         body_item: 2
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 3
         show_cm: false
         show_cm_projection: false
         show_zmp: false

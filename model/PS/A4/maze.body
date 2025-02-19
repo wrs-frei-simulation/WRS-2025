@@ -1,0 +1,73 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+name: Maze
+links:
+  -
+    name: Maze
+    translation: [ 0, 0, 3.9 ]
+    jointType: fixed
+    material: Ground
+    AMOR: true
+    elements:
+      - &duct
+        type: Shape
+        translation: [ 3.0, 2.0, 0.0 ]
+        geometry: { type: Box, size: [ 4.0, 6.0, 0.2 ] }
+        appearance: &BodyAppearance { material: { diffuseColor: [ 0.5, 0.5, 0.5 ] } }
+      - { <<: *duct, translation: [ -2.0, 0.0, 0.0 ], geometry: { type: Box, size: [ 6.0, 10.0, 0.2 ] } }
+      - &box
+        type: Shape
+        translation: [ 4.5, 4.5, 0.6 ]
+        geometry: { type: Box, size: [ 1.0, 1.0, 1.0 ] }
+        appearance: *BodyAppearance
+      - { <<: *box, translation: [  4.5,  3.5, 0.6 ] }
+      - { <<: *box, translation: [  4.5,  2.5, 0.6 ] }
+      - { <<: *box, translation: [  4.5,  1.75, 0.6 ], geometry: { type: Box, size: [ 1.0, 0.5, 1.0 ] } }
+      - { <<: *box, translation: [  4.5,  0.25, 0.6 ], geometry: { type: Box, size: [ 1.0, 0.5, 1.0 ] } }
+      - { <<: *box, translation: [  4.5, -0.5, 0.6 ] }
+
+      - { <<: *box, translation: [  3.5, -0.5, 0.6 ] }
+
+      - { <<: *box, translation: [  2.5,  3.5, 0.6 ] }
+      - { <<: *box, translation: [  2.5,  1.5, 0.6 ] }
+      - { <<: *box, translation: [  2.5, -0.5, 0.6 ] }
+
+      - { <<: *box, translation: [  1.5,  3.5, 0.6 ] }
+      - { <<: *box, translation: [  1.5,  2.5, 0.6 ] }
+      - { <<: *box, translation: [  1.5,  1.5, 0.6 ] }
+      - { <<: *box, translation: [  1.5,  0.5, 0.6 ] }
+
+      - { <<: *box, translation: [  0.5, -1.5, 0.6 ] }
+      - { <<: *box, translation: [  0.5, -2.5, 0.6 ] }
+      - { <<: *box, translation: [  0.5, -3.5, 0.6 ] }
+      - { <<: *box, translation: [  0.5, -4.5, 0.6 ] }
+
+      - { <<: *box, translation: [ -0.5,  4.5, 0.6 ] }
+      - { <<: *box, translation: [ -0.5,  2.5, 0.6 ] }
+      - { <<: *box, translation: [ -0.5,  0.5, 0.6 ] }
+      - { <<: *box, translation: [ -0.5, -4.5, 0.6 ] }
+
+      - { <<: *box, translation: [ -1.5,  4.5, 0.6 ] }
+      - { <<: *box, translation: [ -1.5,  2.5, 0.6 ] }
+      - { <<: *box, translation: [ -1.5,  0.5, 0.6 ] }
+      - { <<: *box, translation: [ -1.5, -0.5, 0.6 ] }
+      - { <<: *box, translation: [ -1.5, -1.5, 0.6 ] }
+      - { <<: *box, translation: [ -1.5, -2.5, 0.6 ] }
+      - { <<: *box, translation: [ -1.5, -4.5, 0.6 ] }
+
+      - { <<: *box, translation: [ -2.5,  4.5, 0.6 ] }
+      - { <<: *box, translation: [ -2.5,  2.5, 0.6 ] }
+      - { <<: *box, translation: [ -2.5, -0.5, 0.6 ] }
+      - { <<: *box, translation: [ -2.5, -4.5, 0.6 ] }
+
+      - { <<: *box, translation: [ -3.5,  4.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5,  3.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5,  2.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5,  1.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5, -0.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5, -1.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5, -2.5, 0.6 ] }
+      - { <<: *box, translation: [ -3.5, -4.5, 0.6 ] }
+
+      - { <<: *box, translation: [ -4.5,  4.5, 0.6 ] }
+      - { <<: *box, translation: [ -4.5, -4.5, 0.6 ] }
