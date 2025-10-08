@@ -1,0 +1,18 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: TM-1Oom2
+
+links:
+  -
+    name: SYMBOL
+    jointType: fixed
+    translation: [ 0, 0, 0.15 ]
+    rotation: [ [ 0, 1, 0, -90 ], [ 0, 0, 1, -90 ] ]
+    elements:
+      -
+        type: Visual
+        elements:
+          Shape:
+            geometry: { type: Box, size: [ 0.1, 0.1, 0.1 ] }
+            appearance: { texture: { url: "resource/1oom2.png" } }
