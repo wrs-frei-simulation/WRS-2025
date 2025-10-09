@@ -77,7 +77,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "FireController"
+            controller: "FireController1"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -115,7 +115,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "HoseNozzleController"
+            controller: "HoseNozzleController1"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false

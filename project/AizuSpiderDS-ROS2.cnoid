@@ -59,7 +59,7 @@ items:
               class: SimpleControllerItem
               data:
                 isNoDelayMode: false
-                controllerOptions: "ARM1_"
+                controllerOptions: "position ARM1_"
                 controller: "Jaco2Controller"
                 base_directory: "Controller directory"
                 reloading: true
@@ -71,7 +71,7 @@ items:
               class: SimpleControllerItem
               data:
                 isNoDelayMode: false
-                controllerOptions: "ARM2_"
+                controllerOptions: "position ARM2_"
                 controller: "Jaco2Controller"
                 base_directory: "Controller directory"
                 reloading: true
@@ -123,21 +123,22 @@ views:
     class: SceneView
     mounted: true
     state:
-      editMode: false
-      viewpointOperationMode: thirdPerson
+      operation_mode: view
+      viewpoint_operation_mode: third_person
+      focus_position: [ 0.0323267, 0, 0.600433 ]
       visible_polygon_elements: [ face ]
       highlighting: false
-      collisionLines: false
+      collision_lines: false
       cameras:
         -
           camera: [ System, Perspective ]
-          isCurrent: true
-          eye: [ 3, 1.5, 1.2 ]
+          is_current: true
+          eye: [ 1.91495, 0.941313, 0.976958 ]
           direction: [ -0.880451, -0.440225, -0.17609 ]
           up: [ -0.1575, -0.0787495, 0.984374 ]
         -
           camera: [ System, Orthographic ]
-          orthoHeight: 20
+          ortho_height: 20
       lighting_mode: normal
       culling_mode: enabled
       shading_mode: smooth
@@ -273,17 +274,17 @@ viewAreas:
     contents:
       type: splitter
       orientation: horizontal
-      sizes: [ 1401, 445 ]
+      sizes: [ 1404, 446 ]
       children:
         -
           type: splitter
           orientation: horizontal
-          sizes: [ 335, 1062 ]
+          sizes: [ 336, 1064 ]
           children:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 504, 504 ]
+              sizes: [ 503, 502 ]
               children:
                 -
                   type: pane
@@ -295,7 +296,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 756, 252 ]
+              sizes: [ 754, 251 ]
               children:
                 -
                   type: pane
@@ -307,7 +308,7 @@ viewAreas:
         -
           type: splitter
           orientation: vertical
-          sizes: [ 229, 779 ]
+          sizes: [ 228, 777 ]
           children:
             -
               type: pane
@@ -315,7 +316,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 312, 463 ]
+              sizes: [ 311, 462 ]
               children:
                 -
                   type: pane

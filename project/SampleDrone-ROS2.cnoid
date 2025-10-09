@@ -89,21 +89,22 @@ views:
     class: SceneView
     mounted: true
     state:
-      editMode: false
-      viewpointOperationMode: thirdPerson
+      operation_mode: view
+      viewpoint_operation_mode: third_person
+      focus_position: [ 0, 0, 0.11 ]
       visible_polygon_elements: [ face ]
       highlighting: false
-      collisionLines: false
+      collision_lines: false
       cameras:
         -
           camera: [ System, Perspective ]
-          isCurrent: true
-          eye: [ 3, 1.5, 1.2 ]
+          is_current: true
+          eye: [ 0.611951, 0.305975, 0.23239 ]
           direction: [ -0.880451, -0.440225, -0.17609 ]
           up: [ -0.1575, -0.0787495, 0.984374 ]
         -
           camera: [ System, Orthographic ]
-          orthoHeight: 20
+          ortho_height: 20
       lighting_mode: normal
       culling_mode: enabled
       shading_mode: smooth
@@ -234,17 +235,17 @@ viewAreas:
     contents:
       type: splitter
       orientation: horizontal
-      sizes: [ 1401, 445 ]
+      sizes: [ 1404, 446 ]
       children:
         -
           type: splitter
           orientation: horizontal
-          sizes: [ 362, 1035 ]
+          sizes: [ 363, 1037 ]
           children:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 504, 504 ]
+              sizes: [ 503, 502 ]
               children:
                 -
                   type: pane
@@ -256,7 +257,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 757, 251 ]
+              sizes: [ 755, 250 ]
               children:
                 -
                   type: pane
@@ -268,7 +269,7 @@ viewAreas:
         -
           type: splitter
           orientation: vertical
-          sizes: [ 221, 787 ]
+          sizes: [ 220, 785 ]
           children:
             -
               type: pane
@@ -276,7 +277,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 306, 477 ]
+              sizes: [ 305, 476 ]
               children:
                 -
                   type: pane

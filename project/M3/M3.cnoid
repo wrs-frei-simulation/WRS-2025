@@ -282,14 +282,14 @@ items:
                 format: CHOREONOID-BODY
                 rootPosition: [ 4.49989757, 6.466, 0.676399825 ]
                 rootAttitude: [
-                  7.63013996e-17, 1.11022303e-16, -1,
+                  7.63013994e-17, 1.11022302e-16, -0.999999998,
                   -1, 3.62458502e-17, -7.63013996e-17,
-                  3.62458502e-17, 1, 1.11022303e-16 ]
+                  3.62458502e-17, 0.999999998, 1.11022302e-16 ]
                 initialRootPosition: [ 4.49989757, 6.466, 0.676399825 ]
                 initialRootAttitude: [
-                  -2.22044605e-16, 1.11022302e-16, -1,
-                  -1, -2.22044605e-16, 1.11022302e-16,
-                  -1.11022302e-16, 1, 0 ]
+                  4.4408921e-16, 5.55111512e-16, -1,
+                  -1, 4.4408921e-16, -1.11022302e-16,
+                  1.11022302e-16, 1, 8.8817842e-16 ]
                 fix_root: true
                 collisionDetection: true
                 selfCollisionDetection: false
@@ -335,9 +335,9 @@ items:
               0, 0.31067643, 0.950515732 ]
             initialRootPosition: [ 4.533, 6.166, 0.664899478 ]
             initialRootAttitude: [
-              -2.40202747e-10, -0.950515732, 0.31067643,
-              1, -2.40202747e-10, -1.38777878e-16,
-              -2.77555756e-17, 0.31067643, 0.950515732 ]
+              -7.32951699e-10, -0.950515732, 0.31067643,
+              1, -7.32951699e-10, 7.74892372e-11,
+              7.74893205e-11, 0.31067643, 0.950515732 ]
             fix_root: false
             collisionDetection: true
             selfCollisionDetection: false
@@ -745,7 +745,7 @@ items:
               data:
                 isNoDelayMode: false
                 controllerOptions: ""
-                controller: "BreakerBoxController"
+                controller: "BreakerBoxController1"
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
@@ -909,7 +909,7 @@ items:
               data:
                 isNoDelayMode: false
                 controllerOptions: ""
-                controller: "FireController"
+                controller: "FireController1"
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
@@ -947,7 +947,7 @@ items:
               data:
                 isNoDelayMode: false
                 controllerOptions: ""
-                controller: "HoseNozzleController"
+                controller: "HoseNozzleController1"
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
@@ -1089,7 +1089,7 @@ items:
               data:
                 isNoDelayMode: false
                 controllerOptions: ""
-                controller: "LeakedLineController"
+                controller: "LeakedLineController1"
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
@@ -1175,7 +1175,7 @@ items:
               data:
                 isNoDelayMode: false
                 controllerOptions: ""
-                controller: "LeakedLineController"
+                controller: "LeakedLineController2"
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
@@ -1191,7 +1191,7 @@ items:
                 rootPosition: [ -8.8, -1.8, 0.2 ]
                 rootAttitude: [
                   1.37750702e-48, 6.123234e-17, -1,
-                  -1, 6.123234e-17, 3.74939946e-33,
+                  -1, 6.123234e-17, 4.82715272e-33,
                   6.123234e-17, 1, 6.123234e-17 ]
                 initialRootPosition: [ -8.8, -1.8, 0.2 ]
                 initialRootAttitude: [
@@ -1215,7 +1215,7 @@ items:
                 rootPosition: [ -8.6, -1.8, 0.2 ]
                 rootAttitude: [
                   6.123234e-17, 6.123234e-17, -1,
-                  -1, 3.74939946e-33, -6.123234e-17,
+                  -1, 0, -6.123234e-17,
                   0, 1, 6.123234e-17 ]
                 initialRootPosition: [ -8.6, -1.8, 0.2 ]
                 initialRootAttitude: [
