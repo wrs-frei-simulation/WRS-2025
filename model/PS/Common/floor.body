@@ -13,11 +13,6 @@ links:
         type: Shape
         geometry: { type: Box, size: [ 10.0, 10.0, 0.2 ] }
         appearance: { material: { diffuseColor: [ 0.5, 0.5, 0 ] } }
-      -
-        type: Shape
-        translation: [ -3.5, -0.75, 0 ]
-        geometry: { type: Box, size: [ 3.0, 4.5, 0.22 ] }
-        appearance: { material: { diffuseColor: [ 1, 0, 0 ], transparency: 0.5 } }
       - &light
         type: SpotLight
         name: Light1
@@ -33,6 +28,19 @@ links:
             rotation: [ 1, 0, 0, 90 ]
             geometry: { type: Cone, height: 0.1, radius: 0.05 }
             appearance: { material: { diffuse: [ 1.0, 1.0, 0.4 ] } }
+  -
+    name: StartArea
+    parent: Floor
+    translation: [ -3.5, -0.75, 0 ]
+    jointType: fixed
+    elements:
+      -
+        type: Visual
+        elements:
+          -
+            type: Shape
+            geometry: { type: Box, size: [ 3.02, 4.5, 0.22 ] }
+            appearance: { material: { diffuseColor: [ 1, 0, 0 ], transparency: 0.5 } }
   - &breaker
     type: SubBody
     uri: "./misc/breaker_box.body"
