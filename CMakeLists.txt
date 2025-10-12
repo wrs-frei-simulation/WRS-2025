@@ -21,7 +21,6 @@ endif()
 install(DIRECTORY
   model
   project
-#  script
   share
   DESTINATION ${CHOREONOID_SHARE_SUBDIR}/WRS2025)
 

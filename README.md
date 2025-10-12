@@ -135,7 +135,6 @@ $ git clone https://github.com/wrs-frei-simulation/WRS-2025.git choreonoid/ext/W
 - **Move ``hairo-world-plugin`` to ``choreonoid/ext/``.**
 ```bash
 $ choreonoid/misc/script/install-requisites-ubuntu-22.04.sh
-$ sudo ./choreonoid/ext/hairo-world-plugin/misc/script/install-requisites-ubuntu-22.04.sh
 $ cd ~/choreonoid && mkdir build && cd build
 $ cmake .. -DBUILD_AGX_DYNAMICS_PLUGIN=ON -DBUILD_AGX_BODYEXTENSION_PLUGIN=ON -DBUILD_WRS2018=ON -DBUILD_SCENE_EFFECTS_PLUGIN=ON -DBUILD_HAIRO_WORLD_PLUGIN=ON -DENABLE_INSTALL_RPATH_USE_LINK_PATH=ON
 $ make -j8 # -j8 for 8-core CPU, -jN for N-core CPU
@@ -152,7 +151,6 @@ $ git clone https://github.com/wrs-frei-simulation/WRS-2025.git choreonoid/ext/W
 ```
 - **Move ``hairo-world-plugin`` to ``choreonoid/ext/``.**
 ```bash
-$ sudo ./choreonoid/ext/hairo-world-plugin/misc/script/install-requisites-ubuntu-22.04.sh
 $ cd ~/choreonoid/build
 $ cmake .. -DBUILD_AGX_DYNAMICS_PLUGIN=ON -DBUILD_AGX_BODYEXTENSION_PLUGIN=ON -DBUILD_WRS2018=ON -DBUILD_SCENE_EFFECTS_PLUGIN=ON -DBUILD_HAIRO_WORLD_PLUGIN=ON -DENABLE_INSTALL_RPATH_USE_LINK_PATH=ON
 $ make -j8 # -j8 for 8-core CPU, -jN for N-core CPU
@@ -200,9 +198,8 @@ $ git clone https://github.com/wrs-frei-simulation/WRS-2025.git choreonoid/ext/W
 ```
 - **Move ``hairo-world-plugin`` to ``choreonoid/ext/``.**
 ```bash
-$ git clone https://github.com/k38-suzuki/choreonoid_joy2.git
+$ git clone https://github.com/wrs-sim/choreonoid_joy2.git
 $ choreonoid/misc/script/install-requisites-ubuntu-22.04.sh
-$ sudo ./choreonoid/ext/hairo-world-plugin/misc/script/install-requisites-ubuntu-22.04.sh
 $ cd ~/ros2_ws
 $ colcon build --symlink-install --cmake-args -DBUILD_AGX_DYNAMICS_PLUGIN=ON -DBUILD_AGX_BODYEXTENSION_PLUGIN=ON -DBUILD_WRS2018=ON -DBUILD_SCENE_EFFECTS_PLUGIN=ON -DBUILD_HAIRO_WORLD_PLUGIN=ON -DENABLE_INSTALL_RPATH_USE_LINK_PATH=ON
 

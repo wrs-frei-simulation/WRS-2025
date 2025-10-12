@@ -39,7 +39,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "BreakerBoxController2"
+            controller: "BreakerBoxController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -317,7 +317,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController1"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -355,7 +355,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController2"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -393,7 +393,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController3"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -431,7 +431,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController4"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -469,7 +469,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController5"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -507,7 +507,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController6"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -545,7 +545,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController7"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -583,7 +583,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: ""
-            controller: "LeakedLineController8"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -621,7 +621,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: "lever"
-            controller: "LeakedLineController9"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false
@@ -660,7 +660,7 @@ items:
           data:
             isNoDelayMode: false
             controllerOptions: "lever"
-            controller: "LeakedLineController10"
+            controller: "LeakedLineController"
             base_directory: "Controller directory"
             reloading: false
             export_symbols: false

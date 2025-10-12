@@ -9,7 +9,7 @@
 
 using namespace cnoid;
 
-class BreakerBoxController1 : public SimpleController
+class BreakerBoxController : public SimpleController
 {
     Link* breaker;
     DeviceList<SpotLight> lights;
@@ -59,4 +59,4 @@ public:
     }
 };
 
-CNOID_IMPLEMENT_SIMPLE_CONTROLLER_FACTORY(BreakerBoxController1)
+CNOID_IMPLEMENT_SIMPLE_CONTROLLER_FACTORY(BreakerBoxController)

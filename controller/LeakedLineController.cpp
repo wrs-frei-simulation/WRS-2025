@@ -11,7 +11,7 @@
 
 using namespace cnoid;
 
-class LeakedLineController3 : public SimpleController
+class LeakedLineController : public SimpleController
 {
     SimpleControllerIO* io;
     int handActuationMode;
@@ -166,4 +166,4 @@ public:
     }
 };
 
-CNOID_IMPLEMENT_SIMPLE_CONTROLLER_FACTORY(LeakedLineController3)
+CNOID_IMPLEMENT_SIMPLE_CONTROLLER_FACTORY(LeakedLineController)

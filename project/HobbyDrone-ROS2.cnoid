@@ -12,7 +12,7 @@ items:
       class: BodyItem
       is_checked: true
       data:
-        file: "${SHARE}/WRS2025/model/model_ex1/HobbyDrone.body"
+        file: "${SHARE}/model/HobbyDrone/HobbyDrone.body"
         format: CHOREONOID-BODY
         rootPosition: [ 0, 0, 0.3 ]
         rootAttitude: [

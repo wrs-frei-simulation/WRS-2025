@@ -72,28 +72,6 @@ materials:
     viscosity: 1.0
     youngs_modulus: 200e9
   -
-    name: MonoCrawlerTracks
-    density: 1e3
-    youngs_modulus: 1e10
-    roughness: 1.0
-    viscosity: 1.0
-  -
-    name: MonoCrawlerWheel
-    youngs_modulus: 1e10
-    roughness: 1.0
-    viscosity: 1.0
-  -
-    name: MonoCrawler2Tracks
-    density: 1e3
-    youngs_modulus: 1e10
-    roughness: 1.0
-    viscosity: 1.0
-  -
-    name: MonoCrawler2Wheel
-    youngs_modulus: 1e10
-    roughness: 1.0
-    viscosity: 1.0
-  -
     name: WRSCommonTracks
     density: 1e3
     youngs_modulus: 1e10
@@ -219,44 +197,6 @@ contact_materials:
     restitution: 0.0
     surface_viscosity: 1e-8
     friction_model: [ iterative, direct ]
-  -
-    materials: [ Ground, MonoCrawlerTracks ]
-    youngs_modulus: 1e10
-    friction: 1.4
-    secondary_friction: 0.5
-    restitution: 0.0
-    surface_viscosity: 1e-3 # 1e-2
-    secondary_surface_viscosity: 2e-2
-    primary_direction: [ 1, 0, 0 ]
-    friction_model: [ constant_normal_force_oriented_box, direct ]
-    #friction_model: [ oriented_iterative, direct ]
-    constant_normal_force: 500
-    reference_body: MonoCrawlerNA
-    reference_link: CHASSIS
-  -
-    materials: [ MonoCrawlerWheel, MonoCrawlerTracks ]
-    youngs_modulus: 1e10
-    friction: 1.0
-    restitution: 0.0
-  -
-    materials: [ Ground, MonoCrawler2Tracks ]
-    youngs_modulus: 1e10
-    friction: 1.4
-    secondary_friction: 0.5
-    restitution: 0.0
-    surface_viscosity: 1e-3 # 1e-2
-    secondary_surface_viscosity: 2e-2
-    primary_direction: [ 1, 0, 0 ]
-    friction_model: [ constant_normal_force_oriented_box, direct ]
-    #friction_model: [ oriented_iterative, direct ]
-    constant_normal_force: 500
-    reference_body: MonoCrawler2NA
-    reference_link: CHASSIS
-  -
-    materials: [ MonoCrawler2Wheel, MonoCrawler2Tracks ]
-    youngs_modulus: 1e10
-    friction: 1.0
-    restitution: 0.0
   -
     materials: [ Ground, WRSCommonTracks ]
     youngs_modulus: 1e10
